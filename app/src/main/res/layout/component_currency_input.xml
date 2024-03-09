@@ -48,7 +48,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableEnd="@drawable/bottom_arrow"
-        android:text="€ Euro"
         android:textColor="@color/black"
         android:backgroundTint="@android:color/transparent"
 
