@@ -11,7 +11,6 @@ import com.example.currencyconverter.CURRENCY_API_URL
 class ApiService private constructor(
     context: Context
 ) {
-
     private val queue = Volley.newRequestQueue(context)
 
     /**
@@ -38,6 +37,7 @@ class ApiService private constructor(
     }
 
     companion object {
+        @Volatile
         private var INSTANCE: ApiService? = null
 
         /**
@@ -45,10 +45,11 @@ class ApiService private constructor(
          * @return ApiService - The instance of the ApiService
          */
         fun getInstance(context: Context): ApiService {
-            if (INSTANCE == null) {
-                INSTANCE = ApiService(context)
+            return INSTANCE ?: synchronized(this) {
+                INSTANCE ?: ApiService(context).also {
+                    INSTANCE = it
+                }
             }
-            return INSTANCE as ApiService
         }
     }
 }
