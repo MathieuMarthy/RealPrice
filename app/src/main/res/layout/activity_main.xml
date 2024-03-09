@@ -47,5 +47,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/testest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currency_input_1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.currencyconverter"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -48,4 +48,7 @@ dependencies {
 
     // make http requests
     implementation(libs.volley)
+
+    // Gson
+    implementation(libs.gson)
 }
