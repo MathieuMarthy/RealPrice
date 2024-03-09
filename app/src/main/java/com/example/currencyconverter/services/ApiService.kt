@@ -29,7 +29,7 @@ class ApiService private constructor(
      */
     fun getCurrencyExchangeRate(
         successCallback: (Map<String, Int>) -> Unit,
-        errorCallback: (String) -> Unit
+        errorCallback: () -> Unit
     ) {
         val stringRequest = StringRequest(
             Request.Method.GET,
@@ -46,7 +46,7 @@ class ApiService private constructor(
                 if (responseMap.getOrDefault("result", "success") != "success" ||
                     !responseMap.containsKey("rates")
                 ) {
-                    errorCallback("Failed to get the currency exchange rate")
+                    errorCallback()
                     return@StringRequest
                 }
 

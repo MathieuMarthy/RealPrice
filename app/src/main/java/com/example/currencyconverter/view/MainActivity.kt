@@ -1,9 +1,9 @@
 package com.example.currencyconverter.view
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.currencyconverter.R
@@ -34,16 +34,21 @@ class MainActivity : AppCompatActivity() {
         testButton.setOnClickListener {
             this.apiService.getCurrencyExchangeRate(
                 { _ ->
-                    // Handle the success response
-                    Log.d(":3", "update date")
                     this.refreshLastUpdateDate()
                 },
-                { error ->
-                    // Handle the error response
+                {
+                    Toast.makeText(
+                        this,
+                        this.getString(R.string.no_internet_access),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 })
         }
     }
 
+    /**
+     * Refresh the last update date on the UI
+     */
     private fun refreshLastUpdateDate() {
         val date = this.updateDateDAO.load() ?: return
         val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
