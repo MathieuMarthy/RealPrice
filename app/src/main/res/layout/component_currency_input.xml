@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="75dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <View
+        android:id="@+id/currency_input_border"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+
+        android:background="@drawable/rounded_white_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/currency_input_money_amount"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+
+        android:autofillHints="@string/amount_money_convert"
+        android:background="@null"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/currency_input_border"
+        app:layout_constraintStart_toStartOf="@+id/currency_input_border"
+        app:layout_constraintTop_toTopOf="@+id/currency_input_border"
+        tools:ignore="LabelFor" />
+
+    <View
+        android:id="@+id/currency_input_vertical_line"
+        android:layout_width="2dp"
+        android:layout_height="50dp"
+
+        android:layout_marginStart="20dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/currency_input_border"
+        app:layout_constraintStart_toEndOf="@+id/currency_input_money_amount"
+        app:layout_constraintTop_toTopOf="@+id/currency_input_border" />
+
+    <Button
+        android:id="@+id/currency_input_dropDown_curreny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/bottom_arrow"
+        android:text="€ Euro"
+        android:textColor="@color/black"
+        android:backgroundTint="@android:color/transparent"
+
+        app:layout_constraintBottom_toBottomOf="@+id/currency_input_border"
+        app:layout_constraintEnd_toEndOf="@+id/currency_input_border"
+        app:layout_constraintStart_toEndOf="@+id/currency_input_vertical_line"
+        app:layout_constraintTop_toTopOf="@+id/currency_input_border" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
