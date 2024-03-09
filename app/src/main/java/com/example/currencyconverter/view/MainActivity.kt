@@ -10,6 +10,7 @@ import com.example.currencyconverter.R
 import com.example.currencyconverter.dao.ExchangeRateDAO
 import com.example.currencyconverter.dao.UpdateDateDAO
 import com.example.currencyconverter.services.ApiService
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var apiService: ApiService
@@ -44,8 +45,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refreshLastUpdateDate() {
+        val date = this.updateDateDAO.load() ?: return
+        val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+
         val textView = findViewById<TextView>(R.id.testest)
-        val date = this.updateDateDAO.load()
-        textView.text = date.toString()
+        textView.text = this.getString(R.string.last_update_at, date.format(formatter))
     }
 }
