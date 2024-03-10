@@ -28,7 +28,7 @@ class ApiService private constructor(
      * @param errorCallback - The callback function to be called when the request is failed
      */
     fun getCurrencyExchangeRate(
-        successCallback: (Map<String, Int>) -> Unit,
+        successCallback: (Map<String, Double>) -> Unit,
         errorCallback: () -> Unit
     ) {
         val stringRequest = StringRequest(
@@ -58,7 +58,7 @@ class ApiService private constructor(
                     java.time.ZoneOffset.UTC
                 )
 
-                val currencyExchangeRate = responseMap["rates"] as Map<String, Int>
+                val currencyExchangeRate = responseMap["rates"] as Map<String, Double>
 
                 // Save the currency exchange rate and the last update date
                 this.exchangeRateDAO.save(currencyExchangeRate)
