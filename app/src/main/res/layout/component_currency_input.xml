@@ -47,8 +47,6 @@
         android:id="@+id/currency_input_dropDown_curreny"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableEnd="@drawable/bottom_arrow"
-        android:textColor="@color/black"
         android:backgroundTint="@android:color/transparent"
 
         app:layout_constraintBottom_toBottomOf="@+id/currency_input_border"
