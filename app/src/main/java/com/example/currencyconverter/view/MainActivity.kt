@@ -1,12 +1,14 @@
 package com.example.currencyconverter.view
 
-import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.currencyconverter.R
+import com.example.currencyconverter.models.Currency
 import com.example.currencyconverter.services.CurrencyConverterService
 import com.example.currencyconverter.services.CurrencyManagerDBService
 import java.time.LocalDate
@@ -17,6 +19,9 @@ import java.time.format.DateTimeFormatter
 class MainActivity : AppCompatActivity() {
     private lateinit var currencyConverterService: CurrencyConverterService
     private lateinit var currencyManagerDBService: CurrencyManagerDBService
+
+    private val currencyCode1: String = "EUR"
+    private val currencyCode2: String = "JPY"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +34,40 @@ class MainActivity : AppCompatActivity() {
         this.refreshLastUpdateDate()
 
         // update the currency exchange rate if it's not already updated today
-        if (!this.alreadyUpdateToday() || this.isNetworkAvailable()) {
+        if (!this.alreadyUpdateToday() && this.isNetworkAvailable()) {
             this.currencyManagerDBService.updateExchangeRate {
                 this.initConverterAndRefreshDate()
             }
         } else {
             this.initConverterAndRefreshDate()
         }
+
+        val currency = Currency("EUR", "Euro", "€", 2.3)
+        this.setFirstCurrency(currency)
+        this.setSecondCurrency(currency)
+
     }
+
+    private fun setFirstCurrency(currency: Currency) {
+        this.setSymbolOnInput(
+            findViewById(R.id.currency_input_1),
+            currency
+        )
+    }
+
+    private fun setSecondCurrency(currency: Currency) {
+        this.setSymbolOnInput(
+            findViewById(R.id.currency_input_2),
+            currency
+        )
+    }
+
+    private fun setSymbolOnInput(input: ConstraintLayout, currency: Currency) {
+        val button = input.findViewById<Button>(R.id.currency_input_dropDown_curreny)
+
+        button.text = currency.symbol
+    }
+
 
     /**
      * Initialize the currency converter service and refresh the last update date on the UI
@@ -50,11 +81,11 @@ class MainActivity : AppCompatActivity() {
      * Refresh the last update date on the UI
      */
     private fun refreshLastUpdateDate() {
-        val date = this.currencyManagerDBService.getLastUpdateDate() ?: return
+        val date = this.currencyManagerDBService.getLastUpdateDate()
         val textView = findViewById<TextView>(R.id.testest)
 
         val now = LocalDate.now()
-        if (date.toLocalDate() == now) { // if the last update is today
+        if (date == null || date.toLocalDate() == now) { // if the last update is today
             // hide the last update date
             textView.visibility = View.GONE
         } else {
@@ -70,10 +101,7 @@ class MainActivity : AppCompatActivity() {
      * @return Boolean - True if the network is available, False otherwise
      */
     private fun isNetworkAvailable(): Boolean {
-        val connectivityManager = getSystemService(ConnectivityManager::class.java)
-        val network = connectivityManager.activeNetwork
-        val capabilities = connectivityManager.getNetworkCapabilities(network)
-        return capabilities != null
+        return true
     }
 
     /**

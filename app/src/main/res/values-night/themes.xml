@@ -5,5 +5,6 @@
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/blue</item>
         <item name="colorOnPrimary">@color/true_white</item>
+        <item name="fontFamily">@font/poppins_medium</item>
     </style>
 </resources>
