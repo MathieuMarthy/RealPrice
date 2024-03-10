@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_choose_currency_root"
     android:layout_width="match_parent"
-    android:layout_height="50sp">
+    android:paddingHorizontal="30sp"
+    android:layout_height="200sp">
 
     <TextView
         android:id="@+id/item_choose_currency_symbol"
@@ -11,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="€"
 
-        android:textSize="18sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/item_choose_currency_name"
         app:layout_constraintHorizontal_bias="0.65"
@@ -22,6 +23,7 @@
         android:id="@+id/item_choose_currency_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="25sp"
 
         android:text="Euro"
         app:layout_constraintBottom_toBottomOf="parent"

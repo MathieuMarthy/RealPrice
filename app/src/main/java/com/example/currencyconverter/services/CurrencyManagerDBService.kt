@@ -15,7 +15,12 @@ class CurrencyManagerDBService(
     private val updateDateDAO = UpdateDateDAO(context)
 
     val currencies: List<Currency> = this.getAllCurrencies()
-    private val popularCodes = listOf("USD", "EUR", "JPY", "GBP")
+    private val popularCurrency: List<Currency>
+
+    init {
+        val popularCodes = listOf("USD", "EUR", "JPY", "GBP")
+        this.popularCurrency = this.currencies.filter { it.code in popularCodes }
+    }
 
     private fun getAllCurrencies(): List<Currency> {
         val currencies = mutableListOf<Currency>()
@@ -63,7 +68,7 @@ class CurrencyManagerDBService(
     fun getLastUpdateDate() = this.updateDateDAO.load()
 
     fun getPopularCurrencies(): List<Currency> {
-        return this.currencies.filter { it.code in this.popularCodes }
+        return this.popularCurrency
     }
 
     fun getCurrencyByCode(code: String): Currency? {

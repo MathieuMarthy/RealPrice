@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.currencyconverter.R
 import com.example.currencyconverter.adapter.ChooseCurrencyAdapter
+import com.example.currencyconverter.adapter.ChooseCurrencyItemDecorator
 import com.example.currencyconverter.models.Currency
 import com.example.currencyconverter.services.CurrencyConverterService
 import com.example.currencyconverter.services.CurrencyManagerDBService
@@ -145,13 +146,17 @@ class MainActivity : AppCompatActivity() {
                 this.setSymbolOnInput(input, it)
                 dialog.dismiss()
             },
-            actualSelectedCurrency,
-            this
+            actualSelectedCurrency
         )
 
-//        allCurrenciesRecyclerView.addItemDecoration(
-//            ChooseCurrencyItemDecorator(this, currencies)
-//        )
+        allCurrenciesRecyclerView.addItemDecoration(
+            ChooseCurrencyItemDecorator(
+                this,
+                currencies,
+                this.currencyManagerDBService.getPopularCurrencies().last(),
+                actualSelectedCurrency
+            )
+        )
         allCurrenciesRecyclerView.adapter = allCurrenciesAdapter
         allCurrenciesRecyclerView.layoutManager = LinearLayoutManager(this)
 
