@@ -3,4 +3,6 @@
     <string name="amount_money_convert">the amount of money to convert</string>
     <string name="last_update_at">Exchange rates last updated on %s</string>
     <string name="no_internet_access">no internet access</string>
+    <string name="choose_currency">Choose a currency</string>
+    <string name="popular_currencies">Popular currencies</string>
 </resources>

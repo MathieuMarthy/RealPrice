@@ -1,9 +1,14 @@
 package com.example.currencyconverter.view
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -61,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         this.setSymbolOnInput(this.input1, this.currency1)
         this.setSymbolOnInput(this.input2, this.currency2)
 
-        // set listeners
+        // set converters listeners
         val numInput1 = this.input1.findViewById<EditText>(R.id.currency_input_money_amount)
         val numInput2 = this.input2.findViewById<EditText>(R.id.currency_input_money_amount)
 
@@ -99,6 +104,42 @@ class MainActivity : AppCompatActivity() {
             )
             this.inConversion = true
             this.setAmount(this.input1, convertedAmount)
+        }
+
+        // set currency listeners
+        val currencyButton1 = this.input1.findViewById<Button>(R.id.currency_input_dropDown_curreny)
+        val currencyButton2 = this.input2.findViewById<Button>(R.id.currency_input_dropDown_curreny)
+
+        currencyButton1.setOnClickListener {
+            this.openCurrencyDialog(this.input1)
+        }
+
+        currencyButton2.setOnClickListener {
+            this.openCurrencyDialog(this.input2)
+        }
+    }
+
+    private fun openCurrencyDialog(input: ConstraintLayout) {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_choose_currency)
+
+        val closeBtn = dialog.findViewById<ImageButton>(R.id.dialog_choose_currency_close_button)
+        closeBtn.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+
+        val window = dialog.window
+        if (window != null) {
+            val width =
+                (resources.displayMetrics.widthPixels * 0.85).toInt() // 85% de la largeur de l'écran
+            val height =
+                (resources.displayMetrics.heightPixels * 0.90).toInt() // 90% de la hauteur de l'écran
+            window.setLayout(width, height)
+
+            // Définir le fond de la fenêtre de dialogue sur transparent
+            window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }
     }
 
@@ -146,7 +187,10 @@ class MainActivity : AppCompatActivity() {
      * @return Boolean - True if the network is available, False otherwise
      */
     private fun isNetworkAvailable(): Boolean {
-        return true
+        val connectivityManager = getSystemService(ConnectivityManager::class.java)
+        val network = connectivityManager.activeNetwork
+        val capabilities = connectivityManager.getNetworkCapabilities(network)
+        return capabilities != null
     }
 
     /**
