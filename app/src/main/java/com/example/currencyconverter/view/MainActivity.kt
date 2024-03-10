@@ -14,7 +14,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.currencyconverter.R
+import com.example.currencyconverter.adapter.ChooseCurrencyAdapter
 import com.example.currencyconverter.models.Currency
 import com.example.currencyconverter.services.CurrencyConverterService
 import com.example.currencyconverter.services.CurrencyManagerDBService
@@ -58,8 +61,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // set the default currency
-        this.currency1 = this.currencyConverterService.getCurrencyByCode("EUR")!!
-        this.currency2 = this.currencyConverterService.getCurrencyByCode("JPY")!!
+        this.currency1 = this.currencyManagerDBService.getCurrencyByCode("EUR")!!
+        this.currency2 = this.currencyManagerDBService.getCurrencyByCode("JPY")!!
 
 
         // set the currency on the UI
@@ -111,25 +114,50 @@ class MainActivity : AppCompatActivity() {
         val currencyButton2 = this.input2.findViewById<Button>(R.id.currency_input_dropDown_curreny)
 
         currencyButton1.setOnClickListener {
-            this.openCurrencyDialog(this.input1)
+            this.openCurrencyDialog(this.input1, this.currency1)
         }
 
         currencyButton2.setOnClickListener {
-            this.openCurrencyDialog(this.input2)
+            this.openCurrencyDialog(this.input2, this.currency2)
         }
     }
 
-    private fun openCurrencyDialog(input: ConstraintLayout) {
+    private fun openCurrencyDialog(input: ConstraintLayout, actualSelectedCurrency: Currency) {
+        // setup dialog
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_choose_currency)
 
+        // close button
         val closeBtn = dialog.findViewById<ImageButton>(R.id.dialog_choose_currency_close_button)
         closeBtn.setOnClickListener {
             dialog.dismiss()
         }
 
+        // Adapter
+        val currencies =
+            this.currencyManagerDBService.getPopularCurrencies() + this.currencyManagerDBService.currencies
+
+        val allCurrenciesRecyclerView =
+            dialog.findViewById<RecyclerView>(R.id.dialog_choose_currency_rv_all_currencies)
+        val allCurrenciesAdapter = ChooseCurrencyAdapter(
+            currencies,
+            {
+                this.setSymbolOnInput(input, it)
+                dialog.dismiss()
+            },
+            actualSelectedCurrency,
+            this
+        )
+
+//        allCurrenciesRecyclerView.addItemDecoration(
+//            ChooseCurrencyItemDecorator(this, currencies)
+//        )
+        allCurrenciesRecyclerView.adapter = allCurrenciesAdapter
+        allCurrenciesRecyclerView.layoutManager = LinearLayoutManager(this)
+
         dialog.show()
 
+        // change the size of the dialog
         val window = dialog.window
         if (window != null) {
             val width =
@@ -159,7 +187,7 @@ class MainActivity : AppCompatActivity() {
      * Initialize the currency converter service and refresh the last update date on the UI
      */
     private fun initConverterAndRefreshDate() {
-        this.currencyConverterService = CurrencyConverterService(this)
+        this.currencyConverterService = CurrencyConverterService()
         this.refreshLastUpdateDate()
     }
 

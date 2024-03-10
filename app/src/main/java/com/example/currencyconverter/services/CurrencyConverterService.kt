@@ -1,15 +1,8 @@
 package com.example.currencyconverter.services
 
-import android.content.Context
 import com.example.currencyconverter.models.Currency
 
-class CurrencyConverterService(
-    context: Context
-) {
-    private val currencyManagerDBService = CurrencyManagerDBService(context)
-    private val currencies: List<Currency> = this.currencyManagerDBService.getAllCurrencies()
-
-
+class CurrencyConverterService {
     /**
      * Convert the amount from one currency to another
      * @param fromCurrency - The currency to convert from
@@ -22,9 +15,5 @@ class CurrencyConverterService(
         val toRate = toCurrency.rate
 
         return amount * (toRate / fromRate)
-    }
-
-    fun getCurrencyByCode(code: String): Currency? {
-        return this.currencies.find { it.code == code }
     }
 }
