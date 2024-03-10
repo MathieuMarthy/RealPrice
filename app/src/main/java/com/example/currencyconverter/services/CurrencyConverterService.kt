@@ -3,15 +3,12 @@ package com.example.currencyconverter.services
 import android.content.Context
 import com.example.currencyconverter.models.Currency
 
-class CurrencyConverterService private constructor(
+class CurrencyConverterService(
     context: Context
 ) {
-    private val currencies: List<Currency>
+    private val currencyManagerDBService = CurrencyManagerDBService(context)
+    private val currencies: List<Currency> = this.currencyManagerDBService.getAllCurrencies()
 
-    init {
-        val currencyManagerDBService = CurrencyManagerDBService(context)
-        this.currencies = currencyManagerDBService.getAllCurrencies()
-    }
 
     /**
      * Convert the amount from one currency to another
@@ -32,22 +29,5 @@ class CurrencyConverterService private constructor(
         val toRate = toCurrencyInfo.rate
 
         return amount * (toRate / fromRate)
-    }
-
-    companion object {
-        @Volatile
-        private var INSTANCE: CurrencyConverterService? = null
-
-        /**
-         * Get the instance of the CurrencyConverterService
-         * @return CurrencyConverterService - The instance of the CurrencyConverterService
-         */
-        fun getInstance(context: Context): CurrencyConverterService {
-            return INSTANCE ?: synchronized(this) {
-                INSTANCE ?: CurrencyConverterService(context).also {
-                    INSTANCE = it
-                }
-            }
-        }
     }
 }

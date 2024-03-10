@@ -6,8 +6,6 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.currencyconverter.CURRENCY_API_URL
-import com.example.currencyconverter.dao.ExchangeRateDAO
-import com.example.currencyconverter.dao.UpdateDateDAO
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.time.LocalDateTime
@@ -19,28 +17,24 @@ class ApiService private constructor(
     private val queue = Volley.newRequestQueue(context)
     private val gson = Gson()
 
-    private val exchangeRateDAO = ExchangeRateDAO(context)
-    private val updateDateDAO = UpdateDateDAO(context)
-
     /**
      * Get the currency exchange rate from the API based on EUR
      * @param successCallback - The callback function to be called when the request is successful
      * @param errorCallback - The callback function to be called when the request is failed
      */
     fun getCurrencyExchangeRate(
-        successCallback: (Map<String, Double>) -> Unit,
+        successCallback: (Map<String, Double>, LocalDateTime) -> Unit,
         errorCallback: () -> Unit
     ) {
         val stringRequest = StringRequest(
             Request.Method.GET,
             CURRENCY_API_URL,
             { response ->
-                Log.d(":3", "getCurrencyExchangeRate")
+                // Convert the response to a map
                 val responseMap = this.gson.fromJson<Map<String, Any>>(
                     response,
                     object : TypeToken<Map<String, Any>>() {}.type
                 )
-                Log.d(":3", responseMap.toString())
 
                 // If the response is not successful
                 if (responseMap.getOrDefault("result", "success") != "success" ||
@@ -58,16 +52,14 @@ class ApiService private constructor(
                     java.time.ZoneOffset.UTC
                 )
 
+                // Get exchanges rates
                 val currencyExchangeRate = responseMap["rates"] as Map<String, Double>
 
-                // Save the currency exchange rate and the last update date
-                this.exchangeRateDAO.save(currencyExchangeRate)
-                this.updateDateDAO.save(lastUpdateDate)
-
-                successCallback(currencyExchangeRate)
+                successCallback(currencyExchangeRate, lastUpdateDate)
             },
             { error ->
                 Log.d("request", error.toString())
+                errorCallback()
             }
         )
 

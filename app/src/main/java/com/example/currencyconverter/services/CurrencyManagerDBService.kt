@@ -3,6 +3,7 @@ package com.example.currencyconverter.services
 import android.content.Context
 import com.example.currencyconverter.dao.CurrencyInfoDAO
 import com.example.currencyconverter.dao.ExchangeRateDAO
+import com.example.currencyconverter.dao.UpdateDateDAO
 import com.example.currencyconverter.models.Currency
 
 class CurrencyManagerDBService(
@@ -10,6 +11,8 @@ class CurrencyManagerDBService(
 ) {
     private val currencyInfoDAO = CurrencyInfoDAO(context)
     private val exchangeRateDAO = ExchangeRateDAO(context)
+    private val apiService = ApiService.getInstance(context)
+    private val updateDateDAO = UpdateDateDAO(context)
 
     fun getAllCurrencies(): List<Currency> {
         val currencies = mutableListOf<Currency>()
@@ -35,4 +38,24 @@ class CurrencyManagerDBService(
 
         return currencies
     }
+
+    fun updateExchangeRate(callback: () -> Unit) {
+        this.apiService.getCurrencyExchangeRate(
+            { currencyExchangeRate, lastUpdateDate ->
+                // Update the currency exchange rate in the database
+                this.updateCurrencies(currencyExchangeRate)
+                // Update the last update date in the database
+                this.updateDateDAO.save(lastUpdateDate)
+
+                callback()
+            },
+            {}
+        )
+    }
+
+    private fun updateCurrencies(currencies: Map<String, Double>) {
+        this.exchangeRateDAO.save(currencies)
+    }
+
+    fun getLastUpdateDate() = this.updateDateDAO.load()
 }
