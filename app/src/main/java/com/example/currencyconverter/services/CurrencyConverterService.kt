@@ -17,17 +17,14 @@ class CurrencyConverterService(
      * @param amount - The amount to convert
      * @return Double - The converted amount
      */
-    fun convert(fromCurrency: String, toCurrency: String, amount: Double): Double {
-        val fromCurrencyInfo = this.currencies.find { it.code == fromCurrency }
-        val toCurrencyInfo = this.currencies.find { it.code == toCurrency }
-
-        if (fromCurrencyInfo == null || toCurrencyInfo == null) {
-            throw IllegalArgumentException("Invalid currency code")
-        }
-
-        val fromRate = fromCurrencyInfo.rate
-        val toRate = toCurrencyInfo.rate
+    fun convert(fromCurrency: Currency, toCurrency: Currency, amount: Double): Double {
+        val fromRate = fromCurrency.rate
+        val toRate = toCurrency.rate
 
         return amount * (toRate / fromRate)
+    }
+
+    fun getCurrencyByCode(code: String): Currency? {
+        return this.currencies.find { it.code == code }
     }
 }

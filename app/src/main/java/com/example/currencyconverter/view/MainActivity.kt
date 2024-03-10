@@ -3,10 +3,12 @@ package com.example.currencyconverter.view
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.widget.addTextChangedListener
 import com.example.currencyconverter.R
 import com.example.currencyconverter.models.Currency
 import com.example.currencyconverter.services.CurrencyConverterService
@@ -20,16 +22,24 @@ class MainActivity : AppCompatActivity() {
     private lateinit var currencyConverterService: CurrencyConverterService
     private lateinit var currencyManagerDBService: CurrencyManagerDBService
 
-    private val currencyCode1: String = "EUR"
-    private val currencyCode2: String = "JPY"
+    private lateinit var currency1: Currency
+    private lateinit var currency2: Currency
+
+    private lateinit var input1: ConstraintLayout
+    private lateinit var input2: ConstraintLayout
+
+    private var inConversion = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        // init service
+        // init
         this.currencyManagerDBService = CurrencyManagerDBService(this)
+
+        this.input1 = findViewById(R.id.currency_input_1)
+        this.input2 = findViewById(R.id.currency_input_2)
 
         this.refreshLastUpdateDate()
 
@@ -42,29 +52,64 @@ class MainActivity : AppCompatActivity() {
             this.initConverterAndRefreshDate()
         }
 
-        val currency = Currency("EUR", "Euro", "€", 2.3)
-        this.setFirstCurrency(currency)
-        this.setSecondCurrency(currency)
+        // set the default currency
+        this.currency1 = this.currencyConverterService.getCurrencyByCode("EUR")!!
+        this.currency2 = this.currencyConverterService.getCurrencyByCode("JPY")!!
 
+
+        // set the currency on the UI
+        this.setSymbolOnInput(this.input1, this.currency1)
+        this.setSymbolOnInput(this.input2, this.currency2)
+
+        // set listeners
+        val numInput1 = this.input1.findViewById<EditText>(R.id.currency_input_money_amount)
+        val numInput2 = this.input2.findViewById<EditText>(R.id.currency_input_money_amount)
+
+        numInput1.addTextChangedListener {
+            if (inConversion) {
+                this.inConversion = false
+                return@addTextChangedListener
+            }
+
+            val amount = it.toString()
+            if (amount.isBlank()) {
+                return@addTextChangedListener
+            }
+
+            val convertedAmount = this.currencyConverterService.convert(
+                this.currency1, this.currency2, amount.toDouble()
+            )
+            this.inConversion = true
+            this.setAmount(this.input2, convertedAmount)
+        }
+
+        numInput2.addTextChangedListener {
+            if (inConversion) {
+                this.inConversion = false
+                return@addTextChangedListener
+            }
+
+            val amount = it.toString()
+            if (amount.isBlank()) {
+                return@addTextChangedListener
+            }
+
+            val convertedAmount = this.currencyConverterService.convert(
+                this.currency2, this.currency1, amount.toDouble()
+            )
+            this.inConversion = true
+            this.setAmount(this.input1, convertedAmount)
+        }
     }
 
-    private fun setFirstCurrency(currency: Currency) {
-        this.setSymbolOnInput(
-            findViewById(R.id.currency_input_1),
-            currency
-        )
-    }
 
-    private fun setSecondCurrency(currency: Currency) {
-        this.setSymbolOnInput(
-            findViewById(R.id.currency_input_2),
-            currency
-        )
+    private fun setAmount(input: ConstraintLayout, amount: Double) {
+        val numInput = input.findViewById<EditText>(R.id.currency_input_money_amount)
+        numInput.setText(String.format("%.2f", amount))
     }
 
     private fun setSymbolOnInput(input: ConstraintLayout, currency: Currency) {
         val button = input.findViewById<Button>(R.id.currency_input_dropDown_curreny)
-
         button.text = currency.symbol
     }
 
@@ -82,7 +127,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun refreshLastUpdateDate() {
         val date = this.currencyManagerDBService.getLastUpdateDate()
-        val textView = findViewById<TextView>(R.id.testest)
+        val textView = findViewById<TextView>(R.id.updated_at)
 
         val now = LocalDate.now()
         if (date == null || date.toLocalDate() == now) { // if the last update is today
