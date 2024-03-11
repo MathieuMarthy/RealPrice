@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -53,14 +54,22 @@ class MainActivity : AppCompatActivity() {
 
         this.refreshLastUpdateDate()
 
-        // update the currency exchange rate if it's not already updated today
-        if (!this.alreadyUpdateToday() && this.isNetworkAvailable()) {
-            this.currencyManagerDBService.updateExchangeRate {
-                this.initConverterAndRefreshDate()
+        if (this.isNetworkAvailable()) {
+            // update the currency exchange rate if it's not already updated today
+            if (!this.alreadyUpdateToday()) {
+                this.currencyManagerDBService.updateExchangeRate {
+                    this.initConverterAndRefreshDate()
+                }
             }
         } else {
-            this.initConverterAndRefreshDate()
+            val noInternetText = findViewById<TextView>(R.id.no_internet_text)
+            val noInternetIcon = findViewById<ImageView>(R.id.no_internet_icon)
+
+            noInternetText.visibility = View.VISIBLE
+            noInternetIcon.visibility = View.VISIBLE
         }
+        this.initConverterAndRefreshDate()
+
 
         // set the default currency
         this.currency1 = this.currencyManagerDBService.getCurrencyByCode("EUR")!!

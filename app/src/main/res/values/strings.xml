@@ -4,4 +4,5 @@
     <string name="last_update_at">Exchange rates last updated on %s</string>
     <string name="choose_currency">Choose a currency</string>
     <string name="popular_currencies">Popular currencies</string>
+    <string name="offline_mode">Offline mode</string>
 </resources>
