@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">currencyConverter</string>
+    <string name="app_name" translatable="false">RealPrice</string>
     <string name="amount_money_convert">the amount of money to convert</string>
     <string name="last_update_at">Exchange rates last updated on %s</string>
     <string name="choose_currency">Choose a currency</string>
