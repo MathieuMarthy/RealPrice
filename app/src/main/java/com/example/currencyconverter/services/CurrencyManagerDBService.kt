@@ -44,7 +44,7 @@ class CurrencyManagerDBService(
             }
         }
 
-        return currencies
+        return currencies.sortedBy { it.name }
     }
 
     fun updateExchangeRate(callback: () -> Unit) {

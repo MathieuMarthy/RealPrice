@@ -18,7 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.currencyconverter.R
 import com.example.currencyconverter.adapter.ChooseCurrencyAdapter
-import com.example.currencyconverter.adapter.ChooseCurrencyItemDecorator
+import com.example.currencyconverter.itemDecorator.ChooseCurrencyItemDecorator
+import com.example.currencyconverter.itemDecorator.PopularLimiterItemDecoration
 import com.example.currencyconverter.models.Currency
 import com.example.currencyconverter.services.CurrencyConverterService
 import com.example.currencyconverter.services.CurrencyManagerDBService
@@ -153,8 +154,13 @@ class MainActivity : AppCompatActivity() {
             ChooseCurrencyItemDecorator(
                 this,
                 currencies,
-                this.currencyManagerDBService.getPopularCurrencies().last(),
                 actualSelectedCurrency
+            )
+        )
+        allCurrenciesRecyclerView.addItemDecoration(
+            PopularLimiterItemDecoration(
+                this,
+                this.currencyManagerDBService.getPopularCurrencies().size
             )
         )
         allCurrenciesRecyclerView.adapter = allCurrenciesAdapter
@@ -176,7 +182,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun setAmount(input: ConstraintLayout, amount: Double) {
         val numInput = input.findViewById<EditText>(R.id.currency_input_money_amount)
         numInput.setText(String.format("%.2f", amount))
@@ -186,7 +191,6 @@ class MainActivity : AppCompatActivity() {
         val button = input.findViewById<Button>(R.id.currency_input_dropDown_curreny)
         button.text = currency.symbol
     }
-
 
     /**
      * Initialize the currency converter service and refresh the last update date on the UI
