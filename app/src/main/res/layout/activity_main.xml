@@ -73,5 +73,16 @@
         app:layout_constraintTop_toTopOf="@+id/no_internet_text"
         app:srcCompat="@drawable/no_internet" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

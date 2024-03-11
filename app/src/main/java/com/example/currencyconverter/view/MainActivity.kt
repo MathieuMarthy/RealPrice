@@ -61,14 +61,9 @@ class MainActivity : AppCompatActivity() {
                     this.initConverterAndRefreshDate()
                 }
             }
-        } else {
-            val noInternetText = findViewById<TextView>(R.id.no_internet_text)
-            val noInternetIcon = findViewById<ImageView>(R.id.no_internet_icon)
-
-            noInternetText.visibility = View.VISIBLE
-            noInternetIcon.visibility = View.VISIBLE
         }
         this.initConverterAndRefreshDate()
+        this.refreshOfflineIndication()
 
 
         // set the default currency
@@ -113,6 +108,16 @@ class MainActivity : AppCompatActivity() {
         currencyButton2.setOnClickListener {
             this.openCurrencyDialog(this.input2, this.currency2)
         }
+    }
+
+    private fun refreshOfflineIndication() {
+        val noInternetText = findViewById<TextView>(R.id.no_internet_text)
+        val noInternetIcon = findViewById<ImageView>(R.id.no_internet_icon)
+
+        val visibility = if (!this.isNetworkAvailable()) View.VISIBLE else View.GONE
+
+        noInternetText.visibility = visibility
+        noInternetIcon.visibility = visibility
     }
 
     private fun convertMoney(fromFristCurrency: Boolean) {
@@ -266,5 +271,10 @@ class MainActivity : AppCompatActivity() {
 
         // .toLocalDate() to compare only the day not the hour and minutes
         return now.toLocalDate() == lastUpdateDate.toLocalDate()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        this.refreshOfflineIndication()
     }
 }
