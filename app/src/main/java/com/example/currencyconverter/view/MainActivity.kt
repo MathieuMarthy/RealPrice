@@ -68,8 +68,8 @@ class MainActivity : AppCompatActivity() {
 
 
         // set the currency on the UI
-        this.setSymbolOnInput(this.input1, this.currency1)
-        this.setSymbolOnInput(this.input2, this.currency2)
+        this.setCurrency(this.input1, this.currency1)
+        this.setCurrency(this.input2, this.currency2)
 
         // set converters listeners
         val numInput1 = this.input1.findViewById<EditText>(R.id.currency_input_money_amount)
@@ -81,16 +81,7 @@ class MainActivity : AppCompatActivity() {
                 return@addTextChangedListener
             }
 
-            val amount = it.toString()
-            if (amount.isBlank()) {
-                return@addTextChangedListener
-            }
-
-            val convertedAmount = this.currencyConverterService.convert(
-                this.currency1, this.currency2, amount.toDouble()
-            )
-            this.inConversion = true
-            this.setAmount(this.input2, convertedAmount)
+            this.convertMoney(true)
         }
 
         numInput2.addTextChangedListener {
@@ -99,16 +90,7 @@ class MainActivity : AppCompatActivity() {
                 return@addTextChangedListener
             }
 
-            val amount = it.toString()
-            if (amount.isBlank()) {
-                return@addTextChangedListener
-            }
-
-            val convertedAmount = this.currencyConverterService.convert(
-                this.currency2, this.currency1, amount.toDouble()
-            )
-            this.inConversion = true
-            this.setAmount(this.input1, convertedAmount)
+            this.convertMoney(false)
         }
 
         // set currency listeners
@@ -121,6 +103,31 @@ class MainActivity : AppCompatActivity() {
 
         currencyButton2.setOnClickListener {
             this.openCurrencyDialog(this.input2, this.currency2)
+        }
+    }
+
+    private fun convertMoney(fromFristCurrency: Boolean) {
+        val amount = when (fromFristCurrency) {
+            true -> this.input1.findViewById<EditText>(R.id.currency_input_money_amount).text.toString()
+            false -> this.input2.findViewById<EditText>(R.id.currency_input_money_amount).text.toString()
+        }
+
+        if (amount.isBlank()) {
+            return
+        }
+
+        this.inConversion = true
+
+        if (fromFristCurrency) {
+            val convertedAmount = this.currencyConverterService.convert(
+                this.currency1, this.currency2, amount.toDouble()
+            )
+            this.setAmount(this.input2, convertedAmount)
+        } else {
+            val convertedAmount = this.currencyConverterService.convert(
+                this.currency2, this.currency1, amount.toDouble()
+            )
+            this.setAmount(this.input1, convertedAmount)
         }
     }
 
@@ -142,13 +149,11 @@ class MainActivity : AppCompatActivity() {
         val allCurrenciesRecyclerView =
             dialog.findViewById<RecyclerView>(R.id.dialog_choose_currency_rv_all_currencies)
         val allCurrenciesAdapter = ChooseCurrencyAdapter(
-            currencies,
-            {
-                this.setSymbolOnInput(input, it)
-                dialog.dismiss()
-            },
-            actualSelectedCurrency
-        )
+            currencies
+        ) {
+            this.setCurrency(input, it)
+            dialog.dismiss()
+        }
 
         allCurrenciesRecyclerView.addItemDecoration(
             ChooseCurrencyItemDecorator(
@@ -187,7 +192,19 @@ class MainActivity : AppCompatActivity() {
         numInput.setText(String.format("%.2f", amount))
     }
 
-    private fun setSymbolOnInput(input: ConstraintLayout, currency: Currency) {
+    private fun setCurrency(input: ConstraintLayout, currency: Currency) {
+        when (input) {
+            this.input1 -> {
+                this.currency1 = currency
+                this.convertMoney(false)
+            }
+
+            this.input2 -> {
+                this.currency2 = currency
+                this.convertMoney(true)
+            }
+        }
+
         val button = input.findViewById<Button>(R.id.currency_input_dropDown_curreny)
         button.text = currency.symbol
     }

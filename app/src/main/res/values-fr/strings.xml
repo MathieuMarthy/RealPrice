@@ -2,7 +2,6 @@
 <resources>
     <string name="amount_money_convert">le montant d\'argent à convertir</string>
     <string name="last_update_at">dernière mise à jour des taux de change le %s</string>
-    <string name="no_internet_access">aucun accès internet</string>
     <string name="choose_currency">Choisissez une monnaie</string>
     <string name="popular_currencies">Monnaies populaires</string>
 </resources>

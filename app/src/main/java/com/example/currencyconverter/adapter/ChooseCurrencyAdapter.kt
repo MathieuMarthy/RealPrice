@@ -10,8 +10,7 @@ import com.example.currencyconverter.models.Currency
 
 class ChooseCurrencyAdapter(
     private val currencies: List<Currency>,
-    private val onCurrencyClickListener: (Currency) -> Unit,
-    private val actualSelectedCurrency: Currency
+    private val onCurrencyClickListener: (Currency) -> Unit
 ) : RecyclerView.Adapter<ChooseCurrencyAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
