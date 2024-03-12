@@ -22,6 +22,7 @@ import com.example.currencyconverter.adapter.ChooseCurrencyAdapter
 import com.example.currencyconverter.itemDecorator.ChooseCurrencyItemDecorator
 import com.example.currencyconverter.itemDecorator.PopularLimiterItemDecoration
 import com.example.currencyconverter.models.Currency
+import com.example.currencyconverter.services.ConfigurationService
 import com.example.currencyconverter.services.CurrencyConverterService
 import com.example.currencyconverter.services.CurrencyManagerDBService
 import java.time.LocalDate
@@ -32,6 +33,7 @@ import java.time.format.DateTimeFormatter
 class MainActivity : AppCompatActivity() {
     private lateinit var currencyConverterService: CurrencyConverterService
     private lateinit var currencyManagerDBService: CurrencyManagerDBService
+    private lateinit var configurationService: ConfigurationService
 
     private lateinit var currency1: Currency
     private lateinit var currency2: Currency
@@ -48,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         // init
         this.currencyManagerDBService = CurrencyManagerDBService(this)
+        this.configurationService = ConfigurationService(this)
 
         this.input1 = findViewById(R.id.currency_input_1)
         this.input2 = findViewById(R.id.currency_input_2)
@@ -67,8 +70,12 @@ class MainActivity : AppCompatActivity() {
 
 
         // set the default currency
-        this.currency1 = this.currencyManagerDBService.getCurrencyByCode("EUR")!!
-        this.currency2 = this.currencyManagerDBService.getCurrencyByCode("JPY")!!
+        this.currency1 = this.currencyManagerDBService.getCurrencyByCode(
+            this.configurationService.configuration.defaultCurrency1
+        )!!
+        this.currency2 = this.currencyManagerDBService.getCurrencyByCode(
+            this.configurationService.configuration.defaultCurrency2
+        )!!
 
 
         // set the currency on the UI
@@ -211,11 +218,13 @@ class MainActivity : AppCompatActivity() {
             this.input1 -> {
                 this.currency1 = currency
                 this.convertMoney(false)
+                this.configurationService.saveCurrency1(currency.code)
             }
 
             this.input2 -> {
                 this.currency2 = currency
                 this.convertMoney(true)
+                this.configurationService.saveCurrency2(currency.code)
             }
         }
 

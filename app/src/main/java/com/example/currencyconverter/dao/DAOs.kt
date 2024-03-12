@@ -1,8 +1,10 @@
 package com.example.currencyconverter.dao
 
 import android.content.Context
+import com.example.currencyconverter.models.Configuration
 import java.time.LocalDateTime
 import java.time.ZoneOffset
+
 
 class ExchangeRateDAO(context: Context) :
     JsonDatabase<Map<String, Double>>("exchange_rate.json", context)
@@ -10,6 +12,10 @@ class ExchangeRateDAO(context: Context) :
 
 class CurrencyInfoDAO(context: Context) :
     AssetsDatabase<List<Map<String, String>>>("databases/currency_info.json", context)
+
+
+class ConfigurationDAO(context: Context) :
+    JsonDatabase<Configuration>("configuration.json", context)
 
 
 class UpdateDateDAO(context: Context) {
