@@ -15,7 +15,7 @@ class ConfigurationService(
         val storedConfig = this.configurationDao.load(Configuration::class.java)
 
         if (storedConfig == null) {
-            this.configuration = Configuration("EUR", "JPY")
+            this.configuration = Configuration()
             this.configurationDao.save(this.configuration)
         } else {
             this.configuration = storedConfig
@@ -29,6 +29,26 @@ class ConfigurationService(
 
     fun saveCurrency2(currency: String) {
         this.configuration.defaultCurrency2 = currency
+        this.configurationDao.save(this.configuration)
+    }
+
+    fun setAllowMobileData(allow: Boolean) {
+        this.configuration.allowMobileData = allow
+        this.configurationDao.save(this.configuration)
+    }
+
+    fun setBankCharge(active: Boolean) {
+        this.configuration.activeBankCharge = active
+        this.configurationDao.save(this.configuration)
+    }
+
+    fun setTaxRate(rate: Double) {
+        this.configuration.taxRate = rate
+        this.configurationDao.save(this.configuration)
+    }
+
+    fun setFixedTax(fixedTax: Double) {
+        this.configuration.fixedTax = fixedTax
         this.configurationDao.save(this.configuration)
     }
 }

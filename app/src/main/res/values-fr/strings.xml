@@ -5,4 +5,9 @@
     <string name="choose_currency">Choisissez une monnaie</string>
     <string name="popular_currencies">Monnaies populaires</string>
     <string name="offline_mode">Mode hors ligne</string>
+    <string name="settings">Paramètres</string>
+    <string name="allow_data_utilisation">Autoriser l\'utilisation des données mobiles</string>
+    <string name="enable_bank_taxes">Prendre en compte des frais de banque</string>
+    <string name="tax_rate">Taux de taxes</string>
+    <string name="fixed_tax">Taxe fixe</string>
 </resources>

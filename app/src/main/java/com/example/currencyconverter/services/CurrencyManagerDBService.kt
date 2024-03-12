@@ -1,6 +1,7 @@
 package com.example.currencyconverter.services
 
 import android.content.Context
+import android.util.Log
 import com.example.currencyconverter.dao.CurrencyInfoDAO
 import com.example.currencyconverter.dao.ExchangeRateDAO
 import com.example.currencyconverter.dao.UpdateDateDAO
@@ -63,6 +64,7 @@ class CurrencyManagerDBService(
 
     private fun updateCurrencies(currencies: Map<String, Double>) {
         this.exchangeRateDAO.save(currencies)
+        Log.i("CurrencyManagerDBService", "Currencies updated")
     }
 
     fun getLastUpdateDate() = this.updateDateDAO.load()

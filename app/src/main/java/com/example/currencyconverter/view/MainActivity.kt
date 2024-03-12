@@ -1,6 +1,7 @@
 package com.example.currencyconverter.view
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
@@ -57,18 +58,18 @@ class MainActivity : AppCompatActivity() {
 
         this.refreshLastUpdateDate()
 
-        if (this.isNetworkAvailable()) {
+        if (this.isNetworkAvailable() && !this.alreadyUpdateToday()) {
             // update the currency exchange rate if it's not already updated today
-            if (!this.alreadyUpdateToday()) {
-                this.currencyManagerDBService.updateExchangeRate {
-                    this.initConverterAndRefreshDate()
-                }
+            this.currencyManagerDBService.updateExchangeRate {
+                this.currencyManagerDBService = CurrencyManagerDBService(this)
+                this.init()
             }
+        } else {
+            this.init()
         }
-        this.initConverterAndRefreshDate()
-        this.refreshOfflineIndication()
+    }
 
-
+    private fun init() {
         // set the default currency
         this.currency1 = this.currencyManagerDBService.getCurrencyByCode(
             this.configurationService.configuration.defaultCurrency1
@@ -76,7 +77,6 @@ class MainActivity : AppCompatActivity() {
         this.currency2 = this.currencyManagerDBService.getCurrencyByCode(
             this.configurationService.configuration.defaultCurrency2
         )!!
-
 
         // set the currency on the UI
         this.setCurrency(this.input1, this.currency1)
@@ -115,6 +115,16 @@ class MainActivity : AppCompatActivity() {
         currencyButton2.setOnClickListener {
             this.openCurrencyDialog(this.input2, this.currency2)
         }
+
+        // settings button
+        val settingBtn = findViewById<View>(R.id.settings)
+        settingBtn.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+        this.refreshOfflineIndication()
+        this.initConverterAndRefreshDate()
     }
 
     private fun refreshOfflineIndication() {

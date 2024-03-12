@@ -15,6 +15,8 @@ abstract class Database<T>(
 
     open fun load(typeToken: Type = object : TypeToken<T>() {}.type): T? {
         return try {
+            this.createFile()
+
             val jsonString = this.context.openFileInput(this.filePath).bufferedReader().use {
                 it.readText()
             }
@@ -23,6 +25,13 @@ abstract class Database<T>(
         } catch (e: Exception) {
             Log.e("Database", "Error reading file: $filePath", e)
             null
+        }
+    }
+
+    private fun createFile() {
+        val file = context.getFileStreamPath(this.filePath)
+        if (!file.exists()) {
+            file.createNewFile()
         }
     }
 }
