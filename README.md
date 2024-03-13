@@ -35,8 +35,9 @@
 </div>
 
 <br>
+<br>
 
-<div align="left">
+<div align="center">
     <a href="#">:fr: Français</a> |
     <a href="#">:uk: English</a> |
     <a href="#">:kr: 한국어</a> |
