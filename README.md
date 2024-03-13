@@ -6,6 +6,8 @@
 
 <p align="center"><i>par</i> <b><a href="https://github.com/MathieuMarthy">MathieuMarthy</a></b> <i>&</i> <b><a href="https://github.com/Game-K-Hack">Game K</a></b></p>
 
+<br>
+
 <div align="center">
   <a href="#TODO">
     <img src="https://img.shields.io/static/v1?label=release&message=v1.0.0&color=blue" alt="Release - v1.0.0" />
@@ -34,6 +36,18 @@
 
 <br>
 
+<div align="left">
+    <a href="#">:fr: Français</a>
+    <a href="#">:uk: English</a>
+    <a href="#">:kr: 한국어</a>
+    <a href="#">:jp: 日本語</a>
+    <a href="#">:cn: 中文</a>
+    <a href="#">:it: Italiano</a>
+    <a href="#">:es: Español</a>
+    <a href="#">:ru: Русский</a>
+    <a href="#">:de: Deutsch</a>
+</div>
+
 ## Description
 
 RealPrice est une application de conversion de devises indispensable pour les voyageurs soucieux de connaître le coût réel des objets dans une monnaie étrangère. Avec RealPrice, vous pouvez facilement comparer les taux de change entre deux monnaies et ajuster le pourcentage de commission prélevé par votre banque lors des transactions internationales. Cette fonctionnalité vous permet de calculer le prix final d'un article ou d'un service, en prenant en compte non seulement le taux de change, mais aussi les frais bancaires associés. L'application se met automatiquement à jour dès que vous êtes connecté à Internet, garantissant ainsi des conversions toujours précises et à jour. Ne partez plus en voyage sans RealPrice ! Soyez assuré de savoir exactement combien vous dépenserez dans votre devise de choix, en tenant compte des frais de conversion de votre banque. <a href=#TODO>Téléchargez RealPrice</a> dès aujourd'hui et voyagez en toute sérénité.
@@ -45,3 +59,17 @@ RealPrice est une application de conversion de devises indispensable pour les vo
 ## Paramétrage
 
 #TODO
+
+Languge disponible:
+
+- :fr: Français
+- :uk: English
+- :kr: 한국어
+- :jp: 日本語
+- :cn: 中文
+- :it: Italiano
+- :es: Español
+- :ru: Русский
+- :de: Deutsch
+
+_Si vous voulez que l'application soit traduit dans votre langue, dite-le nous en laissent un <a href="https://github.com/MathieuMarthy/currencyConverter/issues/1">message dans Issue</a>._
