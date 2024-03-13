@@ -246,7 +246,7 @@ class MainActivity : AppCompatActivity() {
      * Initialize the currency converter service and refresh the last update date on the UI
      */
     private fun initConverterAndRefreshDate() {
-        this.currencyConverterService = CurrencyConverterService()
+        this.currencyConverterService = CurrencyConverterService(this)
         this.refreshLastUpdateDate()
     }
 
@@ -294,6 +294,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        this.configurationService.refresh()
         this.refreshOfflineIndication()
     }
 }

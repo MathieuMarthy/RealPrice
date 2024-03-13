@@ -1,7 +1,6 @@
 package com.example.currencyconverter.view
 
 import android.os.Bundle
-import android.text.InputType
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -75,8 +74,8 @@ class SettingsActivity : AppCompatActivity() {
         // TODO: adapter les couleurs en fonction du thème
         if (this.configurationService.configuration.activeBankCharge) {
             // enable inputs
-            this.inputTaxRate.inputType = InputType.TYPE_NUMBER_FLAG_DECIMAL
-            this.inputFixedTax.inputType = InputType.TYPE_NUMBER_FLAG_DECIMAL
+            this.inputTaxRate.isEnabled = true
+            this.inputFixedTax.isEnabled = true
 
             // set text color
             this.inputTaxRateText.setTextColor(getColor(R.color.true_white))
@@ -87,8 +86,8 @@ class SettingsActivity : AppCompatActivity() {
             this.inputFixedTax.setText(this.configurationService.configuration.fixedTax.toString())
         } else {
             // disable inputs
-            this.inputTaxRate.inputType = InputType.TYPE_NULL
-            this.inputFixedTax.inputType = InputType.TYPE_NULL
+            this.inputTaxRate.isEnabled = false
+            this.inputFixedTax.isEnabled = false
 
             // set text color
             this.inputTaxRateText.setTextColor(getColor(R.color.light_grey))

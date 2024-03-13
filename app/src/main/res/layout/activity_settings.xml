@@ -87,8 +87,9 @@
         android:layout_height="53dp"
         android:autofillHints="tax rate"
         android:ems="10"
+        android:enabled="false"
 
-        android:inputType="none"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@+id/settings_tax_rate_text"
         app:layout_constraintEnd_toEndOf="@+id/settings_bank_taxes_switch"
         app:layout_constraintTop_toTopOf="@+id/settings_tax_rate_text" />
@@ -100,6 +101,7 @@
         android:layout_marginStart="4dp"
         android:labelFor="@+id/settings_fixed_tax_input"
         android:text="@string/fixed_tax"
+
 
         android:textColor="@color/light_grey"
 
@@ -114,8 +116,9 @@
         android:layout_height="54dp"
         android:autofillHints="fixed tax"
         android:ems="10"
+        android:enabled="false"
 
-        android:inputType="none"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@+id/settings_fixed_tax_text"
         app:layout_constraintEnd_toEndOf="@+id/settings_tax_rate_input"
         app:layout_constraintTop_toTopOf="@+id/settings_fixed_tax_text" />

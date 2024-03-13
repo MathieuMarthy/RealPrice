@@ -5,21 +5,14 @@ import com.example.currencyconverter.dao.ConfigurationDAO
 import com.example.currencyconverter.models.Configuration
 
 class ConfigurationService(
-    context: Context
+    private val context: Context
 ) {
-    private val configurationDao = ConfigurationDAO(context)
-    var configuration: Configuration
+    private lateinit var configurationDao: ConfigurationDAO
+    lateinit var configuration: Configuration
         private set
 
     init {
-        val storedConfig = this.configurationDao.load(Configuration::class.java)
-
-        if (storedConfig == null) {
-            this.configuration = Configuration()
-            this.configurationDao.save(this.configuration)
-        } else {
-            this.configuration = storedConfig
-        }
+        this.refresh()
     }
 
     fun saveCurrency1(currency: String) {
@@ -50,5 +43,17 @@ class ConfigurationService(
     fun setFixedTax(fixedTax: Double) {
         this.configuration.fixedTax = fixedTax
         this.configurationDao.save(this.configuration)
+    }
+
+    fun refresh() {
+        this.configurationDao = ConfigurationDAO(this.context)
+        val storedConfig = this.configurationDao.load(Configuration::class.java)
+
+        if (storedConfig == null) {
+            this.configuration = Configuration()
+            this.configurationDao.save(this.configuration)
+        } else {
+            this.configuration = storedConfig
+        }
     }
 }
