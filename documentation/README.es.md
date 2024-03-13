@@ -38,14 +38,14 @@
 <br>
 
 <div align="center">
-    <a href="#">:fr: Français</a> |
-    <a href="#">:uk: English</a> |
-    <a href="#">:kr: 한국어</a> |
-    <a href="#">:jp: 日本語</a> |
-    <a href="#">:cn: 中文</a> |
-    <a href="#">:it: Italiano</a> |
-    <a href="#">:ru: Русский</a> |
-    <a href="#">:de: Deutsch</a>
+    <a href="./documentation/README.fr.md">:fr: Français</a> |
+    <a href="./documentation/README.uk.md">:uk: English</a> |
+    <a href="./documentation/README.kr.md">:kr: 한국어</a> |
+    <a href="./documentation/README.jp.md">:jp: 日本語</a> |
+    <a href="./documentation/README.cn.md">:cn: 中文</a> |
+    <a href="./documentation/README.it.md">:it: Italiano</a> |
+    <a href="./documentation/README.ru.md">:ru: Русский</a> |
+    <a href="./documentation/README.de.md">:de: Deutsch</a>
 </div>
 
 ## Descripción
