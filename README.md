@@ -37,14 +37,14 @@
 <br>
 
 <div align="left">
-    <a href="#">:fr: Français</a>
-    <a href="#">:uk: English</a>
-    <a href="#">:kr: 한국어</a>
-    <a href="#">:jp: 日本語</a>
-    <a href="#">:cn: 中文</a>
-    <a href="#">:it: Italiano</a>
-    <a href="#">:es: Español</a>
-    <a href="#">:ru: Русский</a>
+    <a href="#">:fr: Français</a> |
+    <a href="#">:uk: English</a> |
+    <a href="#">:kr: 한국어</a> |
+    <a href="#">:jp: 日本語</a> |
+    <a href="#">:cn: 中文</a> |
+    <a href="#">:it: Italiano</a> |
+    <a href="#">:es: Español</a> |
+    <a href="#">:ru: Русский</a> |
     <a href="#">:de: Deutsch</a>
 </div>
 
@@ -63,13 +63,13 @@ RealPrice est une application de conversion de devises indispensable pour les vo
 Languge disponible:
 
 - :fr: Français
-- :uk: English
-- :kr: 한국어
-- :jp: 日本語
-- :cn: 中文
-- :it: Italiano
-- :es: Español
-- :ru: Русский
-- :de: Deutsch
+- :uk: English _(arrive bientôt)_
+- :kr: 한국어 _(arrive bientôt)_
+- :jp: 日本語 _(arrive bientôt)_
+- :cn: 中文 _(arrive bientôt)_
+- :it: Italiano _(arrive bientôt)_
+- :es: Español _(arrive bientôt)_
+- :ru: Русский _(arrive bientôt)_
+- :de: Deutsch _(arrive bientôt)_
 
 _Si vous voulez que l'application soit traduit dans votre langue, dite-le nous en laissent un <a href="https://github.com/MathieuMarthy/currencyConverter/issues/1">message dans Issue</a>._
