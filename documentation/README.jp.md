@@ -38,7 +38,7 @@
 <br>
 
 <div align="center">
-    <a href="../documentation/README.fr.md">:fr: Français</a> |
+    <a href="../README.fr.md">:fr: Français</a> |
     <a href="../documentation/README.uk.md">:uk: English</a> |
     <a href="../documentation/README.kr.md">:kr: 한국어</a> |
     <a href="../documentation/README.cn.md">:cn: 中文</a> |
