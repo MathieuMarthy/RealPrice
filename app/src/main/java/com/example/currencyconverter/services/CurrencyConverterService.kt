@@ -19,8 +19,7 @@ class CurrencyConverterService(
         val fromRate = fromCurrency.rate
         val toRate = toCurrency.rate
 
-        val a = this.calculAmount(amount)
-        return a * (toRate / fromRate)
+        return this.calculAmount(amount) * (toRate / fromRate)
     }
 
     private fun calculAmount(amount: Double): Double {
@@ -31,5 +30,9 @@ class CurrencyConverterService(
             return amount + (fixedTax + amount * taxRate)
         }
         return amount
+    }
+
+    fun refreshConfig() {
+        this.configurationService.refresh()
     }
 }

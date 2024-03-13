@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var input2: ConstraintLayout
 
     private var inConversion = false
+    private var requestInProcess = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,9 +61,11 @@ class MainActivity : AppCompatActivity() {
 
         if (this.isNetworkAvailable() && !this.alreadyUpdateToday()) {
             // update the currency exchange rate if it's not already updated today
+            this.requestInProcess = true
             this.currencyManagerDBService.updateExchangeRate {
                 this.currencyManagerDBService = CurrencyManagerDBService(this)
                 this.init()
+                this.requestInProcess = false
             }
         } else {
             this.init()
@@ -294,7 +297,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        this.configurationService.refresh()
-        this.refreshOfflineIndication()
+
+        if (!this.requestInProcess) {
+            this.configurationService.refresh()
+            this.currencyConverterService.refreshConfig()
+            this.refreshOfflineIndication()
+        }
     }
 }

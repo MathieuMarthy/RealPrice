@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.065" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/settings_allow_data_switch"
@@ -34,6 +34,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
 
         android:labelFor="@+id/settings_bank_taxes_switch_text"
 
@@ -132,9 +133,44 @@
 
         android:background="@null"
         android:scaleType="fitCenter"
+        android:contentDescription="back button"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+
+        android:text="@string/pourcentage"
+        app:layout_constraintBottom_toBottomOf="@+id/settings_tax_rate_input"
+        app:layout_constraintStart_toEndOf="@+id/settings_tax_rate_input"
+        app:layout_constraintTop_toTopOf="@+id/settings_tax_rate_input" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/light_grey"
+        android:text="@string/apply_bank_charges_on"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/settings_fixed_tax_text"
+        app:layout_constraintTop_toBottomOf="@+id/settings_fixed_tax_text"
+        app:layout_constraintVertical_bias="0.203" />
+
+    <Button
+        android:id="@+id/settings_button_apply_bank_charges_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:text="€"
+
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/settings_fixed_tax_input"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
