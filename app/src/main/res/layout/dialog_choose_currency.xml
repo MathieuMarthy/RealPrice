@@ -52,7 +52,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dialog_choose_currency_rv_all_currencies"
         android:layout_width="365dp"
-        android:layout_height="604dp"
+        android:layout_height="605dp"
+        android:paddingTop="20dp"
+
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
