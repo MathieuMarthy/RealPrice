@@ -45,6 +45,11 @@ class ConfigurationService(
         this.configurationDao.save(this.configuration)
     }
 
+    fun setTaxCurrency(currencyCode: String) {
+        this.configuration.taxCurrency = currencyCode
+        this.configurationDao.save(this.configuration)
+    }
+
     fun refresh() {
         this.configurationDao = ConfigurationDAO(this.context)
         val storedConfig = this.configurationDao.load(Configuration::class.java)

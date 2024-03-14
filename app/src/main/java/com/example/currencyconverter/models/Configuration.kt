@@ -6,5 +6,6 @@ class Configuration(
     var allowMobileData: Boolean = false,
     var activeBankCharge: Boolean = false,
     var taxRate: Double = 0.0,
-    var fixedTax: Double = 0.0
+    var fixedTax: Double = 0.0,
+    var taxCurrency: String = "EUR",
 )

@@ -1,27 +1,19 @@
 package com.example.currencyconverter.view
 
-import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.currencyconverter.R
-import com.example.currencyconverter.adapter.ChooseCurrencyAdapter
-import com.example.currencyconverter.itemDecorator.ChooseCurrencyItemDecorator
-import com.example.currencyconverter.itemDecorator.PopularLimiterItemDecoration
+import com.example.currencyconverter.dialogs.ChooseCurrencyDialog
 import com.example.currencyconverter.models.Currency
 import com.example.currencyconverter.services.ConfigurationService
 import com.example.currencyconverter.services.CurrencyConverterService
@@ -130,6 +122,24 @@ class MainActivity : AppCompatActivity() {
         this.initConverterAndRefreshDate()
     }
 
+
+    private fun exchangeCurrenciesAndAmount() {
+        val tempCurrency = this.currency1
+        val tempAmount = this.input1
+            .findViewById<EditText>(R.id.currency_input_money_amount).text
+            .toString().toDoubleOrNull() ?: 0.0
+
+        this.setCurrency(this.input1, this.currency2)
+        this.setAmount(
+            this.input1, this.input2
+                .findViewById<EditText>(R.id.currency_input_money_amount).text
+                .toString().toDoubleOrNull() ?: 0.0
+        )
+
+        this.setCurrency(this.input2, tempCurrency)
+        this.setAmount(this.input2, tempAmount)
+    }
+
     private fun refreshOfflineIndication() {
         val noInternetText = findViewById<TextView>(R.id.no_internet_text)
         val noInternetIcon = findViewById<ImageView>(R.id.no_internet_icon)
@@ -166,58 +176,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openCurrencyDialog(input: ConstraintLayout, actualSelectedCurrency: Currency) {
-        // setup dialog
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.dialog_choose_currency)
-
-        // close button
-        val closeBtn = dialog.findViewById<ImageButton>(R.id.dialog_choose_currency_close_button)
-        closeBtn.setOnClickListener {
-            dialog.dismiss()
-        }
-
-        // Adapter
         val currencies =
             this.currencyManagerDBService.getPopularCurrencies() + this.currencyManagerDBService.currencies
+        val popularSize = this.currencyManagerDBService.getPopularCurrencies().size
 
-        val allCurrenciesRecyclerView =
-            dialog.findViewById<RecyclerView>(R.id.dialog_choose_currency_rv_all_currencies)
-        val allCurrenciesAdapter = ChooseCurrencyAdapter(
-            currencies
-        ) {
-            this.setCurrency(input, it)
-            dialog.dismiss()
-        }
+        ChooseCurrencyDialog.show(
+            this,
+            currencies,
+            popularSize,
+            actualSelectedCurrency
+        ) { currency ->
+            when (input) {
+                this.input1 -> {
+                    if (currency == this.currency2) {
+                        this.exchangeCurrenciesAndAmount()
+                    } else {
+                        this.setCurrency(input, currency)
+                    }
+                }
 
-        allCurrenciesRecyclerView.addItemDecoration(
-            ChooseCurrencyItemDecorator(
-                this,
-                currencies,
-                actualSelectedCurrency
-            )
-        )
-        allCurrenciesRecyclerView.addItemDecoration(
-            PopularLimiterItemDecoration(
-                this,
-                this.currencyManagerDBService.getPopularCurrencies().size
-            )
-        )
-        allCurrenciesRecyclerView.adapter = allCurrenciesAdapter
-        allCurrenciesRecyclerView.layoutManager = LinearLayoutManager(this)
-
-        dialog.show()
-
-        // change the size of the dialog
-        val window = dialog.window
-        if (window != null) {
-            val width =
-                (resources.displayMetrics.widthPixels * 0.85).toInt() // 85% de la largeur de l'écran
-            val height =
-                (resources.displayMetrics.heightPixels * 0.90).toInt() // 90% de la hauteur de l'écran
-            window.setLayout(width, height)
-
-            // Définir le fond de la fenêtre de dialogue sur transparent
-            window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                this.input2 -> {
+                    if (currency == this.currency1) {
+                        this.exchangeCurrenciesAndAmount()
+                    } else {
+                        this.setCurrency(input, currency)
+                    }
+                }
+            }
         }
     }
 
