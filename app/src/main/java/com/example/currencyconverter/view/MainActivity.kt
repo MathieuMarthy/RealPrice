@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private var inConversion = false
     private var requestInProcess = false
+    private var lastConvertFromFirstCurrency = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -151,6 +152,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun convertMoney(fromFristCurrency: Boolean) {
+        this.lastConvertFromFirstCurrency = fromFristCurrency
         val amount = when (fromFristCurrency) {
             true -> this.input1.findViewById<EditText>(R.id.currency_input_money_amount).text.toString()
             false -> this.input2.findViewById<EditText>(R.id.currency_input_money_amount).text.toString()
@@ -287,6 +289,7 @@ class MainActivity : AppCompatActivity() {
             this.configurationService.refresh()
             this.currencyConverterService.refreshConfig()
             this.refreshOfflineIndication()
+            this.convertMoney(this.lastConvertFromFirstCurrency)
         }
     }
 }

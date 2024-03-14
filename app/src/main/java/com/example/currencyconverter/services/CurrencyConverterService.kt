@@ -27,9 +27,9 @@ class CurrencyConverterService(
     private fun calculAmount(amount: Double, toCurrency: Currency): Double {
         if (
             this.configurationService.configuration.activeBankCharge &&
-            toCurrency.code != this.configurationService.configuration.taxCurrency
+            toCurrency.code == this.configurationService.configuration.taxCurrency
         ) {
-            val taxRate = this.configurationService.configuration.taxRate
+            val taxRate = this.configurationService.configuration.taxRate / 100
             val fixedTax = this.configurationService.configuration.fixedTax
             val taxes = (fixedTax + amount * taxRate)
 

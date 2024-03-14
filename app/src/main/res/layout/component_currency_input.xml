@@ -26,7 +26,7 @@
 
         android:autofillHints="@string/amount_money_convert"
         android:background="@null"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@+id/currency_input_border"
         app:layout_constraintStart_toStartOf="@+id/currency_input_border"
         app:layout_constraintTop_toTopOf="@+id/currency_input_border"
