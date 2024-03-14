@@ -11,5 +11,8 @@
     <string name="tax_rate">Tax rate</string>
     <string name="fixed_tax">Fixed tax</string>
     <string name="pourcentage" translatable="false">%</string>
-    <string name="apply_bank_charges_on">Apply bank charges on\ncurrency:</string>
+    <string name="apply_bank_charges_on">Apply bank charges on\ncurrency</string>
+    <string name="limit_tax">Maximum commission</string>
+    <string name="taxes_amount_text">Commission of %s which is %s</string>
+    <string name="back_button">back button</string>
 </resources>

@@ -17,10 +17,10 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.253" />
 
     <include
         android:id="@+id/currency_input_2"
@@ -34,8 +34,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintTop_toTopOf="@+id/currency_input_1"
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:id="@+id/updated_at"
@@ -105,6 +105,16 @@
         app:layout_constraintEnd_toEndOf="@+id/settings"
         app:layout_constraintStart_toStartOf="@+id/settings"
         app:layout_constraintTop_toTopOf="@+id/settings" />
+
+    <TextView
+        android:id="@+id/taxes_amount_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toTopOf="@+id/currency_input_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currency_input_1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

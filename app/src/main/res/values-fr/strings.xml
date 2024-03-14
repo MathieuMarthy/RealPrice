@@ -10,5 +10,8 @@
     <string name="enable_bank_taxes">Prendre en compte en des frais\nde banque</string>
     <string name="tax_rate">Taux de taxes</string>
     <string name="fixed_tax">Taxe fixe</string>
-    <string name="apply_bank_charges_on">Appliquer les frais\nde banque sur la monnaie:</string>
+    <string name="apply_bank_charges_on">Appliquer les frais de banque\nsur la monnaie</string>
+    <string name="limit_tax">commission maximale</string>
+    <string name="taxes_amount_text">commisions de %s soit %s</string>
+    <string name="back_button">bouton retour</string>
 </resources>

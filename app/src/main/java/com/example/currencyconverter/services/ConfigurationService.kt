@@ -50,6 +50,11 @@ class ConfigurationService(
         this.configurationDao.save(this.configuration)
     }
 
+    fun setLimitTax(limitTax: Double) {
+        this.configuration.limitTax = limitTax
+        this.configurationDao.save(this.configuration)
+    }
+
     fun refresh() {
         this.configurationDao = ConfigurationDAO(this.context)
         val storedConfig = this.configurationDao.load(Configuration::class.java)

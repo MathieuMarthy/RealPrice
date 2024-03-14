@@ -79,7 +79,7 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/settings_bank_taxes_switch_text"
-        app:layout_constraintTop_toBottomOf="@+id/settings_bank_taxes_switch_text"
+        app:layout_constraintTop_toBottomOf="@+id/settings_tax_currency_text"
         app:layout_constraintVertical_bias="0.125" />
 
     <EditText
@@ -133,7 +133,7 @@
 
         android:background="@null"
         android:scaleType="fitCenter"
-        android:contentDescription="back button"
+        android:contentDescription="@string/back_button"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -154,23 +154,46 @@
         android:id="@+id/settings_tax_currency_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/light_grey"
         android:text="@string/apply_bank_charges_on"
+        android:textColor="@color/light_grey"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/settings_fixed_tax_text"
-        app:layout_constraintTop_toBottomOf="@+id/settings_fixed_tax_text"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintTop_toBottomOf="@+id/settings_bank_taxes_switch_text"
+        app:layout_constraintVertical_bias="0.104" />
 
     <Button
         android:id="@+id/settings_tax_currency_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"
-        android:text="€"
 
         app:layout_constraintBottom_toBottomOf="@+id/settings_tax_currency_text"
         app:layout_constraintEnd_toEndOf="@+id/settings_fixed_tax_input"
         app:layout_constraintTop_toTopOf="@+id/settings_tax_currency_text" />
+
+    <TextView
+        android:id="@+id/settings_limit_tax_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limit_tax"
+        android:textColor="@color/light_grey"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/settings_fixed_tax_text"
+        app:layout_constraintTop_toBottomOf="@+id/settings_fixed_tax_text"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <EditText
+        android:id="@+id/settings_limit_tax_input"
+        android:layout_width="58dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+
+        app:layout_constraintBottom_toBottomOf="@+id/settings_limit_tax_text"
+        app:layout_constraintEnd_toEndOf="@+id/settings_fixed_tax_input"
+        app:layout_constraintTop_toTopOf="@+id/settings_limit_tax_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

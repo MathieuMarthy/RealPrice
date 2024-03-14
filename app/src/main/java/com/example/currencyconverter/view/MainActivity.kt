@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var input1: ConstraintLayout
     private lateinit var input2: ConstraintLayout
+    private lateinit var taxesText: TextView
 
     private var inConversion = false
     private var requestInProcess = false
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         this.input1 = findViewById(R.id.currency_input_1)
         this.input2 = findViewById(R.id.currency_input_2)
+        this.taxesText = findViewById(R.id.taxes_amount_text)
 
         this.refreshLastUpdateDate()
 
@@ -153,7 +155,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun convertMoney(fromFristCurrency: Boolean) {
         this.lastConvertFromFirstCurrency = fromFristCurrency
-        val amount = when (fromFristCurrency) {
+        var amount = when (fromFristCurrency) {
             true -> this.input1.findViewById<EditText>(R.id.currency_input_money_amount).text.toString()
             false -> this.input2.findViewById<EditText>(R.id.currency_input_money_amount).text.toString()
         }
@@ -161,20 +163,42 @@ class MainActivity : AppCompatActivity() {
         if (amount.isBlank()) {
             return
         }
+        amount = amount.replace(",", ".")
 
         this.inConversion = true
 
         if (fromFristCurrency) {
-            val convertedAmount = this.currencyConverterService.convert(
+            val (convertedAmount, taxesAmount) = this.currencyConverterService.convert(
                 this.currency1, this.currency2, amount.toDouble()
             )
             this.setAmount(this.input2, convertedAmount)
+            this.setTaxesText(taxesAmount, convertedAmount, this.currency2)
         } else {
-            val convertedAmount = this.currencyConverterService.convert(
+            val (convertedAmount, taxesAmount) = this.currencyConverterService.convert(
                 this.currency2, this.currency1, amount.toDouble()
             )
             this.setAmount(this.input1, convertedAmount)
+            this.setTaxesText(taxesAmount, convertedAmount, this.currency2)
+
         }
+    }
+
+    private fun setTaxesText(taxesAmount: Double, total: Double, currency: Currency) {
+        if (taxesAmount == 0.0) {
+            this.taxesText.text = ""
+            return
+        }
+
+        val taxesString = String.format("%.2f", taxesAmount)
+        val totalString = String.format("%.2f", total + taxesAmount)
+        val taxesAmountSymbol = "$taxesString ${currency.symbol}"
+        val totalAmountSymbol = "$totalString ${currency.symbol}"
+
+        this.taxesText.text = getString(
+            R.string.taxes_amount_text,
+            taxesAmountSymbol,
+            totalAmountSymbol
+        )
     }
 
     private fun openCurrencyDialog(input: ConstraintLayout, actualSelectedCurrency: Currency) {

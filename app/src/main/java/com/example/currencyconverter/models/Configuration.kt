@@ -8,4 +8,5 @@ class Configuration(
     var taxRate: Double = 0.0,
     var fixedTax: Double = 0.0,
     var taxCurrency: String = "EUR",
+    var limitTax: Double = 0.0
 )

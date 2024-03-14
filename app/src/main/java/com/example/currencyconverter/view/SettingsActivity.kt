@@ -26,6 +26,8 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var inputFixedTaxText: TextView
     private lateinit var inputTaxCurrency: TextView
     private lateinit var buttonTaxCurrency: Button
+    private lateinit var inputTaxText: TextView
+    private lateinit var inputlimitTax: EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +49,8 @@ class SettingsActivity : AppCompatActivity() {
         this.inputFixedTaxText = findViewById(R.id.settings_fixed_tax_text)
         this.inputTaxCurrency = findViewById(R.id.settings_tax_currency_text)
         this.buttonTaxCurrency = findViewById(R.id.settings_tax_currency_button)
+        this.inputTaxText = findViewById(R.id.settings_limit_tax_text)
+        this.inputlimitTax = findViewById(R.id.settings_limit_tax_input)
 
         // set value
         switchAllowMobileData.isChecked = this.configurationService.configuration.allowMobileData
@@ -56,6 +60,7 @@ class SettingsActivity : AppCompatActivity() {
         )!!.symbol
         this.inputTaxRate.setText(this.configurationService.configuration.taxRate.toString())
         this.inputFixedTax.setText(this.configurationService.configuration.fixedTax.toString())
+        this.inputlimitTax.setText(this.configurationService.configuration.limitTax.toString())
 
         // set listener
         switchAllowMobileData.setOnCheckedChangeListener { _, isChecked ->
@@ -77,6 +82,11 @@ class SettingsActivity : AppCompatActivity() {
             this.configurationService.setFixedTax(fixedTax)
         }
 
+        this.inputlimitTax.addTextChangedListener {
+            val limitTax = this.inputlimitTax.text.toString().toDoubleOrNull() ?: 0.0
+            this.configurationService.setLimitTax(limitTax)
+        }
+
         buttonTaxCurrency.setOnClickListener {
             val currencies =
                 this.currencyManagerDBService.getPopularCurrencies() + this.currencyManagerDBService.currencies
@@ -95,6 +105,8 @@ class SettingsActivity : AppCompatActivity() {
                 this.refreshBankSettingsDisplay()
             }
         }
+
+        this.inputlimitTax
 
         this.refreshBankSettingsDisplay()
 
@@ -121,6 +133,7 @@ class SettingsActivity : AppCompatActivity() {
         this.inputTaxRate.isEnabled = isEnable
         this.inputFixedTax.isEnabled = isEnable
         this.buttonTaxCurrency.isEnabled = isEnable
+        this.inputlimitTax.isEnabled = isEnable
 
         this.inputTaxRate.setTextColor(textColor)
         this.inputFixedTax.setTextColor(textColor)
@@ -128,5 +141,6 @@ class SettingsActivity : AppCompatActivity() {
         this.inputFixedTaxText.setTextColor(textColor)
         this.inputTaxCurrency.setTextColor(textColor)
         this.inputPourcentageText.setTextColor(textColor)
+        this.inputTaxText.setTextColor(textColor)
     }
 }
