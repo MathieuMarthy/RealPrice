@@ -1,6 +1,7 @@
 package com.example.currencyconverter.view
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Bundle
@@ -52,6 +53,14 @@ class MainActivity : AppCompatActivity() {
         this.input1 = findViewById(R.id.currency_input_1)
         this.input2 = findViewById(R.id.currency_input_2)
         this.taxesText = findViewById(R.id.taxes_amount_text)
+        val logoImage = findViewById<ImageView>(R.id.logo)
+
+        val color: Int = if (this.isDarkThemeActive()) {
+            this.getColor(R.color.true_white)
+        } else {
+            this.getColor(R.color.black)
+        }
+        logoImage.setColorFilter(color)
 
         this.refreshLastUpdateDate()
 
@@ -333,5 +342,9 @@ class MainActivity : AppCompatActivity() {
             this.refreshOfflineIndication()
             this.convertMoney(this.lastConvertFromFirstCurrency)
         }
+    }
+
+    private fun isDarkThemeActive(): Boolean {
+        return resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
     }
 }
