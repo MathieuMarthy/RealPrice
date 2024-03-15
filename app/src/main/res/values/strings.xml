@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">currencyConverter</string>
+    <string name="app_name" translatable="false">RealPrice</string>
+    <string name="amount_money_convert">the amount of money to convert</string>
+    <string name="last_update_at">Exchange rates last updated on %s</string>
+    <string name="choose_currency">Choose a currency</string>
+    <string name="popular_currencies">Popular currencies</string>
+    <string name="offline_mode">Offline mode</string>
+    <string name="settings">Settings</string>
+    <string name="allow_data_utilisation">Allow mobile data usage</string>
+    <string name="enable_bank_taxes">Take into account bank charges</string>
+    <string name="tax_rate">Tax rate</string>
+    <string name="fixed_tax">Fixed tax</string>
+    <string name="pourcentage" translatable="false">%</string>
+    <string name="apply_bank_charges_on">Apply bank charges on\ncurrency</string>
+    <string name="limit_tax">Maximum commission</string>
+    <string name="taxes_amount_text">Commission of %s which is %s</string>
+    <string name="back_button">back button</string>
 </resources>
