@@ -2,6 +2,7 @@ package com.example.currencyconverter.view
 
 import android.content.Intent
 import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -290,8 +291,25 @@ class MainActivity : AppCompatActivity() {
     private fun isNetworkAvailable(): Boolean {
         val connectivityManager = getSystemService(ConnectivityManager::class.java)
         val network = connectivityManager.activeNetwork
-        val capabilities = connectivityManager.getNetworkCapabilities(network)
-        return capabilities != null
+        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+
+        // check if wifi or ethernet is available
+        if (
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
+        ) {
+            return true
+        }
+
+        // check if mobile data is available and if it's allowed in the settings
+        if (
+            capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) &&
+            this.configurationService.configuration.allowMobileData
+        ) {
+            return true
+        }
+
+        return false
     }
 
     /**
