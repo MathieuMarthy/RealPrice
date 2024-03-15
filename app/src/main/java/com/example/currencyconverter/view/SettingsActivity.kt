@@ -1,5 +1,6 @@
 package com.example.currencyconverter.view
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -115,19 +116,32 @@ class SettingsActivity : AppCompatActivity() {
         backBtn.setOnClickListener {
             finish()
         }
+        val color: Int = if (this.isDarkThemeActive()) {
+            this.getColor(R.color.true_white)
+        } else {
+            this.getColor(R.color.black)
+        }
+        backBtn.setColorFilter(color)
     }
 
     private fun refreshBankSettingsDisplay() {
         val isEnable: Boolean
         val textColor: Int
 
-        // TODO: adapter les couleurs en fonction du thème
         if (this.configurationService.configuration.activeBankCharge) {
             isEnable = true
-            textColor = getColor(R.color.true_white)
+            textColor = if (isDarkThemeActive()) {
+                getColor(R.color.true_white)
+            } else {
+                getColor(R.color.black)
+            }
         } else {
             isEnable = false
-            textColor = getColor(R.color.light_grey)
+            textColor = if (isDarkThemeActive()) {
+                getColor(R.color.light_grey)
+            } else {
+                getColor(R.color.white)
+            }
         }
 
         this.inputTaxRate.isEnabled = isEnable
@@ -142,5 +156,9 @@ class SettingsActivity : AppCompatActivity() {
         this.inputTaxCurrency.setTextColor(textColor)
         this.inputPourcentageText.setTextColor(textColor)
         this.inputTaxText.setTextColor(textColor)
+    }
+
+    private fun isDarkThemeActive(): Boolean {
+        return resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
     }
 }
