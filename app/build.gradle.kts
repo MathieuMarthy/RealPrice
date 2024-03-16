@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.currencyconverter"
+    namespace = "com.example.realprice"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.currencyconverter"
+        applicationId = "com.example.realprice"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
