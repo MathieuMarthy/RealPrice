@@ -14,4 +14,7 @@
     <string name="limit_tax">commission maximale</string>
     <string name="taxes_amount_text">commisions de %s soit %s</string>
     <string name="back_button">bouton retour</string>
+    <string name="retry">Réessayer</string>
+    <string name="no_internet">Pas d\'internet</string>
+    <string name="enable_internet_to_update">Activer internet une fois pour\ninitialiser les données</string>
 </resources>

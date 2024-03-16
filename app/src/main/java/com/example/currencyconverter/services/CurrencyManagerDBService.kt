@@ -13,9 +13,7 @@ class CurrencyManagerDBService(
     private val currencyInfoDAO = CurrencyInfoDAO(context)
     private val exchangeRateDAO = ExchangeRateDAO(context)
     private val apiService = ApiService.getInstance(context)
-    private val statService = StatService.getInstance(context)
     private val updateDateDAO = UpdateDateDAO(context)
-    private val sharedPref = context.getSharedPreferences("initialization", Context.MODE_PRIVATE)
 
     val currencies: List<Currency> = this.getAllCurrencies()
     private val popularCurrency: List<Currency>
@@ -23,19 +21,6 @@ class CurrencyManagerDBService(
     init {
         val popularCodes = listOf("USD", "EUR", "JPY", "GBP")
         this.popularCurrency = this.currencies.filter { it.code in popularCodes }
-
-        // si les informations n'ont pas été envoyer
-        if (!sharedPref.getBoolean("StatSent", false)) {
-            // récupérer le fichier de variable "initialization"
-            val editor = sharedPref.edit()
-            // paramétrer la variable pour éviter de renvoyer les informations à chaque démarrage
-            editor.putBoolean("StatSent", true)
-            // appliquer les changements
-            editor.apply()
-            // envoyer les informations
-            statService.sendStat()
-        }
-
     }
 
     private fun getAllCurrencies(): List<Currency> {
@@ -90,5 +75,9 @@ class CurrencyManagerDBService(
 
     fun getCurrencyByCode(code: String): Currency? {
         return this.currencies.find { it.code == code }
+    }
+
+    fun haveNoData(): Boolean {
+        return this.currencies.isEmpty()
     }
 }
