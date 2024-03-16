@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.view.View
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,7 @@ import com.example.currencyconverter.adapter.ChooseCurrencyAdapter
 import com.example.currencyconverter.itemDecorator.ChooseCurrencyItemDecorator
 import com.example.currencyconverter.itemDecorator.PopularLimiterItemDecoration
 import com.example.currencyconverter.models.Currency
+import com.example.currencyconverter.services.ThemeService
 
 class ChooseCurrencyDialog {
 
@@ -23,9 +25,21 @@ class ChooseCurrencyDialog {
             actualSelectedCurrency: Currency,
             callback: (Currency) -> Unit
         ) {
+            val themeService = ThemeService(context)
+
             // setup dialog
             val dialog = Dialog(context)
             dialog.setContentView(R.layout.dialog_choose_currency)
+
+
+            val color = if (themeService.isDarkThemeActive()) {
+                context.getColor(R.color.grey)
+            } else {
+                context.getColor(R.color.true_white)
+            }
+
+            val layout = dialog.findViewById<View>(R.id.dialog_view)
+            layout.setBackgroundColor(color)
 
             // close button
             val closeBtn =

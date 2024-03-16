@@ -128,15 +128,15 @@
         android:id="@+id/settings_back_button"
         android:layout_width="31dp"
         android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
 
         android:background="@null"
-        android:scaleType="fitCenter"
         android:contentDescription="@string/back_button"
+        android:scaleType="fitCenter"
 
+        app:layout_constraintBottom_toBottomOf="@+id/settings_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/settings_title"
         app:srcCompat="@drawable/back" />
 
     <TextView

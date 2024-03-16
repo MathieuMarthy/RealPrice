@@ -1,7 +1,6 @@
 package com.example.currencyconverter.view
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Bundle
@@ -20,6 +19,7 @@ import com.example.currencyconverter.models.Currency
 import com.example.currencyconverter.services.ConfigurationService
 import com.example.currencyconverter.services.CurrencyConverterService
 import com.example.currencyconverter.services.CurrencyManagerDBService
+import com.example.currencyconverter.services.ThemeService
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var currencyConverterService: CurrencyConverterService
     private lateinit var currencyManagerDBService: CurrencyManagerDBService
     private lateinit var configurationService: ConfigurationService
+    private lateinit var themeService: ThemeService
 
     private lateinit var currency1: Currency
     private lateinit var currency2: Currency
@@ -49,13 +50,14 @@ class MainActivity : AppCompatActivity() {
         // init
         this.currencyManagerDBService = CurrencyManagerDBService(this)
         this.configurationService = ConfigurationService(this)
+        this.themeService = ThemeService(this)
 
         this.input1 = findViewById(R.id.currency_input_1)
         this.input2 = findViewById(R.id.currency_input_2)
         this.taxesText = findViewById(R.id.taxes_amount_text)
         val logoImage = findViewById<ImageView>(R.id.logo)
 
-        val color: Int = if (this.isDarkThemeActive()) {
+        val color: Int = if (this.themeService.isDarkThemeActive()) {
             this.getColor(R.color.true_white)
         } else {
             this.getColor(R.color.black)
@@ -342,9 +344,5 @@ class MainActivity : AppCompatActivity() {
             this.refreshOfflineIndication()
             this.convertMoney(this.lastConvertFromFirstCurrency)
         }
-    }
-
-    private fun isDarkThemeActive(): Boolean {
-        return resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
     }
 }
