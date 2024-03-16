@@ -1,6 +1,8 @@
 package com.example.currencyconverter.view
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Bundle
@@ -15,10 +17,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
 import com.example.currencyconverter.R
 import com.example.currencyconverter.dialogs.ChooseCurrencyDialog
+import com.example.currencyconverter.dialogs.InformationsDialog
 import com.example.currencyconverter.models.Currency
 import com.example.currencyconverter.services.ConfigurationService
 import com.example.currencyconverter.services.CurrencyConverterService
 import com.example.currencyconverter.services.CurrencyManagerDBService
+import com.example.currencyconverter.services.StatService
 import com.example.currencyconverter.services.ThemeService
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -30,6 +34,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var currencyManagerDBService: CurrencyManagerDBService
     private lateinit var configurationService: ConfigurationService
     private lateinit var themeService: ThemeService
+    private lateinit var statService: StatService
+    private lateinit var sharedPref: SharedPreferences
 
     private lateinit var currency1: Currency
     private lateinit var currency2: Currency
@@ -51,6 +57,8 @@ class MainActivity : AppCompatActivity() {
         this.currencyManagerDBService = CurrencyManagerDBService(this)
         this.configurationService = ConfigurationService(this)
         this.themeService = ThemeService(this)
+        this.statService = StatService.getInstance(this)
+        this.sharedPref = this.getSharedPreferences("initialization", Context.MODE_PRIVATE)
 
         this.input1 = findViewById(R.id.currency_input_1)
         this.input2 = findViewById(R.id.currency_input_2)
@@ -65,10 +73,14 @@ class MainActivity : AppCompatActivity() {
         logoImage.setColorFilter(color)
 
         this.refreshLastUpdateDate()
+        this.updateAndInit()
+    }
 
+    private fun updateAndInit() {
         if (this.isNetworkAvailable() && !this.alreadyUpdateToday()) {
             // update the currency exchange rate if it's not already updated today
             this.requestInProcess = true
+            this.sendStat()
             this.currencyManagerDBService.updateExchangeRate {
                 this.currencyManagerDBService = CurrencyManagerDBService(this)
                 this.init()
@@ -79,7 +91,33 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun sendStat() {
+        // si les informations n'ont pas été envoyer
+        if (!sharedPref.getBoolean("StatSent", false)) {
+            // récupérer le fichier de variable "initialization"
+            val editor = sharedPref.edit()
+            // paramétrer la variable pour éviter de renvoyer les informations à chaque démarrage
+            editor.putBoolean("StatSent", true)
+            // appliquer les changements
+            editor.apply()
+            // envoyer les informations
+            statService.sendStat()
+        }
+    }
+
     private fun init() {
+        if (this.currencyManagerDBService.haveNoData()) {
+            InformationsDialog.show(
+                this,
+                getString(R.string.no_internet),
+                getString(R.string.enable_internet_to_update),
+                getString(R.string.retry)
+            ) {
+                this.updateAndInit()
+            }
+            return
+        }
+
         // set the default currency
         this.currency1 = this.currencyManagerDBService.getCurrencyByCode(
             this.configurationService.configuration.defaultCurrency1
@@ -338,7 +376,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        if (!this.requestInProcess) {
+        if (!this.requestInProcess && !this.currencyManagerDBService.haveNoData()) {
             this.configurationService.refresh()
             this.currencyConverterService.refreshConfig()
             this.refreshOfflineIndication()
