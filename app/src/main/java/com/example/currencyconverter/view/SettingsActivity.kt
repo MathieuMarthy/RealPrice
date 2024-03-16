@@ -1,6 +1,5 @@
 package com.example.currencyconverter.view
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -14,11 +13,13 @@ import com.example.currencyconverter.R
 import com.example.currencyconverter.dialogs.ChooseCurrencyDialog
 import com.example.currencyconverter.services.ConfigurationService
 import com.example.currencyconverter.services.CurrencyManagerDBService
+import com.example.currencyconverter.services.ThemeService
 
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var configurationService: ConfigurationService
     private lateinit var currencyManagerDBService: CurrencyManagerDBService
+    private lateinit var themeService: ThemeService
 
     private lateinit var inputTaxRate: EditText
     private lateinit var inputTaxRateText: TextView
@@ -39,6 +40,7 @@ class SettingsActivity : AppCompatActivity() {
         // init service
         this.configurationService = ConfigurationService(this)
         this.currencyManagerDBService = CurrencyManagerDBService(this)
+        this.themeService = ThemeService(this)
 
         // get inputs
         val switchAllowMobileData = findViewById<SwitchCompat>(R.id.settings_allow_data_switch)
@@ -116,7 +118,7 @@ class SettingsActivity : AppCompatActivity() {
         backBtn.setOnClickListener {
             finish()
         }
-        val color: Int = if (this.isDarkThemeActive()) {
+        val color: Int = if (this.themeService.isDarkThemeActive()) {
             this.getColor(R.color.true_white)
         } else {
             this.getColor(R.color.black)
@@ -130,14 +132,14 @@ class SettingsActivity : AppCompatActivity() {
 
         if (this.configurationService.configuration.activeBankCharge) {
             isEnable = true
-            textColor = if (isDarkThemeActive()) {
+            textColor = if (this.themeService.isDarkThemeActive()) {
                 getColor(R.color.true_white)
             } else {
                 getColor(R.color.black)
             }
         } else {
             isEnable = false
-            textColor = if (isDarkThemeActive()) {
+            textColor = if (this.themeService.isDarkThemeActive()) {
                 getColor(R.color.light_grey)
             } else {
                 getColor(R.color.white)
@@ -156,9 +158,5 @@ class SettingsActivity : AppCompatActivity() {
         this.inputTaxCurrency.setTextColor(textColor)
         this.inputPourcentageText.setTextColor(textColor)
         this.inputTaxText.setTextColor(textColor)
-    }
-
-    private fun isDarkThemeActive(): Boolean {
-        return resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
     }
 }
