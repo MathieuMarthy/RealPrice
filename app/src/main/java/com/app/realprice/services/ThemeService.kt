@@ -1,4 +1,4 @@
-package com.example.realprice.services
+package com.app.realprice.services
 
 import android.content.Context
 import android.content.res.Configuration

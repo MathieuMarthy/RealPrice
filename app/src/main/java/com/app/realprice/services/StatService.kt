@@ -1,13 +1,13 @@
-package com.example.realprice.services
+package com.app.realprice.services
 
 import android.content.Context
+import android.os.Build
 import com.android.volley.Request
 import com.android.volley.Response
-import com.android.volley.toolbox.Volley
-import com.example.realprice.WEBHOOK_API_URL
-import org.json.JSONObject
 import com.android.volley.toolbox.JsonObjectRequest
-import android.os.Build
+import com.android.volley.toolbox.Volley
+import com.app.realprice.WEBHOOK_API_URL
+import org.json.JSONObject
 import java.util.Locale
 
 
@@ -23,9 +23,17 @@ class StatService private constructor(context: Context) {
         val deviceLanguage = Locale.getDefault().language // Langue par défaut du système
         // créer le corp JSON à envoyer
         val jsonBody = JSONObject()
-        jsonBody.put("content", "os:$osVersion;model:$deviceModel;maker:$deviceManufacturer;language:$deviceLanguage")
+        jsonBody.put(
+            "content",
+            "os:$osVersion;model:$deviceModel;maker:$deviceManufacturer;language:$deviceLanguage"
+        )
         // créer la requête POST du Webhook
-        val jsonObjectRequest = JsonObjectRequest(Request.Method.POST, WEBHOOK_API_URL, jsonBody, Response.Listener {}, Response.ErrorListener {})
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.POST,
+            WEBHOOK_API_URL,
+            jsonBody,
+            Response.Listener {},
+            Response.ErrorListener {})
         // envoyer la requête
         queue.add(jsonObjectRequest)
     }

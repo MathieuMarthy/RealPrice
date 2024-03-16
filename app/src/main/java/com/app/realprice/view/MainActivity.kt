@@ -1,4 +1,4 @@
-package com.example.realprice.view
+package com.app.realprice.view
 
 import android.content.Context
 import android.content.Intent
@@ -15,15 +15,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
-import com.example.realprice.R
-import com.example.realprice.dialogs.ChooseCurrencyDialog
-import com.example.realprice.dialogs.InformationsDialog
-import com.example.realprice.models.Currency
-import com.example.realprice.services.ConfigurationService
-import com.example.realprice.services.CurrencyConverterService
-import com.example.realprice.services.CurrencyManagerDBService
-import com.example.realprice.services.StatService
-import com.example.realprice.services.ThemeService
+import com.app.realprice.R
+import com.app.realprice.dialogs.ChooseCurrencyDialog
+import com.app.realprice.dialogs.InformationsDialog
+import com.app.realprice.models.Currency
+import com.app.realprice.services.ConfigurationService
+import com.app.realprice.services.CurrencyConverterService
+import com.app.realprice.services.CurrencyManagerDBService
+import com.app.realprice.services.StatService
+import com.app.realprice.services.ThemeService
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

@@ -1,4 +1,4 @@
-package com.example.realprice.models
+package com.app.realprice.models
 
 class Configuration(
     var defaultCurrency1: String = "EUR",

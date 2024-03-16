@@ -1,7 +1,7 @@
-package com.example.realprice.dao
+package com.app.realprice.dao
 
 import android.content.Context
-import com.example.realprice.models.Configuration
+import com.app.realprice.models.Configuration
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 

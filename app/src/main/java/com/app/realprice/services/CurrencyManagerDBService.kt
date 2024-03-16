@@ -1,11 +1,11 @@
-package com.example.realprice.services
+package com.app.realprice.services
 
 import android.content.Context
 import android.util.Log
-import com.example.realprice.dao.CurrencyInfoDAO
-import com.example.realprice.dao.ExchangeRateDAO
-import com.example.realprice.dao.UpdateDateDAO
-import com.example.realprice.models.Currency
+import com.app.realprice.dao.CurrencyInfoDAO
+import com.app.realprice.dao.ExchangeRateDAO
+import com.app.realprice.dao.UpdateDateDAO
+import com.app.realprice.models.Currency
 
 class CurrencyManagerDBService(
     context: Context

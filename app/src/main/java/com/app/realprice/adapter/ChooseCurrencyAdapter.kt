@@ -1,12 +1,12 @@
-package com.example.realprice.adapter
+package com.app.realprice.adapter
 
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.realprice.R
-import com.example.realprice.models.Currency
+import com.app.realprice.R
+import com.app.realprice.models.Currency
 
 class ChooseCurrencyAdapter(
     private val currencies: List<Currency>,

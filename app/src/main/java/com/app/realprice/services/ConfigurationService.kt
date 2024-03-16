@@ -1,8 +1,8 @@
-package com.example.realprice.services
+package com.app.realprice.services
 
 import android.content.Context
-import com.example.realprice.dao.ConfigurationDAO
-import com.example.realprice.models.Configuration
+import com.app.realprice.dao.ConfigurationDAO
+import com.app.realprice.models.Configuration
 
 class ConfigurationService(
     private val context: Context

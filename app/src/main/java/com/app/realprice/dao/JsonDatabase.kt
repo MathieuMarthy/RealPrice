@@ -1,4 +1,4 @@
-package com.example.realprice.dao
+package com.app.realprice.dao
 
 import android.content.Context
 

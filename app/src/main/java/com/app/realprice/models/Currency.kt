@@ -1,4 +1,4 @@
-package com.example.realprice.models
+package com.app.realprice.models
 
 class Currency(
     val code: String,

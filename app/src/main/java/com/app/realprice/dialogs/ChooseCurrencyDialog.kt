@@ -1,4 +1,4 @@
-package com.example.realprice.dialogs
+package com.app.realprice.dialogs
 
 import android.app.Dialog
 import android.content.Context
@@ -8,12 +8,12 @@ import android.view.View
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.realprice.R
-import com.example.realprice.adapter.ChooseCurrencyAdapter
-import com.example.realprice.itemDecorator.ChooseCurrencyItemDecorator
-import com.example.realprice.itemDecorator.PopularLimiterItemDecoration
-import com.example.realprice.models.Currency
-import com.example.realprice.services.ThemeService
+import com.app.realprice.R
+import com.app.realprice.adapter.ChooseCurrencyAdapter
+import com.app.realprice.itemDecorator.ChooseCurrencyItemDecorator
+import com.app.realprice.itemDecorator.PopularLimiterItemDecoration
+import com.app.realprice.models.Currency
+import com.app.realprice.services.ThemeService
 
 class ChooseCurrencyDialog {
 

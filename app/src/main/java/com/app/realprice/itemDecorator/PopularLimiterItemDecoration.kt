@@ -1,4 +1,4 @@
-package com.example.realprice.itemDecorator
+package com.app.realprice.itemDecorator
 
 import android.content.Context
 import android.graphics.Canvas
@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.realprice.R
+import com.app.realprice.R
 
 class PopularLimiterItemDecoration(
     context: Context,

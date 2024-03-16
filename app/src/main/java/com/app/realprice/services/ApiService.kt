@@ -1,11 +1,11 @@
-package com.example.realprice.services
+package com.app.realprice.services
 
 import android.content.Context
 import android.util.Log
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.realprice.CURRENCY_API_URL
+import com.app.realprice.CURRENCY_API_URL
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.time.LocalDateTime

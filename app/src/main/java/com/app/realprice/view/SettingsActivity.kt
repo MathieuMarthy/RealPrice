@@ -1,4 +1,4 @@
-package com.example.realprice.view
+package com.app.realprice.view
 
 import android.os.Bundle
 import android.widget.Button
@@ -9,11 +9,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.widget.addTextChangedListener
-import com.example.realprice.R
-import com.example.realprice.dialogs.ChooseCurrencyDialog
-import com.example.realprice.services.ConfigurationService
-import com.example.realprice.services.CurrencyManagerDBService
-import com.example.realprice.services.ThemeService
+import com.app.realprice.R
+import com.app.realprice.dialogs.ChooseCurrencyDialog
+import com.app.realprice.services.ConfigurationService
+import com.app.realprice.services.CurrencyManagerDBService
+import com.app.realprice.services.ThemeService
 
 class SettingsActivity : AppCompatActivity() {
 

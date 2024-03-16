@@ -1,7 +1,7 @@
-package com.example.realprice.services
+package com.app.realprice.services
 
 import android.content.Context
-import com.example.realprice.models.Currency
+import com.app.realprice.models.Currency
 
 class CurrencyConverterService(
     context: Context

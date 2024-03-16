@@ -1,13 +1,13 @@
-package com.example.realprice.itemDecorator
+package com.app.realprice.itemDecorator
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.realprice.R
-import com.example.realprice.models.Currency
-import com.example.realprice.services.ThemeService
+import com.app.realprice.R
+import com.app.realprice.models.Currency
+import com.app.realprice.services.ThemeService
 
 class ChooseCurrencyItemDecorator(
     context: Context,

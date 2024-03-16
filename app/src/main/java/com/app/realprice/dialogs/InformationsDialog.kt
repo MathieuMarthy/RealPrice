@@ -1,4 +1,4 @@
-package com.example.realprice.dialogs
+package com.app.realprice.dialogs
 
 import android.app.Dialog
 import android.content.Context
@@ -7,8 +7,8 @@ import android.graphics.drawable.ColorDrawable
 import android.widget.Button
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.realprice.R
-import com.example.realprice.services.ThemeService
+import com.app.realprice.R
+import com.app.realprice.services.ThemeService
 
 class InformationsDialog {
     companion object {
