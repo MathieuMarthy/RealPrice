@@ -3,7 +3,6 @@ package com.app.realprice.services
 import android.content.Context
 import android.os.Build
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.app.realprice.WEBHOOK_API_URL
@@ -32,8 +31,8 @@ class StatService private constructor(context: Context) {
             Request.Method.POST,
             WEBHOOK_API_URL,
             jsonBody,
-            Response.Listener {},
-            Response.ErrorListener {})
+            {},
+            {})
         // envoyer la requête
         queue.add(jsonObjectRequest)
     }
