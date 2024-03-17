@@ -118,6 +118,8 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
+        this.initConverterAndRefreshDate()
+
         // set the default currency
         this.currency1 = this.currencyManagerDBService.getCurrencyByCode(
             this.configurationService.configuration.defaultCurrency1
@@ -178,15 +180,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun exchangeCurrenciesAndAmount() {
         val tempCurrency = this.currency1
-        val tempAmount = this.input1
+        val tempAmount = this.textToDoubleOrNull(
+            this.input1
             .findViewById<EditText>(R.id.currency_input_money_amount).text
-            .toString().toDoubleOrNull() ?: 0.0
+                .toString()
+        ) ?: 0.0
 
-        this.setCurrency(this.input1, this.currency2)
+        this.setCurrency(this.input1, this.currency2, false)
+        this.inConversion = true
         this.setAmount(
-            this.input1, this.input2
+            this.input1, this.textToDoubleOrNull(
+                this.input2
                 .findViewById<EditText>(R.id.currency_input_money_amount).text
-                .toString().toDoubleOrNull() ?: 0.0
+                    .toString()
+            ) ?: 0.0
         )
 
         this.setCurrency(this.input2, tempCurrency)
@@ -210,12 +217,15 @@ class MainActivity : AppCompatActivity() {
             false -> this.input2.findViewById<EditText>(R.id.currency_input_money_amount).text.toString()
         }
 
+        this.inConversion = true
         if (amount.isBlank()) {
+            when (fromFristCurrency) {
+                true -> this.setAmount(this.input2, 0.0)
+                false -> this.setAmount(this.input1, 0.0)
+            }
             return
         }
         amount = amount.replace(",", ".")
-
-        this.inConversion = true
 
         if (fromFristCurrency) {
             val (convertedAmount, taxesAmount) = this.currencyConverterService.convert(
@@ -228,19 +238,18 @@ class MainActivity : AppCompatActivity() {
                 this.currency2, this.currency1, amount.toDouble()
             )
             this.setAmount(this.input1, convertedAmount)
-            this.setTaxesText(taxesAmount, convertedAmount, this.currency2)
-
+            this.setTaxesText(taxesAmount, convertedAmount, this.currency1)
         }
     }
 
-    private fun setTaxesText(taxesAmount: Double, total: Double, currency: Currency) {
+    private fun setTaxesText(taxesAmount: Double, amount: Double, currency: Currency) {
         if (taxesAmount == 0.0) {
             this.taxesText.text = ""
             return
         }
 
         val taxesString = String.format("%.2f", taxesAmount)
-        val totalString = String.format("%.2f", total + taxesAmount)
+        val totalString = String.format("%.2f", amount + taxesAmount)
         val taxesAmountSymbol = "$taxesString ${currency.symbol}"
         val totalAmountSymbol = "$totalString ${currency.symbol}"
 
@@ -284,20 +293,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun setAmount(input: ConstraintLayout, amount: Double) {
         val numInput = input.findViewById<EditText>(R.id.currency_input_money_amount)
-        numInput.setText(String.format("%.2f", amount))
+
+        var string = String.format("%.2f", amount)
+        if (string.endsWith(".00") || string.endsWith(",00")) {
+            string = string.substring(0, string.length - 3)
+        }
+        numInput.setText(string)
     }
 
-    private fun setCurrency(input: ConstraintLayout, currency: Currency) {
+    private fun setCurrency(input: ConstraintLayout, currency: Currency, convert: Boolean = true) {
         when (input) {
             this.input1 -> {
                 this.currency1 = currency
-                this.convertMoney(false)
+                if (convert) this.convertMoney(false)
                 this.configurationService.saveCurrency1(currency.code)
             }
 
             this.input2 -> {
                 this.currency2 = currency
-                this.convertMoney(true)
+                if (convert) this.convertMoney(true)
                 this.configurationService.saveCurrency2(currency.code)
             }
         }
@@ -382,5 +396,9 @@ class MainActivity : AppCompatActivity() {
             this.refreshOfflineIndication()
             this.convertMoney(this.lastConvertFromFirstCurrency)
         }
+    }
+
+    private fun textToDoubleOrNull(text: String): Double? {
+        return text.replace(",", ".").toDoubleOrNull()
     }
 }
