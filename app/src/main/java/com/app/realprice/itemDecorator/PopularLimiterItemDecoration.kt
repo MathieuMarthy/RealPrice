@@ -43,8 +43,10 @@ class PopularLimiterItemDecoration(
             val position = parent.getChildAdapterPosition(child)
 
             if (position == this.limit) {
-                val top = child.bottom - 140
-                val bottom = top + 10
+                val previousChild = parent.getChildAt(i - 1)
+
+                val top = previousChild.bottom + 12
+                val bottom = child.top - 12
 
                 divider?.setBounds(left, top, right, bottom)
                 divider?.draw(c)
