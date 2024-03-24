@@ -32,8 +32,9 @@ class ChooseCurrencyItemDecorator(
             // We check if the currency is popular
             if (currency == this.actualSelectedCurrency) {
                 // We define the position of our separator
-                val top = child.bottom - 125
-                val bottom = child.bottom - 5
+                val top = child.top - 5
+                val bottom = child.bottom
+
 
                 // change color of selected currency
                 val color = if (this.themeService.isDarkThemeActive()) {
