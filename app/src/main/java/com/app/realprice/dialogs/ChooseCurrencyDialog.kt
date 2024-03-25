@@ -51,7 +51,8 @@ class ChooseCurrencyDialog {
             val allCurrenciesRecyclerView =
                 dialog.findViewById<RecyclerView>(R.id.dialog_choose_currency_rv_all_currencies)
             val allCurrenciesAdapter = ChooseCurrencyAdapter(
-                currencies
+                currencies,
+                context
             ) {
                 dialog.dismiss()
                 callback(it)

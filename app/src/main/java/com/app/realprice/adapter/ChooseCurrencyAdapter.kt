@@ -1,6 +1,5 @@
 package com.app.realprice.adapter
 
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -10,6 +9,7 @@ import com.app.realprice.models.Currency
 
 class ChooseCurrencyAdapter(
     private val currencies: List<Currency>,
+    private val context: android.content.Context,
     private val onCurrencyClickListener: (Currency) -> Unit
 ) : RecyclerView.Adapter<ChooseCurrencyAdapter.ViewHolder>() {
 
@@ -31,11 +31,10 @@ class ChooseCurrencyAdapter(
 
         // set texts
         holder.symbol.text = item.symbol
-        holder.name.text = item.name
+        holder.name.text = item.getName(this.context)
 
         // set click listener
         holder.root.setOnClickListener {
-            Log.i("ChooseCurrencyAdapter", "Currency clicked: $item")
             this.onCurrencyClickListener(item)
         }
     }

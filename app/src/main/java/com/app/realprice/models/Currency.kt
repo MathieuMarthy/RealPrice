@@ -1,11 +1,17 @@
 package com.app.realprice.models
 
+import android.content.Context
+
 class Currency(
     val code: String,
     val symbol: String,
-    val name: String,
     val rate: Double
 ) {
+    fun getName(context: Context): String {
+        val resourceId = context.resources.getIdentifier(this.code, "string", context.packageName)
+        return context.getString(resourceId)
+    }
+
     override fun equals(other: Any?): Boolean {
         if (other is Currency) {
             return this.code == other.code
@@ -13,8 +19,7 @@ class Currency(
 
         return false
     }
-
     override fun toString(): String {
-        return "Currency(code='$code', symbol='$symbol', name='$name', rate=$rate)"
+        return "Currency(code='$code', symbol='$symbol', rate=$rate)"
     }
 }

@@ -1,7 +1,6 @@
 package com.app.realprice.services
 
 import android.content.Context
-import android.util.Log
 import com.app.realprice.dao.CurrencyInfoDAO
 import com.app.realprice.dao.ExchangeRateDAO
 import com.app.realprice.dao.UpdateDateDAO
@@ -38,14 +37,13 @@ class CurrencyManagerDBService(
                     Currency(
                         code.key,
                         currency["symbol"] ?: "",
-                        currency["name"] ?: "",
                         code.value
                     )
                 )
             }
         }
 
-        return currencies.sortedBy { it.name }
+        return currencies.sortedBy { it.code }
     }
 
     fun updateExchangeRate(callback: () -> Unit) {
@@ -64,7 +62,6 @@ class CurrencyManagerDBService(
 
     private fun updateCurrencies(currencies: Map<String, Double>) {
         this.exchangeRateDAO.save(currencies)
-        Log.i("CurrencyManagerDBService", "Currencies updated")
     }
 
     fun getLastUpdateDate() = this.updateDateDAO.load()
