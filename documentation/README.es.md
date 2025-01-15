@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/static/v1?label=release&message=v1.0.2&color=blue" alt="Versión - v1.0.2" />
   </a>
   <a href="https://www.android.com">
-    <img src="https://img.shields.io/static/v1?label=versión&message=android&color=green" alt="Versión - Android" />
+    <img src="https://img.shields.io/static/v1?label=version&message=android&color=green" alt="Versión - Android" />
   </a>
   <a href="https://choosealicense.com/licenses/mit">
     <img src="https://img.shields.io/badge/Licencia-MIT-yellow" alt="Licencia" />
