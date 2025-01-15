@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +25,6 @@ import com.app.realprice.services.CurrencyConverterService
 import com.app.realprice.services.CurrencyManagerDBService
 import com.app.realprice.services.StatService
 import com.app.realprice.services.ThemeService
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -73,21 +73,30 @@ class MainActivity : AppCompatActivity() {
         logoImage.setColorFilter(color)
 
         this.refreshLastUpdateDate()
-        this.updateAndInit()
+        this.updateData {
+            this.init()
+        }
     }
 
-    private fun updateAndInit() {
+    private fun updateData(callback: (() -> Unit)? = null) {
         if (this.isNetworkAvailable() && !this.alreadyUpdateToday()) {
             // update the currency exchange rate if it's not already updated today
             this.requestInProcess = true
             this.sendStat()
+            // toast message
+            val toast = Toast.makeText(
+                applicationContext,
+                "update",
+                Toast.LENGTH_SHORT
+            )
+            toast.show()
             this.currencyManagerDBService.updateExchangeRate {
                 this.currencyManagerDBService = CurrencyManagerDBService(this)
-                this.init()
                 this.requestInProcess = false
+                callback?.invoke()
             }
         } else {
-            this.init()
+            callback?.invoke()
         }
     }
 
@@ -113,7 +122,9 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.enable_internet_to_update),
                 getString(R.string.retry)
             ) {
-                this.updateAndInit()
+                this.updateData {
+                    this.init()
+                }
             }
             return
         }
@@ -332,17 +343,15 @@ class MainActivity : AppCompatActivity() {
      * Refresh the last update date on the UI
      */
     private fun refreshLastUpdateDate() {
-        val date = this.currencyManagerDBService.getLastUpdateDate()
         val textView = findViewById<TextView>(R.id.updated_at)
+        val date = this.currencyManagerDBService.getLastUpdateDate()
 
-        val now = LocalDate.now()
-        if (date == null || date.toLocalDate() == now) { // if the last update is today
+        if (date == null || this.alreadyUpdateToday()) { // if the last update is today
             // hide the last update date
             textView.visibility = View.GONE
         } else {
             // show the last update date
             val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-
             textView.text = this.getString(R.string.last_update_at, date.format(formatter))
         }
     }
@@ -380,6 +389,7 @@ class MainActivity : AppCompatActivity() {
      * @return Boolean - True if the currency exchange rate has already been updated today, False otherwise
      */
     private fun alreadyUpdateToday(): Boolean {
+        return false
         val now = LocalDateTime.now()
         val lastUpdateDate = this.currencyManagerDBService.getLastUpdateDate() ?: return false
 
@@ -389,9 +399,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        this.configurationService.refresh()
 
         if (!this.requestInProcess && !this.currencyManagerDBService.haveNoData()) {
-            this.configurationService.refresh()
+            this.updateData()
             this.currencyConverterService.refreshConfig()
             this.refreshOfflineIndication()
             this.convertMoney(this.lastConvertFromFirstCurrency)
