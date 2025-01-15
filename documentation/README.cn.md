@@ -9,10 +9,10 @@
 <br>
 
 <div align="center">
-  <a href="#TODO">
-    <img src="https://img.shields.io/static/v1?label=release&message=v1.0.0&color=blue" alt="发布 - v1.0.0" />
+  <a href="https://github.com/MathieuMarthy/RealPrice/releases/tag/1.0.2">
+    <img src="https://img.shields.io/static/v1?label=release&message=v1.0.2&color=blue" alt="发布 - v1.0.2" />
   </a>
-  <a href="#TODO">
+  <a href="https://www.android.com">
     <img src="https://img.shields.io/static/v1?label=version&message=android&color=green" alt="版本 - Android" />
   </a>
   <a href="https://choosealicense.com/licenses/mit">
@@ -29,8 +29,11 @@
 <br>
 
 <div align="center">
-    <a href="#TODO">
+    <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">
         <img src="https://img.shields.io/badge/下载APK-4EAA25?style=for-the-badge&logo=android&logoColor=white" alt="下载APK"/>
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.app.realprice">
+        <img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white" alt="Play Store"/>
     </a>
 </div>
 
@@ -42,6 +45,7 @@
     <a href="../documentation/README.uk.md">:uk: English</a> |
     <a href="../documentation/README.kr.md">:kr: 한국어</a> |
     <a href="../documentation/README.jp.md">:jp: 日本語</a> |
+    <b>:cn: 中文</b> |
     <a href="../documentation/README.it.md">:it: Italiano</a> |
     <a href="../documentation/README.es.md">:es: Español</a> |
     <a href="../documentation/README.ru.md">:ru: Русский</a> |
@@ -50,7 +54,7 @@
 
 ## 描述
 
-RealPrice是一款不可或缺的货币转换应用，适用于那些关心在外国货币中了解物品实际成本的旅行者。通过RealPrice，您可以轻松比较两种货币之间的汇率，并调整您的银行在国际交易中收取的手续费百分比。该功能允许您计算物品或服务的最终价格，不仅考虑汇率，还考虑与银行相关的费用。只要连接到互联网，应用程序就会自动更新，确保始终准确和最新的转换。不要再出国旅行而没有RealPrice！确保准确知道您将在您选择的货币中花费多少，包括您的银行的换算费用。立即<a href=#TODO>下载RealPrice</a>，放心旅行。
+RealPrice是一款不可或缺的货币转换应用，适用于那些关心在外国货币中了解物品实际成本的旅行者。通过RealPrice，您可以轻松比较两种货币之间的汇率，并调整您的银行在国际交易中收取的手续费百分比。该功能允许您计算物品或服务的最终价格，不仅考虑汇率，还考虑与银行相关的费用。只要连接到互联网，应用程序就会自动更新，确保始终准确和最新的转换。不要再出国旅行而没有RealPrice！确保准确知道您将在您选择的货币中花费多少，包括您的银行的换算费用。立即<a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">下载RealPrice</a>，放心旅行。
 
 ## 操作
 
@@ -63,13 +67,13 @@ RealPrice是一款不可或缺的货币转换应用，适用于那些关心在�
 可用语言:
 
 - :fr: 法语
-- :uk: 英语 _(即将推出)_
-- :kr: 韩语 _(即将推出)_
-- :jp: 日语 _(即将推出)_
-- :cn: 中文 _(即将推出)_
-- :it: 意大利语 _(即将推出)_
-- :es: 西班牙语 _(即将推出)_
-- :ru: 俄语 _(即将推出)_
-- :de: 德语 _(即将推出)_
+- :uk: 英语
+- :kr: 韩语
+- :jp: 日语
+- :cn: 中文
+- :it: 意大利语
+- :es: 西班牙语
+- :ru: 俄语
+- :de: 德语
 
 _如果您希望将应用程序翻译成您的语言，或者 README 中存在翻译问题，请联系我们，请在<a href="https://github.com/MathieuMarthy/RealPrice/issues/1">问题</a>中留言告诉我们。_

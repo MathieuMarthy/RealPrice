@@ -6,8 +6,10 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.widget.SwitchCompat
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.app.realprice.R
+import com.app.realprice.services.ConfigurationService
 import com.app.realprice.services.ThemeService
 
 class InformationsDialog {
@@ -17,11 +19,13 @@ class InformationsDialog {
             title: String,
             text: String,
             buttonText: String,
+            configurationService: ConfigurationService,
             callback: () -> Unit
         ) {
             val themeService = ThemeService(context)
 
             val dialog = Dialog(context)
+            dialog.setCancelable(false)
             dialog.setContentView(R.layout.dialog_informations)
 
             val color = if (themeService.isDarkThemeActive()) {
@@ -41,6 +45,12 @@ class InformationsDialog {
             button.setOnClickListener {
                 callback()
                 dialog.dismiss()
+            }
+
+            val switchAllowMobileData =
+                dialog.findViewById<SwitchCompat>(R.id.dialog_imnformations_allow_data_switch)
+            switchAllowMobileData.setOnClickListener {
+                configurationService.configuration.allowMobileData = switchAllowMobileData.isChecked
             }
 
             val root = dialog.findViewById<ConstraintLayout>(R.id.dialog_root)

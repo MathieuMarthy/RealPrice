@@ -1,570 +1,712 @@
 [
   {
-    "code": "EUR",
-    "symbol": "€"
+      "code": "EUR",
+      "symbol": "€",
+      "flag": "🇪🇺"
   },
   {
-    "code": "ALL",
-    "symbol": "L"
+      "code": "ALL",
+      "symbol": "Lek",
+      "flag": "🇦🇱"
   },
   {
-    "code": "BYN",
-    "symbol": "Br"
+      "code": "BYN",
+      "symbol": "Br",
+      "flag": "🇧🇾"
   },
   {
-    "code": "BAM",
-    "symbol": "KM"
+      "code": "BAM",
+      "symbol": "KM",
+      "flag": "🇧🇦"
   },
   {
-    "code": "BGN",
-    "symbol": "Лв"
+      "code": "BGN",
+      "symbol": "Лв",
+      "flag": "🇧🇬"
   },
   {
-    "code": "CZK",
-    "symbol": "Kč"
+      "code": "CZK",
+      "symbol": "Kč",
+      "flag": "🇨🇿"
   },
   {
-    "code": "DKK",
-    "symbol": "Kr"
+      "code": "DKK",
+      "symbol": "Kr",
+      "flag": "🇩🇰"
   },
   {
-    "code": "GEL",
-    "symbol": "₾"
+      "code": "GEL",
+      "symbol": "₾",
+      "flag": "🇬🇪"
   },
   {
-    "code": "HUF",
-    "symbol": "ft"
+      "code": "HUF",
+      "symbol": "ft",
+      "flag": "🇭🇺"
   },
   {
-    "code": "ISK",
-    "symbol": "Íkr"
+      "code": "ISK",
+      "symbol": "Íkr",
+      "flag": "🇮🇸"
   },
   {
-    "code": "CHF",
-    "symbol": "CHF"
+      "code": "CHF",
+      "symbol": "CHF",
+      "flag": "🇨🇭"
   },
   {
-    "code": "MDL",
-    "symbol": "L"
+      "code": "MDL",
+      "symbol": "L",
+      "flag": "🇲🇩"
   },
   {
-    "code": "MKD",
-    "symbol": "Ден"
+      "code": "MKD",
+      "symbol": "Ден",
+      "flag": "🇲🇰"
   },
   {
-    "code": "NOK",
-    "symbol": "Kr"
+      "code": "NOK",
+      "symbol": "Kr",
+      "flag": "🇳🇴"
   },
   {
-    "code": "PLN",
-    "symbol": "zł"
+      "code": "PLN",
+      "symbol": "zł",
+      "flag": "🇵🇱"
   },
   {
-    "code": "RON",
-    "symbol": "lei"
+      "code": "RON",
+      "symbol": "lei",
+      "flag": "🇷🇴"
   },
   {
-    "code": "RUB",
-    "symbol": "₽"
+      "code": "RUB",
+      "symbol": "₽",
+      "flag": "🇷🇺"
   },
   {
-    "code": "RSD",
-    "symbol": "RSD"
+      "code": "RSD",
+      "symbol": "RSD",
+      "flag": "🇷🇸"
   },
   {
-    "code": "TRY",
-    "symbol": "₺"
+      "code": "TRY",
+      "symbol": "₺",
+      "flag": "🇹🇷"
   },
   {
-    "code": "UAH",
-    "symbol": "₴"
+      "code": "UAH",
+      "symbol": "₴",
+      "flag": "🇺🇦"
   },
   {
-    "code": "GBP",
-    "symbol": "£"
+      "code": "GBP",
+      "symbol": "£",
+      "flag": "🇬🇧"
   },
   {
-    "code": "USD",
-    "symbol": "$"
+      "code": "USD",
+      "symbol": "$",
+      "flag": "🇺🇸"
   },
   {
-    "code": "XCD",
-    "symbol": "$"
+      "code": "XCD",
+      "symbol": "$",
+      "flag": "🇦🇬"
   },
   {
-    "code": "AWG",
-    "symbol": "ƒ"
+      "code": "AWG",
+      "symbol": "ƒ",
+      "flag": "🇦🇼"
   },
   {
-    "code": "ARS",
-    "symbol": "$"
+      "code": "ARS",
+      "symbol": "$",
+      "flag": "🇦🇷"
   },
   {
-    "code": "BSD",
-    "symbol": "B$"
+      "code": "BSD",
+      "symbol": "B$",
+      "flag": "🇧🇸"
   },
   {
-    "code": "BBD",
-    "symbol": "$"
+      "code": "BBD",
+      "symbol": "$",
+      "flag": "🇧🇧"
   },
   {
-    "code": "BMD",
-    "symbol": "$"
+      "code": "BMD",
+      "symbol": "$",
+      "flag": "🇧🇲"
   },
   {
-    "code": "BZD",
-    "symbol": "BZ$"
+      "code": "BZD",
+      "symbol": "BZ$",
+      "flag": "🇧🇿"
   },
   {
-    "code": "BOB",
-    "symbol": "Bs"
+      "code": "BOB",
+      "symbol": "Bs",
+      "flag": "🇧🇴"
   },
   {
-    "code": "BRL",
-    "symbol": "R$"
+      "code": "BRL",
+      "symbol": "R$",
+      "flag": "🇧🇷"
   },
   {
-    "code": "CAD",
-    "symbol": "CA$"
+      "code": "CAD",
+      "symbol": "CA$",
+      "flag": "🇨🇦"
   },
   {
-    "code": "KYD",
-    "symbol": "CI$"
+      "code": "KYD",
+      "symbol": "CI$",
+      "flag": "🇰🇾"
   },
   {
-    "code": "CLP",
-    "symbol": "$"
+      "code": "CLP",
+      "symbol": "$",
+      "flag": "🇨🇱"
   },
   {
-    "code": "COP",
-    "symbol": "$"
+      "code": "COP",
+      "symbol": "$",
+      "flag": "🇨🇴"
   },
   {
-    "code": "CRC",
-    "symbol": "₡"
+      "code": "CRC",
+      "symbol": "₡",
+      "flag": "🇨🇷"
   },
   {
-    "code": "CUP",
-    "symbol": "₱"
+      "code": "CUP",
+      "symbol": "₱",
+      "flag": "🇨🇺"
   },
   {
-    "code": "ANG",
-    "symbol": "ƒ"
+      "code": "ANG",
+      "symbol": "ƒ",
+      "flag": "🇳🇱"
   },
   {
-    "code": "DOP",
-    "symbol": "$"
+      "code": "DOP",
+      "symbol": "$",
+      "flag": "🇩🇴"
   },
   {
-    "code": "FKP",
-    "symbol": "£"
+      "code": "FKP",
+      "symbol": "£",
+      "flag": "🇫🇰"
   },
   {
-    "code": "GTQ",
-    "symbol": "Q"
+      "code": "GTQ",
+      "symbol": "Q",
+      "flag": "🇬🇹"
   },
   {
-    "code": "GYD",
-    "symbol": "$"
+      "code": "GYD",
+      "symbol": "$",
+      "flag": "🇬🇾"
   },
   {
-    "code": "HTQ",
-    "symbol": "G"
+      "code": "HTQ",
+      "symbol": "G",
+      "flag": "🇭🇹"
   },
   {
-    "code": "HNL",
-    "symbol": "L"
+      "code": "HNL",
+      "symbol": "L",
+      "flag": "🇭🇳"
   },
   {
-    "code": "JMD",
-    "symbol": "$"
+      "code": "JMD",
+      "symbol": "$",
+      "flag": "🇯🇲"
   },
   {
-    "code": "MXN",
-    "symbol": "$"
+      "code": "MXN",
+      "symbol": "$",
+      "flag": "🇲🇽"
   },
   {
-    "code": "NIO",
-    "symbol": "C$"
+      "code": "NIO",
+      "symbol": "C$",
+      "flag": "🇳🇮"
   },
   {
-    "code": "PAB",
-    "symbol": "฿"
+      "code": "PAB",
+      "symbol": "฿",
+      "flag": "🇵🇦"
   },
   {
-    "code": "PYG",
-    "symbol": "₲"
+      "code": "PYG",
+      "symbol": "₲",
+      "flag": "🇵🇾"
   },
   {
-    "code": "PEN",
-    "symbol": "S/."
+      "code": "PEN",
+      "symbol": "S/.",
+      "flag": "🇵🇪"
   },
   {
-    "code": "SRD",
-    "symbol": "Sr$"
+      "code": "SRD",
+      "symbol": "Sr$",
+      "flag": "🇸🇷"
   },
   {
-    "code": "TTD",
-    "symbol": "TT$"
+      "code": "TTD",
+      "symbol": "TT$",
+      "flag": "🇹🇹"
   },
   {
-    "code": "UYU",
-    "symbol": "$"
+      "code": "UYU",
+      "symbol": "$",
+      "flag": "🇺🇾"
   },
   {
-    "code": "VED",
-    "symbol": "Bs."
+      "code": "VED",
+      "symbol": "Bs.",
+      "flag": "🇻🇪"
   },
   {
-    "code": "AFN",
-    "symbol": "؋"
+      "code": "AFN",
+      "symbol": "؋",
+      "flag": "🇦🇫"
   },
   {
-    "code": "AMD",
-    "symbol": "֏"
+      "code": "AMD",
+      "symbol": "֏",
+      "flag": "🇦🇲"
   },
   {
-    "code": "AZN",
-    "symbol": "₼"
+      "code": "AZN",
+      "symbol": "₼",
+      "flag": "🇦🇿"
   },
   {
-    "code": "BHD",
-    "symbol": ".د.ب"
+      "code": "BHD",
+      "symbol": ".د.ب",
+      "flag": "🇧🇭"
   },
   {
-    "code": "IQD",
-    "symbol": "ع.د"
+      "code": "IQD",
+      "symbol": "ع.د",
+      "flag": "🇮🇶"
   },
   {
-    "code": "IRR",
-    "symbol": "﷼"
+      "code": "IRR",
+      "symbol": "﷼",
+      "flag": "🇮🇷"
   },
   {
-    "code": "JOD",
-    "symbol": "JOD"
+      "code": "JOD",
+      "symbol": "JOD",
+      "flag": "🇯🇴"
   },
   {
-    "code": "KWD",
-    "symbol": "ك"
+      "code": "KWD",
+      "symbol": "ك",
+      "flag": "🇰🇼"
   },
   {
-    "code": "LBP",
-    "symbol": "ل.ل"
+      "code": "LBP",
+      "symbol": "ل.ل",
+      "flag": "🇱🇧"
   },
   {
-    "code": "ILS",
-    "symbol": "₪"
+      "code": "ILS",
+      "symbol": "₪",
+      "flag": "🇮🇱"
   },
   {
-    "code": "SYP",
-    "symbol": "£"
+      "code": "SYP",
+      "symbol": "£",
+      "flag": "🇸🇾"
   },
   {
-    "code": "AED",
-    "symbol": "د.إ"
+      "code": "AED",
+      "symbol": "د.إ",
+      "flag": "🇦🇪"
   },
   {
-    "code": "OMR",
-    "symbol": "ر.ع"
+      "code": "OMR",
+      "symbol": "ر.ع",
+      "flag": "🇴🇲"
   },
   {
-    "code": "QAR",
-    "symbol": "ر.ق"
+      "code": "QAR",
+      "symbol": "ر.ق",
+      "flag": "🇶🇦"
   },
   {
-    "code": "SAR",
-    "symbol": "SR"
+      "code": "SAR",
+      "symbol": "SR",
+      "flag": "🇸🇦"
   },
   {
-    "code": "YER",
-    "symbol": "﷼"
+      "code": "YER",
+      "symbol": "﷼",
+      "flag": "🇾🇪"
   },
   {
-    "code": "XAF",
-    "symbol": "FCFA"
+      "code": "XAF",
+      "symbol": "FCFA",
+      "flag": "🏳️"
   },
   {
-    "code": "XOF",
-    "symbol": "CFA"
+      "code": "XOF",
+      "symbol": "CFA",
+      "flag": "🏳️"
   },
   {
-    "code": "DZD",
-    "symbol": "دج"
+      "code": "DZD",
+      "symbol": "دج",
+      "flag": "🏳️"
   },
   {
-    "code": "AOA",
-    "symbol": "Kz"
+      "code": "AOA",
+      "symbol": "Kz",
+      "flag": "🏳️"
   },
   {
-    "code": "BWP",
-    "symbol": "P"
+      "code": "BWP",
+      "symbol": "P",
+      "flag": "🏳️"
   },
   {
-    "code": "BIF",
-    "symbol": "FBu"
+      "code": "BIF",
+      "symbol": "FBu",
+      "flag": "🏳️"
   },
   {
-    "code": "CVE",
-    "symbol": "CVE"
+      "code": "CVE",
+      "symbol": "CVE",
+      "flag": "🏳️"
   },
   {
-    "code": "KMF",
-    "symbol": "CF"
+      "code": "KMF",
+      "symbol": "CF",
+      "flag": "🏳️"
   },
   {
-    "code": "CDF",
-    "symbol": "FC"
+      "code": "CDF",
+      "symbol": "FC",
+      "flag": "🏳️"
   },
   {
-    "code": "DJF",
-    "symbol": "Fdj"
+      "code": "DJF",
+      "symbol": "Fdj",
+      "flag": "🏳️"
   },
   {
-    "code": "EGP",
-    "symbol": "E£"
+      "code": "EGP",
+      "symbol": "E£",
+      "flag": "🏳️"
   },
   {
-    "code": "ERN",
-    "symbol": "Nkf"
+      "code": "ERN",
+      "symbol": "Nkf",
+      "flag": "🏳️"
   },
   {
-    "code": "ETB",
-    "symbol": "Br"
+      "code": "ETB",
+      "symbol": "Br",
+      "flag": "🏳️"
   },
   {
-    "code": "SZL",
-    "symbol": "L"
+      "code": "SZL",
+      "symbol": "L",
+      "flag": "🏳️"
   },
   {
-    "code": "GMD",
-    "symbol": "D"
+      "code": "GMD",
+      "symbol": "D",
+      "flag": "🏳️"
   },
   {
-    "code": "GHS",
-    "symbol": "GH"
+      "code": "GHS",
+      "symbol": "GH",
+      "flag": "🏳️"
   },
   {
-    "code": "GNF",
-    "symbol": "FG"
+      "code": "GNF",
+      "symbol": "FG",
+      "flag": "🏳️"
   },
   {
-    "code": "KES",
-    "symbol": "KSh"
+      "code": "KES",
+      "symbol": "KSh",
+      "flag": "🏳️"
   },
   {
-    "code": "LSL",
-    "symbol": "L"
+      "code": "LSL",
+      "symbol": "L",
+      "flag": "🏳️"
   },
   {
-    "code": "LRD",
-    "symbol": "LD$"
+      "code": "LRD",
+      "symbol": "LD$",
+      "flag": "🏳️"
   },
   {
-    "code": "LYD",
-    "symbol": "LD"
+      "code": "LYD",
+      "symbol": "LD",
+      "flag": "🏳️"
   },
   {
-    "code": "MGA",
-    "symbol": "Ar"
+      "code": "MGA",
+      "symbol": "Ar",
+      "flag": "🏳️"
   },
   {
-    "code": "MWK",
-    "symbol": "K"
+      "code": "MWK",
+      "symbol": "K",
+      "flag": "🏳️"
   },
   {
-    "code": "MUR",
-    "symbol": "₨"
+      "code": "MUR",
+      "symbol": "₨",
+      "flag": "🏳️"
   },
   {
-    "code": "MRU",
-    "symbol": "UM"
+      "code": "MRU",
+      "symbol": "UM",
+      "flag": "🏳️"
   },
   {
-    "code": "MAD",
-    "symbol": "DH"
+      "code": "MAD",
+      "symbol": "DH",
+      "flag": "🏳️"
   },
   {
-    "code": "MZN",
-    "symbol": "MT"
+      "code": "MZN",
+      "symbol": "MT",
+      "flag": "🏳️"
   },
   {
-    "code": "NAD",
-    "symbol": "N$"
+      "code": "NAD",
+      "symbol": "N$",
+      "flag": "🏳️"
   },
   {
-    "code": "NGN",
-    "symbol": "₦"
+      "code": "NGN",
+      "symbol": "₦",
+      "flag": "🏳️"
   },
   {
-    "code": "RWF",
-    "symbol": "R₣"
+      "code": "RWF",
+      "symbol": "R₣",
+      "flag": "🏳️"
   },
   {
-    "code": "STN",
-    "symbol": "Db"
+      "code": "STN",
+      "symbol": "Db",
+      "flag": "🏳️"
   },
   {
-    "code": "SCR",
-    "symbol": "SR"
+      "code": "SCR",
+      "symbol": "SR",
+      "flag": "🏳️"
   },
   {
-    "code": "SLL",
-    "symbol": "Le"
+      "code": "SLL",
+      "symbol": "Le",
+      "flag": "🏳️"
   },
   {
-    "code": "SOS",
-    "symbol": "Sh"
+      "code": "SOS",
+      "symbol": "Sh",
+      "flag": "🏳️"
   },
   {
-    "code": "ZAR",
-    "symbol": "R"
+      "code": "ZAR",
+      "symbol": "R",
+      "flag": "🏳️"
   },
   {
-    "code": "SSP",
-    "symbol": "SS£"
+      "code": "SSP",
+      "symbol": "SS£",
+      "flag": "🏳️"
   },
   {
-    "code": "SDG",
-    "symbol": "SDG"
+      "code": "SDG",
+      "symbol": "SDG",
+      "flag": "🏳️"
   },
   {
-    "code": "TZS",
-    "symbol": "TSh"
+      "code": "TZS",
+      "symbol": "TSh",
+      "flag": "🏳️"
   },
   {
-    "code": "TND",
-    "symbol": "DT"
+      "code": "TND",
+      "symbol": "DT",
+      "flag": "🏳️"
   },
   {
-    "code": "UGX",
-    "symbol": "USh"
+      "code": "UGX",
+      "symbol": "USh",
+      "flag": "🏳️"
   },
   {
-    "code": "AUD",
-    "symbol": "A$"
+      "code": "AUD",
+      "symbol": "A$",
+      "flag": "🇦🇺"
   },
   {
-    "code": "BDT",
-    "symbol": "৳"
+      "code": "BDT",
+      "symbol": "৳",
+      "flag": "🇧🇩"
   },
   {
-    "code": "BTN",
-    "symbol": "Nu"
+      "code": "BTN",
+      "symbol": "Nu",
+      "flag": "🇧🇹"
   },
   {
-    "code": "BND",
-    "symbol": "B$"
+      "code": "BND",
+      "symbol": "B$",
+      "flag": "🇧🇳"
   },
   {
-    "code": "KHR",
-    "symbol": "\u17db"
+      "code": "KHR",
+      "symbol": "៛",
+      "flag": "🇰🇭"
   },
   {
-    "code": "CNY",
-    "symbol": "¥"
+      "code": "CNY",
+      "symbol": "¥",
+      "flag": "🇨🇳"
   },
   {
-    "code": "HKD",
-    "symbol": "HK$"
+      "code": "HKD",
+      "symbol": "HK$",
+      "flag": "🇭🇰"
   },
   {
-    "code": "IDR",
-    "symbol": "Rp"
+      "code": "IDR",
+      "symbol": "Rp",
+      "flag": "🇮🇩"
   },
   {
-    "code": "INR",
-    "symbol": "₹"
+      "code": "INR",
+      "symbol": "₹",
+      "flag": "🇮🇳"
   },
   {
-    "code": "JPY",
-    "symbol": "¥"
+      "code": "JPY",
+      "symbol": "¥",
+      "flag": "🇯🇵"
   },
   {
-    "code": "KZT",
-    "symbol": "₸"
+      "code": "KZT",
+      "symbol": "₸",
+      "flag": "🇰🇿"
   },
   {
-    "code": "KGS",
-    "symbol": "som"
+      "code": "KGS",
+      "symbol": "som",
+      "flag": "🇰🇬"
   },
   {
-    "code": "LAK",
-    "symbol": "₭"
+      "code": "LAK",
+      "symbol": "₭",
+      "flag": "🇱🇦"
   },
   {
-    "code": "MOP",
-    "symbol": "$"
+      "code": "MOP",
+      "symbol": "$",
+      "flag": "🏳️"
   },
   {
-    "code": "MYR",
-    "symbol": "RM"
+      "code": "MYR",
+      "symbol": "RM",
+      "flag": "🇲🇾"
   },
   {
-    "code": "MVR",
-    "symbol": "MRf"
+      "code": "MVR",
+      "symbol": "MRf",
+      "flag": "🇲🇻"
   },
   {
-    "code": "MNT",
-    "symbol": "₮"
+      "code": "MNT",
+      "symbol": "₮",
+      "flag": "🇲🇳"
   },
   {
-    "code": "MMK",
-    "symbol": "K"
+      "code": "MMK",
+      "symbol": "K",
+      "flag": "🇲🇲"
   },
   {
-    "code": "NPR",
-    "symbol": "Rs"
+      "code": "NPR",
+      "symbol": "Rs",
+      "flag": "🇳🇵"
   },
   {
-    "code": "NZD",
-    "symbol": "$"
+      "code": "NZD",
+      "symbol": "$",
+      "flag": "🇳🇿"
   },
   {
-    "code": "KPW",
-    "symbol": "₩"
+      "code": "KPW",
+      "symbol": "₩",
+      "flag": "🇰🇵"
   },
   {
-    "code": "PKR",
-    "symbol": "Rs"
+      "code": "PKR",
+      "symbol": "Rs",
+      "flag": "🇵🇰"
   },
   {
-    "code": "PHP",
-    "symbol": "₱"
+      "code": "PHP",
+      "symbol": "₱",
+      "flag": "🇵🇭"
   },
   {
-    "code": "SGD",
-    "symbol": "S$"
+      "code": "SGD",
+      "symbol": "S$",
+      "flag": "🇸🇬"
   },
   {
-    "code": "KRW",
-    "symbol": "₩"
+      "code": "KRW",
+      "symbol": "₩",
+      "flag": "🇰🇷"
   },
   {
-    "code": "LKR",
-    "symbol": "Rs"
+      "code": "LKR",
+      "symbol": "Rs",
+      "flag": "🇱🇰"
   },
   {
-    "code": "TWD",
-    "symbol": "NT$"
+      "code": "TWD",
+      "symbol": "NT$",
+      "flag": "🇹🇼"
   },
   {
-    "code": "TJS",
-    "symbol": "TJS"
+      "code": "TJS",
+      "symbol": "TJS",
+      "flag": "🇹🇯"
   },
   {
-    "code": "THB",
-    "symbol": "฿"
+      "code": "THB",
+      "symbol": "฿",
+      "flag": "🇹🇭"
   },
   {
-    "code": "TMT",
-    "symbol": "T"
+      "code": "TMT",
+      "symbol": "T",
+      "flag": "🇹🇲"
   },
   {
-    "code": "UZS",
-    "symbol": "sum"
+      "code": "UZS",
+      "symbol": "sum",
+      "flag": "🇺🇿"
   },
   {
-    "code": "VND",
-    "symbol": "₫"
+      "code": "VND",
+      "symbol": "₫",
+      "flag": "🇻🇳"
   }
 ]
