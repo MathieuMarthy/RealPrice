@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="amount_money_convert">l'importo di denaro da convertire</string>
+    <string name="amount_money_convert">l\'importo di denaro da convertire</string>
     <string name="last_update_at">ultimo aggiornamento: %s</string>
     <string name="choose_currency">Scegli una valuta</string>
     <string name="popular_currencies">Valute popolari</string>
     <string name="offline_mode">Modalità offline</string>
     <string name="settings">Impostazioni</string>
-    <string name="allow_data_utilisation">Consenti l'utilizzo dei\ndati mobili</string>
+    <string name="allow_data_utilisation">Consenti l\'utilizzo dei\ndati mobili</string>
     <string name="enable_bank_taxes">Includi le commissioni\nbancarie</string>
     <string name="tax_rate">Aliquota fiscale</string>
     <string name="fixed_tax">Tassa fissa</string>
