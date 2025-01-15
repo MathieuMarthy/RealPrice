@@ -22,6 +22,7 @@ class InformationsDialog {
             val themeService = ThemeService(context)
 
             val dialog = Dialog(context)
+            dialog.setCancelable(false)
             dialog.setContentView(R.layout.dialog_informations)
 
             val color = if (themeService.isDarkThemeActive()) {
