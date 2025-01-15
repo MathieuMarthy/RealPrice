@@ -113,7 +113,8 @@ class MainActivity : AppCompatActivity() {
                 this,
                 getString(R.string.no_internet),
                 getString(R.string.enable_internet_to_update),
-                getString(R.string.retry)
+                getString(R.string.retry),
+                this.configurationService
             ) {
                 this.updateData {
                     this.init()
