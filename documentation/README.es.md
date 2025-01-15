@@ -9,10 +9,10 @@
 <br>
 
 <div align="center">
-  <a href="#TODO">
-    <img src="https://img.shields.io/static/v1?label=release&message=v1.0.0&color=blue" alt="Versión - v1.0.0" />
+  <a href="https://github.com/MathieuMarthy/RealPrice/releases/tag/1.0.2">
+    <img src="https://img.shields.io/static/v1?label=release&message=v1.0.2&color=blue" alt="Versión - v1.0.2" />
   </a>
-  <a href="#TODO">
+  <a href="https://www.android.com">
     <img src="https://img.shields.io/static/v1?label=versión&message=android&color=green" alt="Versión - Android" />
   </a>
   <a href="https://choosealicense.com/licenses/mit">
@@ -29,8 +29,11 @@
 <br>
 
 <div align="center">
-    <a href="#TODO">
+    <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">
         <img src="https://img.shields.io/badge/Descargar%20APK-4EAA25?style=for-the-badge&logo=android&logoColor=white" alt="Descargar APK"/>
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.app.realprice">
+        <img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white" alt="Play Store"/>
     </a>
 </div>
 
@@ -44,13 +47,14 @@
     <a href="../documentation/README.jp.md">:jp: 日本語</a> |
     <a href="../documentation/README.cn.md">:cn: 中文</a> |
     <a href="../documentation/README.it.md">:it: Italiano</a> |
+    <b>:es: Español</b> |
     <a href="../documentation/README.ru.md">:ru: Русский</a> |
     <a href="../documentation/README.de.md">:de: Deutsch</a>
 </div>
 
 ## Descripción
 
-RealPrice es una aplicación de conversión de divisas indispensable para los viajeros preocupados por conocer el costo real de los objetos en una moneda extranjera. Con RealPrice, puedes comparar fácilmente los tipos de cambio entre dos monedas y ajustar el porcentaje de comisión cobrado por tu banco durante las transacciones internacionales. Esta función te permite calcular el precio final de un artículo o servicio, teniendo en cuenta no solo el tipo de cambio, sino también las tarifas bancarias asociadas. La aplicación se actualiza automáticamente cuando estás conectado a Internet, asegurando conversiones siempre precisas y actualizadas. ¡No viajes más sin RealPrice! Asegúrate de saber exactamente cuánto gastarás en tu moneda preferida, teniendo en cuenta las tarifas de conversión de tu banco. <a href=#TODO>Descarga RealPrice</a> hoy mismo y viaja con tranquilidad.
+RealPrice es una aplicación de conversión de divisas indispensable para los viajeros preocupados por conocer el costo real de los objetos en una moneda extranjera. Con RealPrice, puedes comparar fácilmente los tipos de cambio entre dos monedas y ajustar el porcentaje de comisión cobrado por tu banco durante las transacciones internacionales. Esta función te permite calcular el precio final de un artículo o servicio, teniendo en cuenta no solo el tipo de cambio, sino también las tarifas bancarias asociadas. La aplicación se actualiza automáticamente cuando estás conectado a Internet, asegurando conversiones siempre precisas y actualizadas. ¡No viajes más sin RealPrice! Asegúrate de saber exactamente cuánto gastarás en tu moneda preferida, teniendo en cuenta las tarifas de conversión de tu banco. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Descarga RealPrice</a> hoy mismo y viaja con tranquilidad.
 
 ## Funcionamiento
 
@@ -63,13 +67,13 @@ RealPrice es una aplicación de conversión de divisas indispensable para los vi
 Idiomas disponibles:
 
 - :fr: Francés
-- :uk: Inglés _(próximamente)_
-- :kr: Coreano _(próximamente)_
-- :jp: Japonés _(próximamente)_
-- :cn: Chino _(próximamente)_
-- :it: Italiano _(próximamente)_
-- :es: Español _(próximamente)_
-- :ru: Ruso _(próximamente)_
-- :de: Alemán _(próximamente)_
+- :uk: Inglés
+- :kr: Coreano
+- :jp: Japonés
+- :cn: Chino
+- :it: Italiano
+- :es: Español
+- :ru: Ruso
+- :de: Alemán
 
 _Si quieres que la aplicación se traduzca a tu idioma o si hay algún problema de traducción en el README, avísanos dejando un <a href="https://github.com/MathieuMarthy/RealPrice/issues/1">mensaje en Issues</a>._
