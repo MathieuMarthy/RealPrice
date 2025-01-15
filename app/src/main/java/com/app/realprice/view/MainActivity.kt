@@ -11,7 +11,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -83,13 +82,7 @@ class MainActivity : AppCompatActivity() {
             // update the currency exchange rate if it's not already updated today
             this.requestInProcess = true
             this.sendStat()
-            // toast message
-            val toast = Toast.makeText(
-                applicationContext,
-                "update",
-                Toast.LENGTH_SHORT
-            )
-            toast.show()
+
             this.currencyManagerDBService.updateExchangeRate {
                 this.currencyManagerDBService = CurrencyManagerDBService(this)
                 this.requestInProcess = false
@@ -389,7 +382,6 @@ class MainActivity : AppCompatActivity() {
      * @return Boolean - True if the currency exchange rate has already been updated today, False otherwise
      */
     private fun alreadyUpdateToday(): Boolean {
-        return false
         val now = LocalDateTime.now()
         val lastUpdateDate = this.currencyManagerDBService.getLastUpdateDate() ?: return false
 
