@@ -1,6 +1,5 @@
 package com.app.realprice.view
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.ConnectivityManager
@@ -323,9 +322,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // currency symbol
         val symbol = input.findViewById<TextView>(R.id.currency_symbol)
         symbol.text = currency.symbol
 
+        // currency flag
         val imageFlag = input.findViewById<ImageView>(R.id.currency_flag)
         val resId = this.resources.getIdentifier(currency.flag, "drawable", this.packageName)
         if (resId != 0) {
@@ -333,6 +334,10 @@ class MainActivity : AppCompatActivity() {
         } else {
             // imageButton.setImageResource(R.drawable.ic_default_flag)
         }
+
+        // currency code
+        val code = input.findViewById<Button>(R.id.currency_input_button_change_currency)
+        code.text = currency.code
     }
 
     /**
