@@ -17,6 +17,7 @@
     <string name="retry">다시 시도</string>
     <string name="no_internet">인터넷 없음</string>
     <string name="enable_internet_to_update">데이터를 초기화하려면 인터넷을 활성화하세요</string>
+    <string name="close_window">창 닫기</string>
 
     <string name="EUR">유로</string>
     <string name="ALL">레크</string>
