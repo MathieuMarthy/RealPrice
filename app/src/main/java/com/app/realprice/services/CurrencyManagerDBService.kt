@@ -18,7 +18,7 @@ class CurrencyManagerDBService(
     private val popularCurrency: List<Currency>
 
     init {
-        val popularCodes = listOf("USD", "EUR", "JPY", "GBP")
+        val popularCodes = listOf("USD", "EUR", "JPY", "GBP", "CNY")
         this.popularCurrency = this.currencies.filter { it.code in popularCodes }
     }
 
