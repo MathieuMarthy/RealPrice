@@ -46,6 +46,8 @@ class ChooseCurrencyAdapter(
             // set texts
             holder.symbol.text = item.symbol
             holder.name.text = item.getName(this.context)
+            holder.flag.text = item.flag
+
 
             // set click listener
             holder.root.setOnClickListener {
@@ -60,5 +62,6 @@ class ChooseCurrencyAdapter(
         val symbol: TextView = view.findViewById(R.id.item_choose_currency_symbol)
         val name: TextView = view.findViewById(R.id.item_choose_currency_name)
         val root: View = view.findViewById(R.id.item_choose_currency_root)
+        val flag: TextView = view.findViewById(R.id.item_choose_currency_flag)
     }
 }
