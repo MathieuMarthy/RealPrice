@@ -17,6 +17,7 @@
     <string name="retry">Riprova</string>
     <string name="no_internet">Nessuna connessione</string>
     <string name="enable_internet_to_update">Abilita internet una volta per\ninizializzare i dati</string>
+    <string name="close_window">chiudi finestra</string>
 
     <string name="EUR">Euro</string>
     <string name="ALL">Lek</string>

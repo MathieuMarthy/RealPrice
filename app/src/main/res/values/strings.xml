@@ -18,6 +18,7 @@
     <string name="retry">Retry</string>
     <string name="no_internet">No internet</string>
     <string name="enable_internet_to_update">Activate internet once to\ninitialize data</string>
+    <string name="close_window">close window</string>
 
     <string name="EUR">Euro</string>
     <string name="ALL">Lek</string>

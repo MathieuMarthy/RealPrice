@@ -4,7 +4,7 @@
     android:id="@+id/item_choose_currency_root"
     android:layout_width="match_parent"
     android:paddingHorizontal="30sp"
-    android:layout_height="200sp">
+    android:layout_height="50sp">
 
     <TextView
         android:id="@+id/item_choose_currency_symbol"

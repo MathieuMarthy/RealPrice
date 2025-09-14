@@ -17,6 +17,7 @@
     <string name="retry">重试</string>
     <string name="no_internet">无网络连接</string>
     <string name="enable_internet_to_update">请启用一次网络以初始化数据</string>
+    <string name="close_window">关闭窗口</string>
 
     <string name="EUR">欧元</string>
     <string name="ALL">阿尔尼克雷克</string>

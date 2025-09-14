@@ -17,6 +17,7 @@
     <string name="retry">再試行</string>
     <string name="no_internet">インターネット接続なし</string>
     <string name="enable_internet_to_update">データを初期化するには\nインターネットを有効にしてください</string>
+    <string name="close_window">ウィンドウを閉じる</string>
 
     <string name="EUR">ユーロ</string>
     <string name="ALL">レク</string>

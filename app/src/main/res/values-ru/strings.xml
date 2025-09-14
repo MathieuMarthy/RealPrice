@@ -17,6 +17,7 @@
     <string name="retry">Повторить</string>
     <string name="no_internet">Нет интернета</string>
     <string name="enable_internet_to_update">Включите интернет, чтобы\nинициализировать данные</string>
+    <string name="close_window">закрыть окно</string>
 
     <string name="EUR">Евро</string>
     <string name="ALL">Лек</string>
