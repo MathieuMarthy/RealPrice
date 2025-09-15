@@ -9,8 +9,13 @@ class Currency(
     val flag: String = ""
 ) {
     fun getName(context: Context): String {
-        val resourceId = context.resources.getIdentifier(this.code, "string", context.packageName)
-        return context.getString(resourceId)
+        try {
+            val resourceId =
+                context.resources.getIdentifier(this.code, "string", context.packageName)
+            return context.getString(resourceId)
+        } catch (_: Exception) {
+            return this.code
+        }
     }
 
     override fun equals(other: Any?): Boolean {

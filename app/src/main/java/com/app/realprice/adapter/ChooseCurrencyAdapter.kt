@@ -38,7 +38,7 @@ class ChooseCurrencyAdapter(
         return if (position == 0) VIEW_TYPE_HEADER else VIEW_TYPE_CURRENCY
     }
 
-    override fun getItemCount(): Int = this.currencies.size + 1
+    override fun getItemCount(): Int = this.currencies.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (holder is CurrencyViewHolder) {
@@ -57,7 +57,7 @@ class ChooseCurrencyAdapter(
             if (resId != 0) {
                 holder.flag.setImageResource(resId)
             } else {
-                // imageButton.setImageResource(R.drawable.ic_default_flag)
+                holder.flag.setImageResource(R.drawable.unknow)
             }
 
 

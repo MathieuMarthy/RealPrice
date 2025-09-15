@@ -38,7 +38,7 @@ class CurrencyManagerDBService(
                         code.key,
                         currency["symbol"] ?: "",
                         code.value,
-                        flag = currency["flag"] ?: ""
+                        flag = if (currency["code"] != null) "_" + currency["code"]?.lowercase() else ""
                     )
                 )
             }
