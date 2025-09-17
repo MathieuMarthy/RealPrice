@@ -1,5 +1,5 @@
 <p align="center" >
-    <img src="./asset/icon/icon_rounded.png" width=200 />
+    <img src="../asset/icon/icon_rounded.png" width=200 />
 </p>
 
 <h3 align="center">RealPrice</h3>
