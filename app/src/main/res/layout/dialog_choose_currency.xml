@@ -3,28 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@drawable/rounded_rectangle"
     android:id="@+id/dialog_root">
-
-    <View
-        android:id="@+id/dialog_view"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-
-        android:background="@drawable/rounded_rectangle" />
 
     <ImageButton
         android:id="@+id/dialog_choose_currency_close_button"
         android:layout_width="20dp"
         android:layout_height="25dp"
         android:background="@null"
+        android:contentDescription="@string/close_window"
         android:scaleType="fitCenter"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/dialog_view"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dialog_view"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.025"
         app:srcCompat="@drawable/close" />
 
@@ -33,25 +27,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choose_currency"
-
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/dialog_choose_currency_close_button"
         app:layout_constraintEnd_toStartOf="@+id/dialog_choose_currency_close_button"
         app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="@+id/dialog_view"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/dialog_choose_currency_close_button"
         app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/popular_currencies"
-        android:textSize="18sp"
-
-        app:layout_constraintStart_toStartOf="@+id/dialog_choose_currency_title"
-        app:layout_constraintTop_toBottomOf="@+id/dialog_choose_currency_title" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -79,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".16" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dialog_choose_currency_rv_all_currencies"
@@ -87,7 +69,9 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

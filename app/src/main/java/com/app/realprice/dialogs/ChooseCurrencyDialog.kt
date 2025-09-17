@@ -3,9 +3,9 @@ package com.app.realprice.dialogs
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.view.View
 import android.widget.ImageButton
+import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.realprice.R
@@ -38,8 +38,8 @@ class ChooseCurrencyDialog {
                 context.getColor(R.color.true_white)
             }
 
-            val layout = dialog.findViewById<View>(R.id.dialog_view)
-            layout.setBackgroundColor(color)
+            val layout = dialog.findViewById<View>(R.id.dialog_root)
+            layout.backgroundTintList = android.content.res.ColorStateList.valueOf(color)
 
             // close button
             val closeBtn =
@@ -48,27 +48,40 @@ class ChooseCurrencyDialog {
                 dialog.dismiss()
             }
 
+            val currenciesWithHeader = currencies.toMutableList()
+            currenciesWithHeader.add(
+                0,
+                Currency(
+                    "",
+                    "header",
+                    0.0,
+                )
+            ) // add a fake currency as header
+
             val allCurrenciesRecyclerView =
                 dialog.findViewById<RecyclerView>(R.id.dialog_choose_currency_rv_all_currencies)
             val allCurrenciesAdapter = ChooseCurrencyAdapter(
-                currencies,
+                currenciesWithHeader,
                 context
             ) {
                 dialog.dismiss()
                 callback(it)
             }
 
+            // set currencies
             allCurrenciesRecyclerView.addItemDecoration(
                 ChooseCurrencyItemDecorator(
                     context,
-                    currencies,
+                    currenciesWithHeader,
                     actualSelectedCurrency
                 )
             )
+
+            // add a limiter between popular currencies and all currencies
             allCurrenciesRecyclerView.addItemDecoration(
                 PopularLimiterItemDecoration(
                     context,
-                    popularSize
+                    popularSize + 1 // +1 because of the header
                 )
             )
             allCurrenciesRecyclerView.adapter = allCurrenciesAdapter
@@ -86,7 +99,7 @@ class ChooseCurrencyDialog {
                 window.setLayout(width, height)
 
                 // Définir le fond de la fenêtre de dialogue sur transparent
-                window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                window.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
             }
         }
     }

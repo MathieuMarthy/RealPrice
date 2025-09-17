@@ -5,11 +5,17 @@ import android.content.Context
 class Currency(
     val code: String,
     val symbol: String,
-    val rate: Double
+    val rate: Double,
+    val flag: String = ""
 ) {
     fun getName(context: Context): String {
-        val resourceId = context.resources.getIdentifier(this.code, "string", context.packageName)
-        return context.getString(resourceId)
+        try {
+            val resourceId =
+                context.resources.getIdentifier(this.code, "string", context.packageName)
+            return context.getString(resourceId)
+        } catch (_: Exception) {
+            return this.code
+        }
     }
 
     override fun equals(other: Any?): Boolean {
@@ -20,6 +26,6 @@ class Currency(
         return false
     }
     override fun toString(): String {
-        return "Currency(code='$code', symbol='$symbol', rate=$rate)"
+        return "Currency(code='$code', symbol='$symbol', rate=$rate, flag='$flag')"
     }
 }

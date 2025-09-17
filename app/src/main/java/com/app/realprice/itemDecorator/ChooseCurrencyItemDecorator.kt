@@ -11,7 +11,7 @@ import com.app.realprice.services.ThemeService
 
 class ChooseCurrencyItemDecorator(
     context: Context,
-    private val currencies: List<Currency>,
+    private val currencies: List<Currency>, // List of all currencies including the header
     private val actualSelectedCurrency: Currency
 ) : RecyclerView.ItemDecoration() {
 
@@ -24,7 +24,7 @@ class ChooseCurrencyItemDecorator(
         val left = parent.paddingLeft + 40
         val right = parent.width - parent.paddingRight - 40
 
-        for (i in 0 until parent.childCount) {
+        for (i in 1 until parent.childCount) { // start at 1 to skip the header
             val child = parent.getChildAt(i)
             // We retrieve the currency corresponding to the current item
             val currency = currencies[parent.getChildAdapterPosition(child)]

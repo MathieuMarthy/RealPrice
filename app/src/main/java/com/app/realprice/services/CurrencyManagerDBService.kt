@@ -18,7 +18,7 @@ class CurrencyManagerDBService(
     private val popularCurrency: List<Currency>
 
     init {
-        val popularCodes = listOf("USD", "EUR", "JPY", "GBP")
+        val popularCodes = listOf("USD", "EUR", "JPY", "GBP", "CNY")
         this.popularCurrency = this.currencies.filter { it.code in popularCodes }
     }
 
@@ -37,7 +37,8 @@ class CurrencyManagerDBService(
                     Currency(
                         code.key,
                         currency["symbol"] ?: "",
-                        code.value
+                        code.value,
+                        flag = if (currency["code"] != null) "_" + currency["code"]?.lowercase() else ""
                     )
                 )
             }

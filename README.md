@@ -1,10 +1,10 @@
 <p align="center" >
-    <img src="./asset/icon/icon_rounded.png" width=200 />
+    <img src="../asset/icon/icon_rounded.png" width=200 />
 </p>
 
 <h3 align="center">RealPrice</h3>
 
-<p align="center"><i>par</i> <b><a href="https://github.com/MathieuMarthy">MathieuMarthy</a></b> <i>&</i> <b><a href="https://github.com/Game-K-Hack">Game K</a></b></p>
+<p align="center"><i>by</i> <b><a href="https://github.com/MathieuMarthy">MathieuMarthy</a></b> <i>&</i> <b><a href="https://github.com/Game-K-Hack">Game K</a></b></p>
 
 <br>
 
@@ -22,15 +22,15 @@
 
 <p align="center">
   <a href="#description">Description</a> •
-  <a href="#fonctionnement">Fonctionnement</a> •
-  <a href="#paramétrage">Paramétrage</a>
+  <a href="#how-it-works">How it works</a> •
+  <a href="#configuration">Configuration</a>
 </p>
 
 <br>
 
 <div align="center">
     <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">
-        <img src="https://img.shields.io/badge/T%C3%A9l%C3%A9charger%20l'APK-4EAA25?style=for-the-badge&logo=android&logoColor=white" alt="Télécharger l'APK"/>
+        <img src="https://img.shields.io/badge/Download%20APK-4EAA25?style=for-the-badge&logo=android&logoColor=white" alt="Download APK"/>
     </a>
     <a href="https://play.google.com/store/apps/details?id=com.app.realprice">
         <img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white" alt="Play Store"/>
@@ -41,8 +41,8 @@
 <br>
 
 <div align="center">
-    <b>:fr: Français</b> |
-    <a href="./documentation/README.uk.md">:uk: English</a> |
+    <a href="./documentation/README.fr.md">:fr: Français</a> |
+    <b>:uk: English</b> |
     <a href="./documentation/README.kr.md">:kr: 한국어</a> |
     <a href="./documentation/README.jp.md">:jp: 日本語</a> |
     <a href="./documentation/README.cn.md">:cn: 中文</a> |
@@ -54,17 +54,32 @@
 
 ## Description
 
-RealPrice est une application de conversion de devises indispensable pour les voyageurs soucieux de connaître le coût réel des objets dans une monnaie étrangère. Avec RealPrice, vous pouvez facilement comparer les taux de change entre deux monnaies et ajuster le pourcentage de commission prélevé par votre banque lors des transactions internationales. Cette fonctionnalité vous permet de calculer le prix final d'un article ou d'un service, en prenant en compte non seulement le taux de change, mais aussi les frais bancaires associés. L'application se met automatiquement à jour dès que vous êtes connecté à Internet, garantissant ainsi des conversions toujours précises et à jour. Ne partez plus en voyage sans RealPrice ! Soyez assuré de savoir exactement combien vous dépenserez dans votre devise de choix, en tenant compte des frais de conversion de votre banque. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Téléchargez RealPrice</a> dès aujourd'hui et voyagez en toute sérénité.
+RealPrice is a currency conversion app essential for travelers who want to know the real cost of items in a foreign currency. With RealPrice, you can easily compare exchange rates between two currencies and adjust the commission percentage charged by your bank during international transactions. This feature allows you to calculate the final price of an item or service, taking into account not only the exchange rate, but also the associated banking fees. The app automatically updates as soon as you are connected to the Internet, ensuring always accurate and up-to-date conversions. Never travel again without RealPrice! Be sure to know exactly how much you'll spend in your currency of choice, accounting for your bank's conversion fees. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Download RealPrice</a> today and travel with peace of mind.
 
-## Fonctionnement
+## How it works
 
-#TODO
+RealPrice operates on a simple yet effective principle to provide you with accurate and realistic currency conversions:
 
-## Paramétrage
+### 🔄 **Real-time conversion**
+- The app features **200+ global currencies** with their current exchange rates
+- Exchange data updates automatically as soon as you are connected to the Internet
+- In offline mode, the app uses the latest downloaded rates with indication of the last update date
 
-#TODO
+### 💰 **Intuitive interface**
+- **Two input fields** allow instant conversion in both directions
+- **Easy currency selection** via a dropdown menu with flags and symbols
+- **Bidirectional conversion**: type an amount in any field to see automatic conversion
+- **Quick exchange**: if you select a currency already in use, the two currencies automatically swap
 
-Languge disponible:
+### 📱 **Advanced features**
+- **Adaptive dark/light mode**
+- **Multilingual support** (9 languages available)
+- **Mobile data management** (enable/disable updates on mobile network)
+
+## Configuration
+
+
+## Available languages:
 
 - :fr: Français
 - :uk: English
@@ -76,4 +91,4 @@ Languge disponible:
 - :ru: Русский
 - :de: Deutsch
 
-_Si vous voulez que l'application soit traduit dans votre langue ou qu'il y a un problème de traduction dans le README, dite-le nous en laissent un <a href="https://github.com/MathieuMarthy/RealPrice/issues/1">message dans Issue</a>._
+_If you want the application to be translated into your language or there is a translation problem in the README, let us know by leaving a <a href="https://github.com/MathieuMarthy/RealPrice/issues/1">message in Issues</a>._
