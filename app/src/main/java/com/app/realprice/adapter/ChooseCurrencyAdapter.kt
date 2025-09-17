@@ -3,6 +3,7 @@ package com.app.realprice.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.app.realprice.R
@@ -37,7 +38,7 @@ class ChooseCurrencyAdapter(
         return if (position == 0) VIEW_TYPE_HEADER else VIEW_TYPE_CURRENCY
     }
 
-    override fun getItemCount(): Int = this.currencies.size + 1
+    override fun getItemCount(): Int = this.currencies.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (holder is CurrencyViewHolder) {
@@ -46,6 +47,19 @@ class ChooseCurrencyAdapter(
             // set texts
             holder.symbol.text = item.symbol
             holder.name.text = item.getName(this.context)
+
+            // currency flag
+            val resId = this.context.resources.getIdentifier(
+                item.flag,
+                "drawable",
+                this.context.packageName
+            )
+            if (resId != 0) {
+                holder.flag.setImageResource(resId)
+            } else {
+                holder.flag.setImageResource(R.drawable.unknow)
+            }
+
 
             // set click listener
             holder.root.setOnClickListener {
@@ -60,5 +74,6 @@ class ChooseCurrencyAdapter(
         val symbol: TextView = view.findViewById(R.id.item_choose_currency_symbol)
         val name: TextView = view.findViewById(R.id.item_choose_currency_name)
         val root: View = view.findViewById(R.id.item_choose_currency_root)
+        val flag: ImageView = view.findViewById(R.id.item_choose_currency_flag)
     }
 }

@@ -38,8 +38,8 @@ class ChooseCurrencyDialog {
                 context.getColor(R.color.true_white)
             }
 
-            val layout = dialog.findViewById<View>(R.id.dialog_view)
-            layout.setBackgroundColor(color)
+            val layout = dialog.findViewById<View>(R.id.dialog_root)
+            layout.backgroundTintList = android.content.res.ColorStateList.valueOf(color)
 
             // close button
             val closeBtn =
