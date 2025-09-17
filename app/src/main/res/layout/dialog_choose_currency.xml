@@ -3,15 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@drawable/rounded_rectangle"
     android:id="@+id/dialog_root">
-
-    <View
-        android:id="@+id/dialog_view"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-
-        android:background="@drawable/rounded_rectangle" />
 
     <ImageButton
         android:id="@+id/dialog_choose_currency_close_button"
@@ -22,10 +15,10 @@
         android:scaleType="fitCenter"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/dialog_view"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dialog_view"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.025"
         app:srcCompat="@drawable/close" />
 
@@ -34,12 +27,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choose_currency"
-
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/dialog_choose_currency_close_button"
         app:layout_constraintEnd_toStartOf="@+id/dialog_choose_currency_close_button"
         app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="@+id/dialog_view"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/dialog_choose_currency_close_button"
         app:layout_constraintVertical_bias="1.0" />
 

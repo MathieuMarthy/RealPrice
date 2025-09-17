@@ -1980,21 +1980,6 @@
     "numToBasic": 100
   },
   {
-    "code": "SLL",
-    "name": "Sierra Leonean Leone",
-    "demonym": "Sierra Leonean",
-    "majorSingle": "Leone",
-    "majorPlural": "Leones",
-    "ISOnum": 694,
-    "symbol": "Le",
-    "symbolNative": "Le",
-    "minorSingle": "Cent",
-    "minorPlural": "Cents",
-    "ISOdigits": 2,
-    "decimals": 2,
-    "numToBasic": 100
-  },
-  {
     "code": "SLS",
     "name": "Somaliland Shilling",
     "demonym": "Somaliland",
