@@ -58,13 +58,40 @@ RealPrice est une application de conversion de devises indispensable pour les vo
 
 ## Fonctionnement
 
-#TODO
+RealPrice fonctionne selon un principe simple mais efficace pour vous offrir des conversions de devises précises et réalistes :
+
+### 🔄 **Conversion en temps réel**
+- L'application dispose de **200+ devises mondiales** avec leurs taux de change actuels
+- Les données de change se mettent à jour automatiquement dès que vous êtes connecté à Internet
+- En mode hors ligne, l'application utilise les derniers taux téléchargés avec indication de la date de dernière mise à jour
+
+### 💰 **Interface intuitive**
+- **Deux champs de saisie** permettent de convertir instantanément dans les deux sens
+- **Sélection facile des devises** via un menu déroulant avec drapeaux et symboles
+- **Conversion bidirectionnelle** : tapez un montant dans n'importe quel champ pour voir la conversion automatique
+- **Échange rapide** : si vous sélectionnez une devise déjà utilisée, les deux devises s'échangent automatiquement
+
+
+### 📱 **Fonctionnalités avancées**
+- **Mode sombre/clair** adaptatif
+- **Support multilingue** (9 langues disponibles)
+- **Gestion des données mobiles** (activation/désactivation des mises à jour sur réseau mobile)
+
+### 🌐 **Mise à jour automatique**
+- Vérification quotidienne des taux de change via Internet
+- Sauvegarde locale des données pour un fonctionnement hors ligne
+- Indication visuelle du statut de connexion
 
 ## Paramétrage
 
-#TODO
+### 🏦 **Calcul des frais bancaires**
+RealPrice va au-delà d'une simple conversion en intégrant :
+- **Taux de commission personnalisable** (pourcentage variable selon votre banque)
+- **Frais fixes** (montant fixe par transaction)
+- **Commission plafonnée** (limite maximale des frais)
+- **Devise de facturation** (choix de la devise sur laquelle s'appliquent les frais)
 
-Languge disponible:
+## Langues disponibles:
 
 - :fr: Français
 - :uk: English
