@@ -22,7 +22,7 @@
 
 <p align="center">
   <a href="#descrizione">Descrizione</a> •
-  <a href="#funzionamento">Funzionamento</a> •
+  <a href="#come-funziona">Come funziona</a> •
   <a href="#configurazione">Configurazione</a>
 </p>
 
@@ -41,39 +41,65 @@
 <br>
 
 <div align="center">
-    <a href="../README.md">:fr: Français</a> |
-    <a href="../documentation/README.uk.md">:uk: English</a> |
-    <a href="../documentation/README.kr.md">:kr: 한국어</a> |
-    <a href="../documentation/README.jp.md">:jp: 日本語</a> |
-    <a href="../documentation/README.cn.md">:cn: 中文</a> |
+    <a href="./README.fr.md">:fr: Français</a> |
+    <a href="../README.md">:uk: English</a> |
+    <a href="./README.kr.md">:kr: 한국어</a> |
+    <a href="./README.jp.md">:jp: 日本語</a> |
+    <a href="./README.cn.md">:cn: 中文</a> |
     <b>:it: Italiano</b> |
-    <a href="../documentation/README.es.md">:es: Español</a> |
-    <a href="../documentation/README.ru.md">:ru: Русский</a> |
-    <a href="../documentation/README.de.md">:de: Deutsch</a>
+    <a href="./README.es.md">:es: Español</a> |
+    <a href="./README.ru.md">:ru: Русский</a> |
+    <a href="./README.de.md">:de: Deutsch</a>
 </div>
 
 ## Descrizione
 
-RealPrice è un'applicazione per la conversione delle valute indispensabile per i viaggiatori che desiderano conoscere il costo effettivo degli oggetti in una valuta straniera. Con RealPrice, puoi facilmente confrontare i tassi di cambio tra due valute e regolare la percentuale di commissione addebitata dalla tua banca durante le transazioni internazionali. Questa funzionalità ti consente di calcolare il prezzo finale di un articolo o di un servizio, tenendo conto non solo del tasso di cambio, ma anche delle spese bancarie associate. L'applicazione si aggiorna automaticamente non appena sei connesso a Internet, garantendo conversioni sempre precise e aggiornate. Non partire mai in viaggio senza RealPrice! Assicurati di sapere esattamente quanto spenderai nella tua valuta di scelta, tenendo conto delle spese di conversione della tua banca. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Scarica RealPrice</a> oggi stesso e viaggia con tranquillità.
+RealPrice è un'app di conversione valuta essenziale per i viaggiatori che vogliono conoscere il costo reale degli articoli in una valuta straniera. Con RealPrice, puoi facilmente confrontare i tassi di cambio tra due valute e regolare la percentuale di commissione addebitata dalla tua banca durante le transazioni internazionali. Questa funzionalità ti consente di calcolare il prezzo finale di un articolo o servizio, tenendo conto non solo del tasso di cambio, ma anche delle commissioni bancarie associate. L'app si aggiorna automaticamente non appena sei connesso a Internet, garantendo conversioni sempre accurate e aggiornate. Non viaggiare mai più senza RealPrice! Assicurati di sapere esattamente quanto spenderai nella tua valuta di scelta, tenendo conto delle commissioni di conversione della tua banca. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Scarica RealPrice</a> oggi stesso e viaggia con tranquillità.
 
-## Funzionamento
+## Come funziona
 
-#TODO
+RealPrice opera secondo un principio semplice ma efficace per offrirti conversioni valutarie accurate e realistiche:
+
+### 🔄 **Conversione in tempo reale**
+- L'app dispone di **oltre 200 valute globali** con i loro tassi di cambio attuali
+- I dati di cambio si aggiornano automaticamente non appena sei connesso a Internet
+- In modalità offline, l'app utilizza gli ultimi tassi scaricati con indicazione della data dell'ultimo aggiornamento
+
+### 💰 **Interfaccia intuitiva**
+- **Due campi di input** consentono la conversione istantanea in entrambe le direzioni
+- **Selezione facile delle valute** tramite un menu a discesa con bandiere e simboli
+- **Conversione bidirezionale**: digita un importo in qualsiasi campo per vedere la conversione automatica
+- **Scambio rapido**: se selezioni una valuta già in uso, le due valute si scambiano automaticamente
+
+### 📱 **Funzionalità avanzate**
+- **Modalità scura/chiara adattiva**
+- **Supporto multilingue** (9 lingue disponibili)
+- **Gestione dati mobili** (attiva/disattiva aggiornamenti su rete mobile)
+
+### 🌐 **Aggiornamento automatico**
+- Verifica quotidiana dei tassi di cambio tramite Internet
+- Backup locale dei dati per il funzionamento offline
+- Indicazione visiva dello stato della connessione
 
 ## Configurazione
 
-#TODO
+### 🏦 **Calcolo delle commissioni bancarie**
+RealPrice va oltre la semplice conversione integrando:
+- **Tasso di commissione personalizzabile** (percentuale variabile secondo la tua banca)
+- **Commissioni fisse** (importo fisso per transazione)
+- **Commissione con limite massimo** (limite massimo delle commissioni)
+- **Valuta di fatturazione** (scelta della valuta a cui si applicano le commissioni)
 
-Lingue disponibili:
+## Lingue disponibili:
 
-- :fr: Francese
-- :uk: Inglese
-- :kr: Coreano
-- :jp: Giapponese
-- :cn: Cinese
+- :fr: Français
+- :uk: English
+- :kr: 한국어
+- :jp: 日本語
+- :cn: 中文
 - :it: Italiano
-- :es: Spagnolo
-- :ru: Russo
-- :de: Tedesco
+- :es: Español
+- :ru: Русский
+- :de: Deutsch
 
-_Se si desidera che l'applicazione sia tradotta nella propria lingua o se c'è un problema di traduzione nel README, fammelo sapere lasciando un <a href="https://github.com/MathieuMarthy/RealPrice/issues/1">messaggio in Issue</a>._
+_Se vuoi che l'applicazione sia tradotta nella tua lingua o c'è un problema di traduzione nel README, faccelo sapere lasciando un <a href="https://github.com/MathieuMarthy/RealPrice/issues/1">messaggio nelle Issues</a>._

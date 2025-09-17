@@ -22,8 +22,8 @@
 
 <p align="center">
   <a href="#설명">설명</a> •
-  <a href="#운영">운영</a> •
-  <a href="#설치">설치</a>
+  <a href="#작동-방식">작동 방식</a> •
+  <a href="#설정">설정</a>
 </p>
 
 <br>
@@ -41,30 +41,56 @@
 <br>
 
 <div align="center">
-    <a href="../README.md">:fr: Français</a> |
-    <a href="../documentation/README.uk.md">:uk: English</a> |
+    <a href="./README.fr.md">:fr: Français</a> |
+    <a href="../README.md">:uk: English</a> |
     <b>:kr: 한국어</b> |
-    <a href="../documentation/README.jp.md">:jp: 日本語</a> |
-    <a href="../documentation/README.cn.md">:cn: 中文</a> |
-    <a href="../documentation/README.it.md">:it: Italiano</a> |
-    <a href="../documentation/README.es.md">:es: Español</a> |
-    <a href="../documentation/README.ru.md">:ru: Русский</a> |
-    <a href="../documentation/README.de.md">:de: Deutsch</a>
+    <a href="./README.jp.md">:jp: 日本語</a> |
+    <a href="./README.cn.md">:cn: 中文</a> |
+    <a href="./README.it.md">:it: Italiano</a> |
+    <a href="./README.es.md">:es: Español</a> |
+    <a href="./README.ru.md">:ru: Русский</a> |
+    <a href="./README.de.md">:de: Deutsch</a>
 </div>
 
 ## 설명
 
-RealPrice는 외국 통화에서 물건의 실제 비용을 알고 싶어하는 여행객들에게 필수적인 환율 변환 애플리케이션입니다. RealPrice를 사용하면 두 통화 간의 환율을 쉽게 비교하고 국제 거래 중에 은행이 부과하는 수수료 비율을 조정할 수 있습니다. 이 기능을 사용하면 환율뿐만 아니라 관련 은행 수수료도 고려하여 물건이나 서비스의 최종 가격을 계산할 수 있습니다. 인터넷에 연결되어 있을 때 애플리케이션은 자동으로 업데이트되어 정확하고 최신의 변환을 보장합니다. RealPrice 없이는 더 이상 여행하지 마세요! 선택한 통화로 얼마나 지출할지 정확히 알아야 하므로 은행의 환전 수수료를 고려하십시오. 오늘 RealPrice를 <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">다운로드</a>하여 안심하고 여행하세요.
+RealPrice는 여행자들이 외화로 표시된 물건의 실제 비용을 알고 싶어하는 사람들에게 필수적인 환율 변환 앱입니다. RealPrice를 사용하면 두 통화 간의 환율을 쉽게 비교하고 국제 거래 시 은행에서 부과하는 수수료 비율을 조정할 수 있습니다. 이 기능을 통해 환율뿐만 아니라 관련 은행 수수료까지 고려하여 상품이나 서비스의 최종 가격을 계산할 수 있습니다. 앱은 인터넷에 연결되면 자동으로 업데이트되어 항상 정확하고 최신의 환율 변환을 보장합니다. 더 이상 RealPrice 없이 여행하지 마세요! 은행의 환전 수수료를 고려하여 선택한 통화로 정확히 얼마를 지출할지 확실히 알 수 있습니다. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">RealPrice를 다운로드</a>하고 안심하고 여행하세요.
 
-## 운영
+## 작동 방식
 
-#TODO
+RealPrice는 정확하고 현실적인 환율 변환을 제공하기 위해 간단하면서도 효과적인 원리로 작동합니다:
 
-## 설치
+### 🔄 **실시간 변환**
+- 앱은 현재 환율과 함께 **200개 이상의 글로벌 통화**를 제공합니다
+- 인터넷에 연결되는 즉시 환율 데이터가 자동으로 업데이트됩니다
+- 오프라인 모드에서는 마지막 업데이트 날짜 표시와 함께 최신 다운로드된 환율을 사용합니다
 
-#TODO
+### 💰 **직관적인 인터페이스**
+- **두 개의 입력 필드**를 통해 양방향으로 즉시 변환할 수 있습니다
+- 플래그와 기호가 있는 드롭다운 메뉴를 통한 **쉬운 통화 선택**
+- **양방향 변환**: 어느 필드에나 금액을 입력하면 자동 변환을 볼 수 있습니다
+- **빠른 교환**: 이미 사용 중인 통화를 선택하면 두 통화가 자동으로 교환됩니다
 
-사용 가능한 언어:
+### 📱 **고급 기능**
+- **적응형 다크/라이트 모드**
+- **다국어 지원** (9개 언어 사용 가능)
+- **모바일 데이터 관리** (모바일 네트워크에서 업데이트 활성화/비활성화)
+
+### 🌐 **자동 업데이트**
+- 인터넷을 통한 환율의 일일 확인
+- 오프라인 작동을 위한 데이터의 로컬 백업
+- 연결 상태의 시각적 표시
+
+## 설정
+
+### 🏦 **은행 수수료 계산**
+RealPrice는 다음을 통합하여 단순한 변환을 뛰어넘습니다:
+- **사용자 정의 가능한 수수료율** (은행에 따른 가변 비율)
+- **고정 수수료** (거래당 고정 금액)
+- **상한 수수료** (수수료의 최대 한도)
+- **청구 통화** (수수료가 적용되는 통화 선택)
+
+## 사용 가능한 언어:
 
 - :fr: Français
 - :uk: English
@@ -76,4 +102,4 @@ RealPrice는 외국 통화에서 물건의 실제 비용을 알고 싶어하는 
 - :ru: Русский
 - :de: Deutsch
 
-_애플리케이션을 사용자 언어로 번역하고 싶거나 README에 번역 문제가 있는 경우, <a href="https://github.com/MathieuMarthy/RealPrice/issues/1">Issue에 메시지를 남겨주세요</a>._
+_앱이 귀하의 언어로 번역되기를 원하거나 README에 번역 문제가 있다면 <a href="https://github.com/MathieuMarthy/RealPrice/issues/1">Issues에 메시지</a>를 남겨 알려주세요._

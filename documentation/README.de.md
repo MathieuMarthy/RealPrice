@@ -22,7 +22,7 @@
 
 <p align="center">
   <a href="#beschreibung">Beschreibung</a> •
-  <a href="#funktionsweise">Funktionsweise</a> •
+  <a href="#wie-es-funktioniert">Wie es funktioniert</a> •
   <a href="#konfiguration">Konfiguration</a>
 </p>
 
@@ -41,39 +41,65 @@
 <br>
 
 <div align="center">
-    <a href="../README.md">:fr: Français</a> |
-    <a href="../documentation/README.uk.md">:uk: English</a> |
-    <a href="../documentation/README.kr.md">:kr: 한국어</a> |
-    <a href="../documentation/README.jp.md">:jp: 日本語</a> |
-    <a href="../documentation/README.cn.md">:cn: 中文</a> |
-    <a href="../documentation/README.it.md">:it: Italiano</a> |
-    <a href="../documentation/README.es.md">:es: Español</a> |
-    <a href="../documentation/README.ru.md">:ru: Русский</a> |
+    <a href="./README.fr.md">:fr: Français</a> |
+    <a href="../README.md">:uk: English</a> |
+    <a href="./README.kr.md">:kr: 한국어</a> |
+    <a href="./README.jp.md">:jp: 日本語</a> |
+    <a href="./README.cn.md">:cn: 中文</a> |
+    <a href="./README.it.md">:it: Italiano</a> |
+    <a href="./README.es.md">:es: Español</a> |
+    <a href="./README.ru.md">:ru: Русский</a> |
     <b>:de: Deutsch</b>
 </div>
 
 ## Beschreibung
 
-RealPrice ist eine unverzichtbare Währungsumrechnungsanwendung für reisefreudige Personen, die den realen Wert von Gegenständen in einer Fremdwährung kennen möchten. Mit RealPrice können Sie einfach die Wechselkurse zwischen zwei Währungen vergleichen und den Prozentsatz der von Ihrer Bank bei internationalen Transaktionen erhobenen Gebühr anpassen. Diese Funktion ermöglicht es Ihnen, den Endpreis eines Artikels oder einer Dienstleistung zu berechnen, wobei nicht nur der Wechselkurs, sondern auch die damit verbundenen Bankgebühren berücksichtigt werden. Die Anwendung wird automatisch aktualisiert, sobald Sie mit dem Internet verbunden sind, um jederzeit genaue und aktuelle Umrechnungen zu gewährleisten. Gehen Sie nicht mehr ohne RealPrice auf Reisen! Seien Sie sicher, genau zu wissen, wie viel Sie in Ihrer Wunschwährung ausgeben werden, unter Berücksichtigung der Umrechnungsgebühren Ihrer Bank. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Laden Sie RealPrice</a> noch heute herunter und reisen Sie sorglos.
+RealPrice ist eine unverzichtbare Währungsumrechnung-App für Reisende, die die echten Kosten von Artikeln in einer Fremdwährung wissen möchten. Mit RealPrice können Sie einfach Wechselkurse zwischen zwei Währungen vergleichen und den Provisionsprozentsatz anpassen, den Ihre Bank bei internationalen Transaktionen erhebt. Diese Funktion ermöglicht es Ihnen, den finalen Preis eines Artikels oder einer Dienstleistung zu berechnen, wobei nicht nur der Wechselkurs, sondern auch die damit verbundenen Bankgebühren berücksichtigt werden. Die App aktualisiert sich automatisch, sobald Sie mit dem Internet verbunden sind, und gewährleistet so immer präzise und aktuelle Umrechnungen. Reisen Sie nie wieder ohne RealPrice! Seien Sie sicher, genau zu wissen, wie viel Sie in Ihrer gewählten Währung ausgeben werden, unter Berücksichtigung der Umrechnungsgebühren Ihrer Bank. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Laden Sie RealPrice</a> noch heute herunter und reisen Sie sorglos.
 
-## Funktionsweise
+## Wie es funktioniert
 
-#TODO
+RealPrice funktioniert nach einem einfachen, aber effektiven Prinzip, um Ihnen genaue und realistische Währungsumrechnungen zu bieten:
+
+### 🔄 **Echtzeitumrechnung**
+- Die App verfügt über **200+ globale Währungen** mit ihren aktuellen Wechselkursen
+- Wechselkursdaten aktualisieren sich automatisch, sobald Sie mit dem Internet verbunden sind
+- Im Offline-Modus nutzt die App die zuletzt heruntergeladenen Kurse mit Anzeige des letzten Aktualisierungsdatums
+
+### 💰 **Intuitive Benutzeroberfläche**
+- **Zwei Eingabefelder** ermöglichen sofortige Umrechnung in beide Richtungen
+- **Einfache Währungsauswahl** über ein Dropdown-Menü mit Flaggen und Symbolen
+- **Bidirektionale Umrechnung**: Geben Sie einen Betrag in jedes Feld ein, um die automatische Umrechnung zu sehen
+- **Schneller Austausch**: Wenn Sie eine bereits verwendete Währung auswählen, tauschen die beiden Währungen automatisch
+
+### 📱 **Erweiterte Funktionen**
+- **Adaptiver Dunkel-/Hellmodus**
+- **Mehrsprachiger Support** (9 Sprachen verfügbar)
+- **Mobile Datenverwaltung** (Aktivierung/Deaktivierung von Updates im Mobilnetz)
+
+### 🌐 **Automatische Updates**
+- Tägliche Überprüfung der Wechselkurse über das Internet
+- Lokale Datensicherung für Offline-Betrieb
+- Visuelle Anzeige des Verbindungsstatus
 
 ## Konfiguration
 
-#TODO
+### 🏦 **Bankgebührenberechnung**
+RealPrice geht über einfache Umrechnung hinaus, indem es integriert:
+- **Anpassbare Provisionssätze** (variabler Prozentsatz je nach Ihrer Bank)
+- **Feste Gebühren** (fester Betrag pro Transaktion)
+- **Gedeckelte Provision** (maximales Limit für Gebühren)
+- **Abrechnungswährung** (Auswahl der Währung, auf die Gebühren angewendet werden)
 
-Verfügbare Sprachen:
+## Verfügbare Sprachen:
 
-- :fr: Französisch
-- :uk: Englisch
-- :kr: Koreanisch
-- :jp: Japanisch
-- :cn: Chinesisch
-- :it: Italienisch
-- :es: Spanisch
-- :ru: Russisch
+- :fr: Français
+- :uk: English
+- :kr: 한국어
+- :jp: 日本語
+- :cn: 中文
+- :it: Italiano
+- :es: Español
+- :ru: Русский
 - :de: Deutsch
 
-_Wenn Sie die Anwendung in Ihre Sprache übersetzt haben möchten oder es ein Problem mit der Übersetzung im README gibt, indem Sie eine <a href="https://github.com/MathieuMarthy/RealPrice/issues/1">Nachricht im Issue</a> hinterlassen._
+_Wenn Sie möchten, dass die Anwendung in Ihre Sprache übersetzt wird oder es ein Übersetzungsproblem im README gibt, lassen Sie es uns wissen, indem Sie eine <a href="https://github.com/MathieuMarthy/RealPrice/issues/1">Nachricht in den Issues</a> hinterlassen._
