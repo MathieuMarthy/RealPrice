@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.app.realprice"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.app.realprice"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 4
         versionName = "1.0.4"
 
