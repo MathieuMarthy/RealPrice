@@ -78,6 +78,43 @@ RealPrice operates on a simple yet effective principle to provide you with accur
 
 ## Configuration
 
+There are several ways to configure the RealPrice app to meet your specific needs. Here's a detailed guide to the available options:
+
+### 📶 **Data management**
+- **Allow mobile data usage**: Enables or disables automatic exchange rate updates via your mobile data. Disabled by default to save your data.
+
+### 🏦 **Banking fees configuration**
+Enable this option to get the real cost of your international transactions:
+
+- **Enable banking fees**: Main switch to take into account your bank's commissions in calculations
+
+#### Fee settings (active only if banking fees are enabled):
+
+- **Commission rate (%)**: Percentage charged by your bank on each transaction
+  - *Example: 2.5% means that for a €100 purchase, you'll pay €2.50 in commission*
+
+- **Fixed fees**: Fixed amount added to each transaction, regardless of the converted amount
+  - *Example: €1.50 fixed fees will be added to each payment, whether you buy for €10 or €1000*
+
+- **Fee application currency**: Select the currency in which your bank charges commissions
+  - *Important: Fees only apply when converting to this currency*
+
+- **Maximum commission**: Banking fees cap (0 = no limit)
+  - *Example: 15.00 to limit fees to €15 maximum per transaction*
+
+### 💡 **How to configure your banking fees?**
+
+1. Check your bank's rate conditions for foreign operations
+2. Enable **"Take into account banking fees"**
+3. Enter the **commission rate** (generally between 1% and 3%)
+4. Add **fixed fees** if your bank applies them
+5. Select the **billing currency** (often your local currency)
+6. Set a **cap** if your bank offers one
+
+### 🌍 **Default currencies**
+The app automatically remembers your last two currencies used for quick access on next startup.
+
+
 
 ## Available languages:
 
