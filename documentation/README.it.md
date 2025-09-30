@@ -9,8 +9,8 @@
 <br>
 
 <div align="center">
-  <a href="https://github.com/MathieuMarthy/RealPrice/releases/tag/1.0.2">
-    <img src="https://img.shields.io/static/v1?label=release&message=v1.0.2&color=blue" alt="Rilascio - v1.0.2" />
+  <a href="https://github.com/MathieuMarthy/RealPrice/releases/tag/1.0.4">
+    <img src="https://img.shields.io/static/v1?label=release&message=v1.0.4&color=blue" alt="Rilascio - v1.0.4" />
   </a>
   <a href="https://www.android.com">
     <img src="https://img.shields.io/static/v1?label=version&message=android&color=green" alt="Versione - Android" />
@@ -22,7 +22,7 @@
 
 <p align="center">
   <a href="#descrizione">Descrizione</a> •
-  <a href="#come-funziona">Come funziona</a> •
+  <a href="#come-funziona-">Come funziona ?</a> •
   <a href="#configurazione">Configurazione</a>
 </p>
 
@@ -54,38 +54,67 @@
 
 ## Descrizione
 
-RealPrice è un'app di conversione valuta essenziale per i viaggiatori che vogliono conoscere il costo reale degli articoli in una valuta straniera. Con RealPrice, puoi facilmente confrontare i tassi di cambio tra due valute e regolare la percentuale di commissione addebitata dalla tua banca durante le transazioni internazionali. Questa funzionalità ti consente di calcolare il prezzo finale di un articolo o servizio, tenendo conto non solo del tasso di cambio, ma anche delle commissioni bancarie associate. L'app si aggiorna automaticamente non appena sei connesso a Internet, garantendo conversioni sempre accurate e aggiornate. Non viaggiare mai più senza RealPrice! Assicurati di sapere esattamente quanto spenderai nella tua valuta di scelta, tenendo conto delle commissioni di conversione della tua banca. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Scarica RealPrice</a> oggi stesso e viaggia con tranquillità.
+RealPrice è un'app di conversione valuta per i viaggiatori che vogliono conoscere il costo reale degli articoli in una valuta straniera. Con RealPrice, puoi facilmente confrontare i tassi di cambio tra due valute e regolare la percentuale di commissione addebitata dalla tua banca durante le transazioni internazionali. Questa funzionalità ti consente di calcolare il prezzo finale di un articolo o servizio, tenendo conto non solo del tasso di cambio, ma anche delle commissioni bancarie associate. L'app si aggiorna automaticamente non appena sei connesso a Internet, garantendo conversioni sempre accurate e aggiornate. Non viaggiare mai più senza RealPrice! Assicurati di sapere esattamente quanto spenderai nella tua valuta di scelta, tenendo conto delle commissioni di conversione della tua banca. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Scarica RealPrice</a> oggi stesso e viaggia con tranquillità.
+<br>
+<br>
+<br>
 
-## Come funziona
+## 💡Come funziona ?
 
 RealPrice opera secondo un principio semplice ma efficace per offrirti conversioni valutarie accurate e realistiche:
 
-### 🔄 **Conversione in tempo reale**
+### Conversione in tempo reale
 - L'app dispone di **oltre 200 valute globali** con i loro tassi di cambio attuali
 - I dati di cambio si aggiornano automaticamente non appena sei connesso a Internet
 - In modalità offline, l'app utilizza gli ultimi tassi scaricati con indicazione della data dell'ultimo aggiornamento
 
-### 💰 **Interfaccia intuitiva**
+### Interfaccia
 - **Due campi di input** consentono la conversione istantanea in entrambe le direzioni
 - **Selezione facile delle valute** tramite un menu a discesa con bandiere e simboli
 - **Conversione bidirezionale**: digita un importo in qualsiasi campo per vedere la conversione automatica
 - **Scambio rapido**: se selezioni una valuta già in uso, le due valute si scambiano automaticamente
 
-### 📱 **Funzionalità avanzate**
-- **Modalità scura/chiara adattiva**
+### Altre funzionalità
+- **Modalità scuro/chiaro adattiva**
 - **Supporto multilingue** (9 lingue disponibili)
-- **Gestione dati mobili** (attiva/disattiva aggiornamenti su rete mobile)
+<br>
+<br>
+<br>
+## ⚙️ Configurazione
 
-### 🌐 **Aggiornamento automatico**
-- Verifica quotidiana dei tassi di cambio tramite Internet
-- Backup locale dei dati per il funzionamento offline
-- Indicazione visiva dello stato della connessione
+Ci sono diversi modi per configurare l'app RealPrice per soddisfare le tue esigenze specifiche. Ecco una guida dettagliata alle opzioni disponibili:
 
-## Configurazione
+### Gestione dei dati
+Puoi attivare o disattivare gli aggiornamenti automatici dei tassi di cambio tramite i tuoi dati mobili. Disabilitato per impostazione predefinita per risparmiare i tuoi dati.
 
-### 🏦 **Calcolo delle commissioni bancarie**
-RealPrice va oltre la semplice conversione integrando:
-- **Tasso di commissione personalizzabile** (percentuale variabile secondo la tua banca)
+### Configurazione delle commissioni bancarie
+Attiva questa opzione per ottenere il costo reale delle tue transazioni internazionali:
+
+#### Impostazioni delle commissioni (attive solo se le commissioni bancarie sono abilitate):
+
+- **Tasso di commissione (%)**: Percentuale addebitata dalla tua banca per ogni transazione
+  - *Esempio: 2,5% significa che per un acquisto di 100€, pagherai 2,50€ di commissione*
+
+- **Commissioni fisse**: Importo fisso aggiunto a ogni transazione, indipendentemente dall'importo convertito
+  - *Esempio: 1,50€ di commissioni fisse verranno aggiunte a ogni pagamento, che tu acquisti per 10€ o 1000€*
+
+- **Valuta di applicazione delle commissioni**: Seleziona la valuta in cui la tua banca addebita le commissioni
+  - *Importante: Le commissioni si applicano solo quando si converte in questa valuta*
+
+- **Commissione massima**: Limite massimo per le commissioni bancarie (0 = nessun limite)
+  - *Esempio: 15,00 per limitare le commissioni a un massimo di 15€ per transazione*
+
+### Come configurare le tue commissioni bancarie?
+
+1. Controlla le condizioni tariffarie della tua banca per le operazioni estere
+2. Attiva **"Tieni conto delle commissioni bancarie"**
+3. Inserisci il **tasso di commissione** (generalmente tra 1% e 3%)
+4. Aggiungi le **commissioni fisse** se la tua banca le applica
+5. Seleziona la **valuta di fatturazione** (spesso la tua valuta locale)
+6. Imposta un **limite** se la tua banca ne offre uno
+
+### Valute predefinite
+L'app ricorda automaticamente le tue ultime due valute utilizzate per un accesso rapido al prossimo avvio.
 - **Commissioni fisse** (importo fisso per transazione)
 - **Commissione con limite massimo** (limite massimo delle commissioni)
 - **Valuta di fatturazione** (scelta della valuta a cui si applicano le commissioni)

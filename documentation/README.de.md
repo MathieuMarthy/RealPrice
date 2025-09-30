@@ -9,8 +9,8 @@
 <br>
 
 <div align="center">
-  <a href="https://github.com/MathieuMarthy/RealPrice/releases/tag/1.0.2">
-    <img src="https://img.shields.io/static/v1?label=release&message=v1.0.2&color=blue" alt="Veröffentlichung - v1.0.2" />
+  <a href="https://github.com/MathieuMarthy/RealPrice/releases/tag/1.0.4">
+    <img src="https://img.shields.io/static/v1?label=release&message=v1.0.4&color=blue" alt="Veröffentlichung - v1.0.4" />
   </a>
   <a href="https://www.android.com">
     <img src="https://img.shields.io/static/v1?label=version&message=android&color=green" alt="Version - Android" />
@@ -22,7 +22,7 @@
 
 <p align="center">
   <a href="#beschreibung">Beschreibung</a> •
-  <a href="#wie-es-funktioniert">Wie es funktioniert</a> •
+  <a href="#wie-funktioniert-es-">Wie funktioniert es ?</a> •
   <a href="#konfiguration">Konfiguration</a>
 </p>
 
@@ -54,41 +54,67 @@
 
 ## Beschreibung
 
-RealPrice ist eine unverzichtbare Währungsumrechnung-App für Reisende, die die echten Kosten von Artikeln in einer Fremdwährung wissen möchten. Mit RealPrice können Sie einfach Wechselkurse zwischen zwei Währungen vergleichen und den Provisionsprozentsatz anpassen, den Ihre Bank bei internationalen Transaktionen erhebt. Diese Funktion ermöglicht es Ihnen, den finalen Preis eines Artikels oder einer Dienstleistung zu berechnen, wobei nicht nur der Wechselkurs, sondern auch die damit verbundenen Bankgebühren berücksichtigt werden. Die App aktualisiert sich automatisch, sobald Sie mit dem Internet verbunden sind, und gewährleistet so immer präzise und aktuelle Umrechnungen. Reisen Sie nie wieder ohne RealPrice! Seien Sie sicher, genau zu wissen, wie viel Sie in Ihrer gewählten Währung ausgeben werden, unter Berücksichtigung der Umrechnungsgebühren Ihrer Bank. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Laden Sie RealPrice</a> noch heute herunter und reisen Sie sorglos.
+RealPrice ist eine Währungsumrechnung-App für Reisende, die die echten Kosten von Artikeln in einer Fremdwährung wissen möchten. Mit RealPrice können Sie einfach Wechselkurse zwischen zwei Währungen vergleichen und den Provisionsprozentsatz anpassen, den Ihre Bank bei internationalen Transaktionen erhebt. Diese Funktion ermöglicht es Ihnen, den finalen Preis eines Artikels oder einer Dienstleistung zu berechnen, wobei nicht nur der Wechselkurs, sondern auch die damit verbundenen Bankgebühren berücksichtigt werden. Die App aktualisiert sich automatisch, sobald Sie mit dem Internet verbunden sind, und gewährleistet so immer präzise und aktuelle Umrechnungen. Reisen Sie nie wieder ohne RealPrice! Seien Sie sicher, genau zu wissen, wie viel Sie in Ihrer gewählten Währung ausgeben werden, unter Berücksichtigung der Umrechnungsgebühren Ihrer Bank. <a href="https://github.com/MathieuMarthy/RealPrice/releases/latest">Laden Sie RealPrice</a> noch heute herunter und reisen Sie sorglos.
+<br>
+<br>
+<br>
 
-## Wie es funktioniert
+## 💡Wie funktioniert es ?
 
 RealPrice funktioniert nach einem einfachen, aber effektiven Prinzip, um Ihnen genaue und realistische Währungsumrechnungen zu bieten:
 
-### 🔄 **Echtzeitumrechnung**
-- Die App verfügt über **200+ globale Währungen** mit ihren aktuellen Wechselkursen
+### Echtzeitumrechnung
+- Die App verfügt über **mehr als 200 globale Währungen** mit ihren aktuellen Wechselkursen
 - Wechselkursdaten aktualisieren sich automatisch, sobald Sie mit dem Internet verbunden sind
 - Im Offline-Modus nutzt die App die zuletzt heruntergeladenen Kurse mit Anzeige des letzten Aktualisierungsdatums
 
-### 💰 **Intuitive Benutzeroberfläche**
+### Benutzeroberfläche
 - **Zwei Eingabefelder** ermöglichen sofortige Umrechnung in beide Richtungen
 - **Einfache Währungsauswahl** über ein Dropdown-Menü mit Flaggen und Symbolen
-- **Bidirektionale Umrechnung**: Geben Sie einen Betrag in jedes Feld ein, um die automatische Umrechnung zu sehen
-- **Schneller Austausch**: Wenn Sie eine bereits verwendete Währung auswählen, tauschen die beiden Währungen automatisch
+- **Bidirektionale Umrechnung**: Tippen Sie einen Betrag in ein beliebiges Feld ein, um die automatische Umrechnung zu sehen
+- **Schneller Wechsel**: Wenn Sie eine bereits verwendete Währung auswählen, tauschen die beiden Währungen automatisch
 
-### 📱 **Erweiterte Funktionen**
+### Weitere Funktionen
 - **Adaptiver Dunkel-/Hellmodus**
 - **Mehrsprachiger Support** (9 Sprachen verfügbar)
-- **Mobile Datenverwaltung** (Aktivierung/Deaktivierung von Updates im Mobilnetz)
+<br>
+<br>
+<br>
+## ⚙️ Konfiguration
 
-### 🌐 **Automatische Updates**
-- Tägliche Überprüfung der Wechselkurse über das Internet
-- Lokale Datensicherung für Offline-Betrieb
-- Visuelle Anzeige des Verbindungsstatus
+Es gibt mehrere Möglichkeiten, die RealPrice-App so zu konfigurieren, dass sie Ihren spezifischen Bedürfnissen entspricht. Hier ist eine detaillierte Anleitung zu den verfügbaren Optionen:
 
-## Konfiguration
+### Datenverwaltung
+Sie können automatische Wechselkurs-Updates über Ihre mobilen Daten aktivieren oder deaktivieren. Standardmäßig deaktiviert, um Ihre Daten zu sparen.
 
-### 🏦 **Bankgebührenberechnung**
-RealPrice geht über einfache Umrechnung hinaus, indem es integriert:
-- **Anpassbare Provisionssätze** (variabler Prozentsatz je nach Ihrer Bank)
-- **Feste Gebühren** (fester Betrag pro Transaktion)
-- **Gedeckelte Provision** (maximales Limit für Gebühren)
-- **Abrechnungswährung** (Auswahl der Währung, auf die Gebühren angewendet werden)
+### Bankgebühren-Konfiguration
+Aktivieren Sie diese Option, um die echten Kosten Ihrer internationalen Transaktionen zu erhalten:
+
+#### Gebühreneinstellungen (nur aktiv, wenn Bankgebühren aktiviert sind):
+
+- **Provisionssatz (%)**: Von Ihrer Bank erhobener Prozentsatz pro Transaktion
+  - *Beispiel: 2,5% bedeutet, dass Sie bei einem Kauf von 100€ 2,50€ Provision zahlen*
+
+- **Feste Gebühren**: Fester Betrag, der zu jeder Transaktion hinzugefügt wird, unabhängig vom umgerechneten Betrag
+  - *Beispiel: 1,50€ feste Gebühren werden zu jeder Zahlung hinzugefügt, egal ob Sie für 10€ oder 1000€ kaufen*
+
+- **Gebühren-Anwendungswährung**: Wählen Sie die Währung, in der Ihre Bank Provisionen berechnet
+  - *Wichtig: Gebühren gelten nur bei der Umrechnung in diese Währung*
+
+- **Maximale Provision**: Obergrenze für Bankgebühren (0 = keine Begrenzung)
+  - *Beispiel: 15,00 um die Gebühren auf maximal 15€ pro Transaktion zu begrenzen*
+
+### Wie konfigurieren Sie Ihre Bankgebühren?
+
+1. Überprüfen Sie die Tarifbedingungen Ihrer Bank für Auslandsgeschäfte
+2. Aktivieren Sie **"Bankgebühren berücksichtigen"**
+3. Geben Sie den **Provisionssatz** ein (in der Regel zwischen 1% und 3%)
+4. Fügen Sie **feste Gebühren** hinzu, falls Ihre Bank diese erhebt
+5. Wählen Sie die **Abrechnungswährung** (oft Ihre lokale Währung)
+6. Setzen Sie eine **Obergrenze**, falls Ihre Bank eine anbietet
+
+### Standardwährungen
+Die App merkt sich automatisch Ihre letzten beiden verwendeten Währungen für schnellen Zugriff beim nächsten Start.
 
 ## Verfügbare Sprachen:
 
