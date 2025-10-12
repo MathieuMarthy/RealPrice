@@ -71,6 +71,9 @@ RealPrice funktioniert nach einem einfachen, aber effektiven Prinzip, um Ihnen g
 ### Benutzeroberfläche
 - **Zwei Eingabefelder** ermöglichen sofortige Umrechnung in beide Richtungen
 - **Einfache Währungsauswahl** über ein Dropdown-Menü mit Flaggen und Symbolen
+- **Intelligente Suchleiste**: Finden Sie Währungen sofort durch Eingabe von Währungscodes (EUR,
+  USD), Währungsnamen (Euro, Dollar) oder Ländernamen (Deutschland, Vereinigte Staaten). Die Suche
+  ignoriert Akzente, sodass die Eingabe von "agypten" "Ägypten" findet
 - **Bidirektionale Umrechnung**: Tippen Sie einen Betrag in ein beliebiges Feld ein, um die automatische Umrechnung zu sehen
 - **Schneller Wechsel**: Wenn Sie eine bereits verwendete Währung auswählen, tauschen die beiden Währungen automatisch
 

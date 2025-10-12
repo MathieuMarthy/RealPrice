@@ -71,6 +71,9 @@ RealPrice fonctionne selon un principe simple mais efficace pour vous fournir de
 ### Interface
 - **Deux champs de saisie** permettent une conversion instantanée dans les deux sens
 - **Sélection facile des devises** via un menu déroulant avec drapeaux et symboles
+- **Barre de recherche intelligente** : Trouvez instantanément les devises en tapant les codes (EUR,
+  USD), les noms de devises (Euro, Dollar), ou les noms de pays (France, États-Unis). La recherche
+  ignore les accents, donc taper "egypte" trouvera "Égypte"
 - **Conversion bidirectionnelle** : tapez un montant dans n'importe quel champ pour voir la conversion automatique
 - **Échange rapide** : si vous sélectionnez une devise déjà utilisée, les deux devises s'échangent automatiquement
 
