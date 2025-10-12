@@ -3,7 +3,9 @@
     <string name="amount_money_convert">le montant d\'argent à convertir</string>
     <string name="last_update_at">dernière mise à jour: %s</string>
     <string name="choose_currency">Choisissez une monnaie</string>
+    <string name="search_currency_hint">Rechercher une devise ou un pays…</string>
     <string name="popular_currencies">Monnaies populaires</string>
+    <string name="search_results">Résultats</string>
     <string name="offline_mode">Mode hors ligne</string>
     <string name="settings">Paramètres</string>
     <string name="allow_data_utilisation">Autoriser l\'utilisation des données\nmobiles</string>

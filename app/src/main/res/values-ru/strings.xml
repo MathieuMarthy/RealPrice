@@ -3,7 +3,9 @@
     <string name="amount_money_convert">сумма денег для конвертации</string>
     <string name="last_update_at">последнее обновление: %s</string>
     <string name="choose_currency">Выберите валюту</string>
+    <string name="search_currency_hint">Поиск валюты или страны…</string>
     <string name="popular_currencies">Популярные валюты</string>
+    <string name="search_results">Результаты</string>
     <string name="offline_mode">Оффлайн режим</string>
     <string name="settings">Настройки</string>
     <string name="allow_data_utilisation">Разрешить использование\nмобильного интернета</string>

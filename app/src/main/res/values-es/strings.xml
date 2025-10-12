@@ -2,8 +2,10 @@
 <resources>
     <string name="amount_money_convert">la cantidad de dinero a convertir</string>
     <string name="last_update_at">última actualización: %s</string>
-    <string name="choose_currency">Elija una moneda</string>
+    <string name="choose_currency">Elegir una moneda</string>
+    <string name="search_currency_hint">Buscar moneda o país…</string>
     <string name="popular_currencies">Monedas populares</string>
+    <string name="search_results">Resultados</string>
     <string name="offline_mode">Modo sin conexión</string>
     <string name="settings">Configuraciones</string>
     <string name="allow_data_utilisation">Permitir el uso de datos\nmóviles</string>
