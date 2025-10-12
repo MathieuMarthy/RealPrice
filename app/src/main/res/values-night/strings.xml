@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="search_currency_hint">Search currency or country…</string>
+    <string name="search_results">Results</string>
     <string name="close_window">close window</string>
 </resources>

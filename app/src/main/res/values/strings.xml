@@ -5,6 +5,7 @@
     <string name="choose_currency">Choose a currency</string>
     <string name="search_currency_hint">Search currency or country…</string>
     <string name="popular_currencies">Popular currencies</string>
+    <string name="search_results">Results</string>
     <string name="offline_mode">Offline mode</string>
     <string name="settings">Settings</string>
     <string name="allow_data_utilisation">Allow mobile data usage</string>

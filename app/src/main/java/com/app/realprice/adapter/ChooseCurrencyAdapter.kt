@@ -15,6 +15,8 @@ class ChooseCurrencyAdapter(
     private val onCurrencyClickListener: (Currency) -> Unit
 ) : RecyclerView.Adapter<ChooseCurrencyAdapter.ViewHolder>() {
 
+    private var isSearchMode = false
+
     open class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     companion object {
@@ -26,6 +28,12 @@ class ChooseCurrencyAdapter(
         this.currencies.clear()
         this.currencies.addAll(newCurrencies)
         notifyDataSetChanged()
+    }
+
+    fun setSearchMode(isSearching: Boolean) {
+        this.isSearchMode = isSearching
+        // Notifier seulement l'en-tête (position 0) pour éviter de redessiner toute la liste
+        notifyItemChanged(0)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -47,7 +55,15 @@ class ChooseCurrencyAdapter(
     override fun getItemCount(): Int = this.currencies.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (holder is CurrencyViewHolder) {
+        if (holder is HeaderViewHolder) {
+            // Gérer l'affichage de l'en-tête selon le mode
+            val headerText = holder.itemView.findViewById<TextView>(R.id.header_text)
+            if (isSearchMode) {
+                headerText.text = context.getString(R.string.search_results)
+            } else {
+                headerText.text = context.getString(R.string.popular_currencies)
+            }
+        } else if (holder is CurrencyViewHolder) {
             val item = this.currencies[position]
 
             // set texts

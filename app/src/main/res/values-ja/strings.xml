@@ -3,8 +3,9 @@
     <string name="amount_money_convert">変換する金額</string>
     <string name="last_update_at">最終更新日時: %s</string>
     <string name="choose_currency">通貨を選択</string>
-    <string name="search_currency_hint">通貨または国を検索...</string>
+    <string name="search_currency_hint">通貨または国を検索…</string>
     <string name="popular_currencies">人気の通貨</string>
+    <string name="search_results">結果</string>
     <string name="offline_mode">オフラインモード</string>
     <string name="settings">設定</string>
     <string name="allow_data_utilisation">モバイルデータの使用を\n許可する</string>

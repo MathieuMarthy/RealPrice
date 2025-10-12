@@ -121,10 +121,11 @@ class ChooseCurrencyDialog {
                             PopularLimiterItemDecoration(context, popularSize + 1)
                         )
 
-                        // Update adapter
+                        // Update adapter and set normal mode (Popular currencies)
                         allCurrenciesAdapter.updateCurrencies(resetList)
+                        allCurrenciesAdapter.setSearchMode(false)
                     } else {
-                        // Recherche complète avec le service (code, nom de devise, et nom de pays)
+                        // Complete search with service (code, currency name, and country name)
                         val filteredCurrencies =
                             currencyCountryService.searchCurrencies(query, currencies)
 
@@ -142,8 +143,9 @@ class ChooseCurrencyDialog {
                             )
                         )
 
-                        // Update adapter
+                        // Update adapter and set search mode (Results)
                         allCurrenciesAdapter.updateCurrencies(filteredList)
+                        allCurrenciesAdapter.setSearchMode(true)
                     }
                 }
             })

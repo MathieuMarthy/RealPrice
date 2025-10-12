@@ -3,8 +3,9 @@
     <string name="amount_money_convert">변환할 금액</string>
     <string name="last_update_at">마지막 업데이트: %s</string>
     <string name="choose_currency">통화 선택</string>
-    <string name="search_currency_hint">통화 또는 국가 검색...</string>
+    <string name="search_currency_hint">통화 또는 국가 검색…</string>
     <string name="popular_currencies">인기 통화</string>
+    <string name="search_results">결과</string>
     <string name="offline_mode">오프라인 모드</string>
     <string name="settings">설정</string>
     <string name="allow_data_utilisation">모바일 데이터 사용 허용</string>
