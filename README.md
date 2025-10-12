@@ -71,6 +71,9 @@ RealPrice operates on a simple yet effective principle to provide you with accur
 ### Interface
 - **Two input fields** allow instant conversion in both directions
 - **Easy currency selection** via a dropdown menu with flags and symbols
+- **Smart search bar**: Find currencies instantly by typing currency codes (EUR, USD), currency
+  names (Euro, Dollar), or country names (France, United States). The search is accent-insensitive,
+  so typing "egypte" will find "Égypte"
 - **Bidirectional conversion**: type an amount in any field to see automatic conversion
 - **Quick exchange**: if you select a currency already in use, the two currencies automatically swap
 

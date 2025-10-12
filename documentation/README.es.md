@@ -71,6 +71,9 @@ RealPrice funciona según un principio simple pero efectivo para brindarte conve
 ### Interfaz
 - **Dos campos de entrada** permiten conversión instantánea en ambas direcciones
 - **Selección fácil de monedas** a través de un menú desplegable con banderas y símbolos
+- **Barra de búsqueda inteligente**: Encuentra monedas instantáneamente escribiendo códigos de
+  moneda (EUR, USD), nombres de monedas (Euro, Dólar), o nombres de países (España, Estados Unidos).
+  La búsqueda ignora acentos, por lo que escribir "egipto" encontrará "Egipto"
 - **Conversión bidireccional**: escribe una cantidad en cualquier campo para ver la conversión automática
 - **Intercambio rápido**: si seleccionas una moneda ya en uso, las dos monedas se intercambian automáticamente
 

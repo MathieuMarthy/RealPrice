@@ -71,6 +71,9 @@ RealPrice opera secondo un principio semplice ma efficace per offrirti conversio
 ### Interfaccia
 - **Due campi di input** consentono la conversione istantanea in entrambe le direzioni
 - **Selezione facile delle valute** tramite un menu a discesa con bandiere e simboli
+- **Barra di ricerca intelligente**: Trova valute istantaneamente digitando codici valuta (EUR,
+  USD), nomi di valute (Euro, Dollaro), o nomi di paesi (Italia, Stati Uniti). La ricerca ignora gli
+  accenti, quindi digitare "egitto" troverà "Egitto"
 - **Conversione bidirezionale**: digita un importo in qualsiasi campo per vedere la conversione automatica
 - **Scambio rapido**: se selezioni una valuta già in uso, le due valute si scambiano automaticamente
 
