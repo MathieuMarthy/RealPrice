@@ -5,6 +5,7 @@ import com.app.realprice.models.Currency
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
+import java.text.Normalizer
 import java.util.Locale
 
 class CurrencyCountryService(private val context: Context) {
@@ -15,6 +16,15 @@ class CurrencyCountryService(private val context: Context) {
     init {
         loadCurrencyCountryMapping()
         loadCountryNames()
+    }
+
+    /**
+     * Normalize text by removing accents and converting to lowercase
+     */
+    private fun normalizeText(text: String): String {
+        return Normalizer.normalize(text, Normalizer.Form.NFD)
+            .replace("[\\p{InCombiningDiacriticalMarks}]".toRegex(), "")
+            .lowercase()
     }
 
     private fun loadCurrencyCountryMapping() {
@@ -85,26 +95,26 @@ class CurrencyCountryService(private val context: Context) {
             return allCurrencies
         }
 
-        val searchQuery = query.lowercase().trim()
+        val normalizedQuery = normalizeText(query.trim())
         val filteredCurrencies = mutableSetOf<Currency>()
 
         allCurrencies.forEach { currency ->
-            // Recherche par code de devise
-            if (currency.code.lowercase().contains(searchQuery)) {
+            // Search by currency code
+            if (normalizeText(currency.code).contains(normalizedQuery)) {
                 filteredCurrencies.add(currency)
             }
 
-            // Recherche par nom de devise
-            val currencyName = currency.getName(context).lowercase()
-            if (currencyName.contains(searchQuery)) {
+            // Search by currency name
+            val currencyName = normalizeText(currency.getName(context))
+            if (currencyName.contains(normalizedQuery)) {
                 filteredCurrencies.add(currency)
             }
 
-            // Recherche par nom de pays
+            // Search by country name
             val countries = currencyToCountries[currency.code] ?: emptyList()
             countries.forEach { countryCode ->
-                val countryName = countryToCountryName[countryCode]?.lowercase() ?: ""
-                if (countryName.contains(searchQuery)) {
+                val countryName = normalizeText(countryToCountryName[countryCode] ?: "")
+                if (countryName.contains(normalizedQuery)) {
                     filteredCurrencies.add(currency)
                 }
             }
