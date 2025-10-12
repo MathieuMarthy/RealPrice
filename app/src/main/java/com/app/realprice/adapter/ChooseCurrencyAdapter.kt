@@ -10,7 +10,7 @@ import com.app.realprice.R
 import com.app.realprice.models.Currency
 
 class ChooseCurrencyAdapter(
-    private val currencies: List<Currency>,
+    private var currencies: MutableList<Currency>,
     private val context: android.content.Context,
     private val onCurrencyClickListener: (Currency) -> Unit
 ) : RecyclerView.Adapter<ChooseCurrencyAdapter.ViewHolder>() {
@@ -20,6 +20,12 @@ class ChooseCurrencyAdapter(
     companion object {
         private const val VIEW_TYPE_HEADER = 0
         private const val VIEW_TYPE_CURRENCY = 1
+    }
+
+    fun updateCurrencies(newCurrencies: List<Currency>) {
+        this.currencies.clear()
+        this.currencies.addAll(newCurrencies)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

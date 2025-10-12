@@ -3,7 +3,10 @@ package com.app.realprice.dialogs
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageButton
 import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +16,7 @@ import com.app.realprice.adapter.ChooseCurrencyAdapter
 import com.app.realprice.itemDecorator.ChooseCurrencyItemDecorator
 import com.app.realprice.itemDecorator.PopularLimiterItemDecoration
 import com.app.realprice.models.Currency
+import com.app.realprice.services.CurrencyCountryService
 import com.app.realprice.services.ThemeService
 
 class ChooseCurrencyDialog {
@@ -26,11 +30,11 @@ class ChooseCurrencyDialog {
             callback: (Currency) -> Unit
         ) {
             val themeService = ThemeService(context)
+            val currencyCountryService = CurrencyCountryService(context)
 
             // setup dialog
             val dialog = Dialog(context)
             dialog.setContentView(R.layout.dialog_choose_currency)
-
 
             val color = if (themeService.isDarkThemeActive()) {
                 context.getColor(R.color.grey)
@@ -48,15 +52,14 @@ class ChooseCurrencyDialog {
                 dialog.dismiss()
             }
 
-            val currenciesWithHeader = currencies.toMutableList()
-            currenciesWithHeader.add(
-                0,
-                Currency(
-                    "",
-                    "header",
-                    0.0,
-                )
-            ) // add a fake currency as header
+            // search functionality
+            val searchEditText = dialog.findViewById<EditText>(R.id.dialog_choose_currency_search)
+            searchEditText.backgroundTintList = android.content.res.ColorStateList.valueOf(color)
+
+            val originalCurrencies = currencies.toMutableList()
+            originalCurrencies.add(0, Currency("", "header", 0.0)) // add header
+
+            val currenciesWithHeader = originalCurrencies.toMutableList()
 
             val allCurrenciesRecyclerView =
                 dialog.findViewById<RecyclerView>(R.id.dialog_choose_currency_rv_all_currencies)
@@ -78,27 +81,81 @@ class ChooseCurrencyDialog {
             )
 
             // add a limiter between popular currencies and all currencies
+            val currentPopularSize = popularSize + 1 // +1 because of the header
             allCurrenciesRecyclerView.addItemDecoration(
-                PopularLimiterItemDecoration(
-                    context,
-                    popularSize + 1 // +1 because of the header
-                )
+                PopularLimiterItemDecoration(context, currentPopularSize)
             )
+
             allCurrenciesRecyclerView.adapter = allCurrenciesAdapter
             allCurrenciesRecyclerView.layoutManager = LinearLayoutManager(context)
+
+            // Add text change listener for search
+            searchEditText.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable?) {
+                    val query = s.toString().trim()
+
+                    // Clear decorations first
+                    while (allCurrenciesRecyclerView.itemDecorationCount > 0) {
+                        allCurrenciesRecyclerView.removeItemDecorationAt(0)
+                    }
+
+                    if (query.isEmpty()) {
+                        // Show original list - reset to initial state
+                        val resetList = originalCurrencies.toMutableList()
+
+                        // Re-add decorations for full list
+                        allCurrenciesRecyclerView.addItemDecoration(
+                            ChooseCurrencyItemDecorator(context, resetList, actualSelectedCurrency)
+                        )
+                        allCurrenciesRecyclerView.addItemDecoration(
+                            PopularLimiterItemDecoration(context, popularSize + 1)
+                        )
+
+                        // Update adapter
+                        allCurrenciesAdapter.updateCurrencies(resetList)
+                    } else {
+                        // Recherche complète avec le service (code, nom de devise, et nom de pays)
+                        val filteredCurrencies =
+                            currencyCountryService.searchCurrencies(query, currencies)
+
+                        // Create new list with header for filtered results
+                        val filteredList = mutableListOf<Currency>()
+                        filteredList.add(Currency("", "header", 0.0)) // Add header first
+                        filteredList.addAll(filteredCurrencies) // Add filtered results
+
+                        // Add decoration for filtered list
+                        allCurrenciesRecyclerView.addItemDecoration(
+                            ChooseCurrencyItemDecorator(
+                                context,
+                                filteredList,
+                                actualSelectedCurrency
+                            )
+                        )
+
+                        // Update adapter
+                        allCurrenciesAdapter.updateCurrencies(filteredList)
+                    }
+                }
+            })
 
             dialog.show()
 
             // change the size of the dialog
             val window = dialog.window
             if (window != null) {
-                val width =
-                    (context.resources.displayMetrics.widthPixels * 0.85).toInt() // 85% de la largeur de l'écran
-                val height =
-                    (context.resources.displayMetrics.heightPixels * 0.90).toInt() // 90% de la hauteur de l'écran
+                val width = (context.resources.displayMetrics.widthPixels * 0.85).toInt()
+                val height = (context.resources.displayMetrics.heightPixels * 0.90).toInt()
                 window.setLayout(width, height)
-
-                // Définir le fond de la fenêtre de dialogue sur transparent
                 window.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
             }
         }

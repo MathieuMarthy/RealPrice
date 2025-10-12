@@ -1,0 +1,559 @@
+{
+  "AFN": [
+    "AF"
+  ],
+  "EUR": [
+    "AX",
+    "AD",
+    "AT",
+    "BE",
+    "HR",
+    "CY",
+    "EE",
+    "FI",
+    "FR",
+    "GF",
+    "TF",
+    "DE",
+    "GR",
+    "GP",
+    "VA",
+    "IE",
+    "IT",
+    "LV",
+    "LT",
+    "LU",
+    "MT",
+    "MQ",
+    "YT",
+    "MC",
+    "ME",
+    "NL",
+    "PT",
+    "RE",
+    "BL",
+    "MF",
+    "PM",
+    "SM",
+    "SK",
+    "SI",
+    "ES"
+  ],
+  "ALL": [
+    "AL"
+  ],
+  "DZD": [
+    "DZ"
+  ],
+  "USD": [
+    "AS",
+    "IO",
+    "VG",
+    "EC",
+    "GU",
+    "MH",
+    "FM",
+    "MP",
+    "PW",
+    "PR",
+    "TL",
+    "TC",
+    "UM",
+    "US",
+    "VI"
+  ],
+  "AOA": [
+    "AO"
+  ],
+  "XCD": [
+    "AI",
+    "AG",
+    "DM",
+    "GD",
+    "MS",
+    "KN",
+    "LC",
+    "VC"
+  ],
+  "": [
+    "AQ",
+    "BQ",
+    "HK",
+    "MO",
+    "GS",
+    "PS"
+  ],
+  "ARS": [
+    "AR"
+  ],
+  "AMD": [
+    "AM"
+  ],
+  "AWG": [
+    "AW"
+  ],
+  "AUD": [
+    "AU",
+    "CX",
+    "CC",
+    "HM",
+    "KI",
+    "NR",
+    "NF",
+    "TV"
+  ],
+  "AZN": [
+    "AZ"
+  ],
+  "BSD": [
+    "BS"
+  ],
+  "BHD": [
+    "BH"
+  ],
+  "BDT": [
+    "BD"
+  ],
+  "BBD": [
+    "BB"
+  ],
+  "BYN": [
+    "BY"
+  ],
+  "BZD": [
+    "BZ"
+  ],
+  "XOF": [
+    "BJ",
+    "BF",
+    "GW",
+    "CI",
+    "ML",
+    "NE",
+    "SN",
+    "TG"
+  ],
+  "BMD": [
+    "BM"
+  ],
+  "Bhutan": [
+    "BT"
+  ],
+  "BOB": [
+    "BO"
+  ],
+  "BAM": [
+    "BA"
+  ],
+  "BWP": [
+    "BW"
+  ],
+  "NOK": [
+    "BV",
+    "NO",
+    "SJ"
+  ],
+  "BRL": [
+    "BR"
+  ],
+  "BND": [
+    "BN"
+  ],
+  "BGN": [
+    "BG"
+  ],
+  "BIF": [
+    "BI"
+  ],
+  "CVE": [
+    "CV"
+  ],
+  "KHR": [
+    "KH"
+  ],
+  "XAF": [
+    "CM",
+    "CF",
+    "TD",
+    "CG",
+    "GQ",
+    "GA"
+  ],
+  "CAD": [
+    "CA"
+  ],
+  "KYD": [
+    "KY"
+  ],
+  "CLP": [
+    "CL"
+  ],
+  "CNY": [
+    "CN"
+  ],
+  "COP": [
+    "CO"
+  ],
+  "KMF": [
+    "KM"
+  ],
+  "NZD": [
+    "CK",
+    "NZ",
+    "NU",
+    "PN",
+    "TK"
+  ],
+  "CRC": [
+    "CR"
+  ],
+  "CUP": [
+    "CU"
+  ],
+  "XCG": [
+    "CW",
+    "SX"
+  ],
+  "CZK": [
+    "CZ"
+  ],
+  "KPW": [
+    "KP"
+  ],
+  "CDF": [
+    "CD"
+  ],
+  "DKK": [
+    "DK",
+    "FO",
+    "GL"
+  ],
+  "DJF": [
+    "DJ"
+  ],
+  "Доминиканская Республика": [
+    "DR"
+  ],
+  "EGP": [
+    "EG"
+  ],
+  "El Salvador": [
+    "SV"
+  ],
+  "ERN": [
+    "ER"
+  ],
+  "SZL": [
+    "SZ"
+  ],
+  "ETB": [
+    "ET"
+  ],
+  "FKP": [
+    "FK"
+  ],
+  "FJD": [
+    "FJ"
+  ],
+  "XPF": [
+    "PF",
+    "NC",
+    "WF"
+  ],
+  "GMD": [
+    "GM"
+  ],
+  "GEL": [
+    "GE"
+  ],
+  "GHS": [
+    "GH"
+  ],
+  "GIP": [
+    "GI"
+  ],
+  "GTQ": [
+    "GT"
+  ],
+  "GBP": [
+    "GG",
+    "IM",
+    "JE",
+    "GB"
+  ],
+  "GNF": [
+    "GN"
+  ],
+  "GYD": [
+    "GY"
+  ],
+  "Haiti": [
+    "HT"
+  ],
+  "HNL": [
+    "HN"
+  ],
+  "HUF": [
+    "HU"
+  ],
+  "ISK": [
+    "IS"
+  ],
+  "INR": [
+    "IN"
+  ],
+  "IDR": [
+    "ID"
+  ],
+  "IRR": [
+    "IR"
+  ],
+  "IQD": [
+    "IQ"
+  ],
+  "ILS": [
+    "IL"
+  ],
+  "JMD": [
+    "JM"
+  ],
+  "JPY": [
+    "JP"
+  ],
+  "JOD": [
+    "JO"
+  ],
+  "KZT": [
+    "KZ"
+  ],
+  "KES": [
+    "KE"
+  ],
+  "KWD": [
+    "KW"
+  ],
+  "KGS": [
+    "KG"
+  ],
+  "LAK": [
+    "LA"
+  ],
+  "LBP": [
+    "LB"
+  ],
+  "Lesotho": [
+    "LS"
+  ],
+  "LRD": [
+    "LR"
+  ],
+  "LYD": [
+    "LY"
+  ],
+  "CHF": [
+    "LI",
+    "CH"
+  ],
+  "MGA": [
+    "MG"
+  ],
+  "MWK": [
+    "MW"
+  ],
+  "MYR": [
+    "MY"
+  ],
+  "MVR": [
+    "MV"
+  ],
+  "MRU": [
+    "MR"
+  ],
+  "MUR": [
+    "MU"
+  ],
+  "MXN": [
+    "MX"
+  ],
+  "MNT": [
+    "MN"
+  ],
+  "MAD": [
+    "MA",
+    "EH"
+  ],
+  "MZN": [
+    "MZ"
+  ],
+  "MMK": [
+    "MM"
+  ],
+  "Namibia": [
+    "NA"
+  ],
+  "NPR": [
+    "NP"
+  ],
+  "NIO": [
+    "NI"
+  ],
+  "NGN": [
+    "NG"
+  ],
+  "MKD": [
+    "MK"
+  ],
+  "OMR": [
+    "OM"
+  ],
+  "PKR": [
+    "PK"
+  ],
+  "Panama": [
+    "PA"
+  ],
+  "PGK": [
+    "PG"
+  ],
+  "PYG": [
+    "PY"
+  ],
+  "PEN": [
+    "PE"
+  ],
+  "PHP": [
+    "PH"
+  ],
+  "PLN": [
+    "PL"
+  ],
+  "QAR": [
+    "QA"
+  ],
+  "KRW": [
+    "KR"
+  ],
+  "MDL": [
+    "MD"
+  ],
+  "RON": [
+    "RO"
+  ],
+  "RUB": [
+    "RU"
+  ],
+  "RWF": [
+    "RW"
+  ],
+  "SHP": [
+    "SH"
+  ],
+  "WST": [
+    "WS"
+  ],
+  "STN": [
+    "ST"
+  ],
+  "SAR": [
+    "SA"
+  ],
+  "RSD": [
+    "RS"
+  ],
+  "SCR": [
+    "SC"
+  ],
+  "SLE": [
+    "SL"
+  ],
+  "SGD": [
+    "SG"
+  ],
+  "SBD": [
+    "SB"
+  ],
+  "SOS": [
+    "SO"
+  ],
+  "ZAR": [
+    "ZA"
+  ],
+  "SSP": [
+    "SS"
+  ],
+  "LKR": [
+    "LK"
+  ],
+  "SDG": [
+    "SD"
+  ],
+  "SRD": [
+    "SR"
+  ],
+  "SEK": [
+    "SE"
+  ],
+  "SYP": [
+    "SY"
+  ],
+  "TWD": [
+    "TW"
+  ],
+  "TJS": [
+    "TJ"
+  ],
+  "THB": [
+    "TH"
+  ],
+  "TOP": [
+    "TO"
+  ],
+  "TTD": [
+    "TT"
+  ],
+  "TND": [
+    "TN"
+  ],
+  "TRY": [
+    "TR"
+  ],
+  "TMT": [
+    "TM"
+  ],
+  "UGX": [
+    "UG"
+  ],
+  "UAH": [
+    "UA"
+  ],
+  "AED": [
+    "AE"
+  ],
+  "TZS": [
+    "TZ"
+  ],
+  "Uruguay": [
+    "UY"
+  ],
+  "UZS": [
+    "UZ"
+  ],
+  "VUV": [
+    "VU"
+  ],
+  "Venezuela (Bolivarian Republic of)": [
+    "VE"
+  ],
+  "VND": [
+    "VN"
+  ],
+  "YER": [
+    "YE"
+  ],
+  "ZMW": [
+    "ZM"
+  ],
+  "ZWG": [
+    "ZW"
+  ]
+}

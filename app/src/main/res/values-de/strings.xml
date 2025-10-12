@@ -2,7 +2,8 @@
 <resources>
     <string name="amount_money_convert">der Betrag, der umgerechnet werden soll</string>
     <string name="last_update_at">letzte Aktualisierung: %s</string>
-    <string name="choose_currency">Währung auswählen</string>
+    <string name="choose_currency">Währung wählen</string>
+    <string name="search_currency_hint">Währung oder Land suchen...</string>
     <string name="popular_currencies">Beliebte Währungen</string>
     <string name="offline_mode">Offline-Modus</string>
     <string name="settings">Einstellungen</string>

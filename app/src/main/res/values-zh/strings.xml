@@ -3,6 +3,7 @@
     <string name="amount_money_convert">要转换的金额</string>
     <string name="last_update_at">最后更新时间: %s</string>
     <string name="choose_currency">选择货币</string>
+    <string name="search_currency_hint">搜索货币或国家...</string>
     <string name="popular_currencies">热门货币</string>
     <string name="offline_mode">离线模式</string>
     <string name="settings">设置</string>

@@ -3,6 +3,7 @@
     <string name="amount_money_convert">the amount of money to convert</string>
     <string name="last_update_at">Last update: %s</string>
     <string name="choose_currency">Choose a currency</string>
+    <string name="search_currency_hint">Search currency or country…</string>
     <string name="popular_currencies">Popular currencies</string>
     <string name="offline_mode">Offline mode</string>
     <string name="settings">Settings</string>
