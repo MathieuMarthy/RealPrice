@@ -80,8 +80,15 @@ RealPrice는 정확하고 현실적인 환율 변환을 제공하기 위해 간�
 - **적응형 다크/라이트 모드**
 - **다국어 지원** (9개 언어 지원)
 <br>
+<p align="center">
+  <img src="./images/ko-KR/01_dark_home.png" width="20%" />
+  <img src="./images/ko-KR/04_dark_search.png" width="20%" />
+  <img src="./images/ko-KR/02_dark_setting.png" width="20%" />
+  <img src="./images/ko-KR/01_light_home.png" width="20%" />
+</p>
 <br>
 <br>
+
 ## ⚙️ 설정
 
 귀하의 특정 요구사항에 맞게 RealPrice 앱을 구성하는 여러 가지 방법이 있습니다. 사용 가능한 옵션에 대한 자세한 가이드는 다음과 같습니다:

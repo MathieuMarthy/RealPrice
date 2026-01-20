@@ -81,6 +81,12 @@ RealPrice fonctionne selon un principe simple mais efficace pour vous fournir de
 - **Mode sombre/clair adaptatif**
 - **Support multilingue** (9 langues disponibles)
 <br>
+<p align="center">
+  <img src="./images/fr-FR/01_dark_home.png" width="20%" />
+  <img src="./images/fr-FR/04_dark_search.png" width="20%" />
+  <img src="./images/fr-FR/02_dark_setting.png" width="20%" />
+  <img src="./images/fr-FR/01_light_home.png" width="20%" />
+</p>
 <br>
 <br>
 

@@ -81,8 +81,15 @@ RealPrice opera secondo un principio semplice ma efficace per offrirti conversio
 - **Modalità scuro/chiaro adattiva**
 - **Supporto multilingue** (9 lingue disponibili)
 <br>
+<p align="center">
+  <img src="./images/it-IT/01_dark_home.png" width="20%" />
+  <img src="./images/it-IT/04_dark_search.png" width="20%" />
+  <img src="./images/it-IT/02_dark_setting.png" width="20%" />
+  <img src="./images/it-IT/01_light_home.png" width="20%" />
+</p>
 <br>
 <br>
+
 ## ⚙️ Configurazione
 
 Ci sono diversi modi per configurare l'app RealPrice per soddisfare le tue esigenze specifiche. Ecco una guida dettagliata alle opzioni disponibili:

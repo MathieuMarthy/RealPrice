@@ -80,8 +80,15 @@ RealPriceは、正確でリアルな通貨変換を提供するため、シン�
 - **適応型ダーク/ライトモード**
 - **多言語サポート**（9言語対応）
 <br>
+<p align="center">
+  <img src="./images/ja-JP/01_dark_home.png" width="20%" />
+  <img src="./images/ja-JP/04_dark_search.png" width="20%" />
+  <img src="./images/ja-JP/02_dark_setting.png" width="20%" />
+  <img src="./images/ja-JP/01_light_home.png" width="20%" />
+</p>
 <br>
 <br>
+
 ## ⚙️ 設定
 
 あなたの特定のニーズに合わせてRealPriceアプリを設定する方法はいくつかあります。利用可能なオプションの詳細ガイドは以下の通りです：
