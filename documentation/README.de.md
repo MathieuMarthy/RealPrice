@@ -81,8 +81,15 @@ RealPrice funktioniert nach einem einfachen, aber effektiven Prinzip, um Ihnen g
 - **Adaptiver Dunkel-/Hellmodus**
 - **Mehrsprachiger Support** (9 Sprachen verfügbar)
 <br>
+<p align="center">
+  <img src="./images/de-DE/01_dark_home.png" width="20%" />
+  <img src="./images/de-DE/04_dark_search.png" width="20%" />
+  <img src="./images/de-DE/02_dark_setting.png" width="20%" />
+  <img src="./images/de-DE/01_light_home.png" width="20%" />
+</p>
 <br>
 <br>
+
 ## ⚙️ Konfiguration
 
 Es gibt mehrere Möglichkeiten, die RealPrice-App so zu konfigurieren, dass sie Ihren spezifischen Bedürfnissen entspricht. Hier ist eine detaillierte Anleitung zu den verfügbaren Optionen:

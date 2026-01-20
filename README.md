@@ -81,6 +81,12 @@ RealPrice operates on a simple yet effective principle to provide you with accur
 - **Adaptive dark/light mode**
 - **Multilingual support** (9 languages available)
 <br>
+<p align="center">
+  <img src="./documentation/images/en-GB/01_dark_home.png" width="20%" />
+  <img src="./documentation/images/en-GB/04_dark_search.png" width="20%" />
+  <img src="./documentation/images/en-GB/02_dark_setting.png" width="20%" />
+  <img src="./documentation/images/en-GB/01_light_home.png" width="20%" />
+</p>
 <br>
 <br>
 

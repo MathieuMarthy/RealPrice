@@ -81,8 +81,15 @@ RealPrice работает по простому, но эффективному 
 - **Адаптивный темный/светлый режим**
 - **Многоязычная поддержка** (доступно 9 языков)
 <br>
+<p align="center">
+  <img src="./images/ru-RU/01_dark_home.png" width="20%" />
+  <img src="./images/ru-RU/04_dark_search.png" width="20%" />
+  <img src="./images/ru-RU/02_dark_setting.png" width="20%" />
+  <img src="./images/ru-RU/01_light_home.png" width="20%" />
+</p>
 <br>
 <br>
+
 ## ⚙️ Конфигурация
 
 Существует несколько способов настройки приложения RealPrice в соответствии с вашими конкретными потребностями. Вот подробное руководство по доступным опциям:

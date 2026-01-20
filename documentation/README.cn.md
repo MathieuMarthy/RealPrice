@@ -81,8 +81,15 @@ RealPrice基于简单而有效的原理运作，为您提供准确和现实的�
 - **自适应深色/浅色模式**
 - **多语言支持**（支持9种语言）
 <br>
+<p align="center">
+  <img src="./images/zh-CN/01_dark_home.png" width="20%" />
+    <img src="./images/zh-CN/04_dark_search.png" width="20%" />
+    <img src="./images/zh-CN/02_dark_setting.png" width="20%" />
+    <img src="./images/zh-CN/01_light_home.png" width="20%" />
+</p>
 <br>
 <br>
+
 ## ⚙️ 配置
 
 有几种方法可以配置RealPrice应用以满足您的特定需求。以下是可用选项的详细指南：
