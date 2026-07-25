@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "com.app.realprice"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.app.realprice"
         minSdk = 26
-        targetSdk = 36
-        versionCode = 6
-        versionName = "1.0.6"
+        targetSdk = 37
+        versionCode = 7
+        versionName = "1.0.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
